@@ -1,0 +1,1873 @@
+﻿<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link rel="StyleSheet" href="help.css" type="text/css">
+</head>
+<body><a NAME="index"></a>
+<h2>OS Sim v.1.0 Help</h2>
+<hr>
+<h2>Index</h2>
+<ul>
+	<li><a href="#introduction">Introduction</a></li>
+	<li><a href="#welcome">Start menu</a></li>
+	<li><a href="#lang">Languages</a></li>
+	<li><a href="#simulations">Simulations</a>
+	<ul>
+		<li><a href="#scheduling">Process Scheduling</a>
+		<ul>
+			<li><a href="#sch_screen">Screen</a></li>
+			<li><a href="#sch_cpu">Processor (CPU)</a></li>
+			<li><a href="#sch_ready">Ready queue</a></li>
+			<li><a href="#sch_incoming">Incoming Process</a></li>
+			<li><a href="#sch_set">Settings</a></li>
+			<li><a href="#sch_new">Adding processes</a></li>
+			<li><a href="#sch_info">Data and statistics</a></li>
+		</ul>
+		</li>
+		<li><a href="#memory">Memory management</a>
+		<ul>
+			<li><a href="#mem_screen">Screen</a></li>
+			<li><a href="#mem_ram">Main Memory</a></li>
+			<li><a href="#mem_queue">Process queue</a></li>
+			<li><a href="#mem_set">Settings</a></li>
+			<li><a href="#mem_new">Adding processes</a></li>
+			<li><a href="#mem_info">Data and statistics</a></li>
+			<LI><A HREF="#mem_detailinfo">Pages table and segments table</A> </LI>
+			<li><a href="#mem_part">Create a partition (only fixed-sized
+			partitions)</a></li>
+			<li><a href="#mem_comp">Compact memory (only variable size
+			partitions and segmentation)</a></li>
+			<li><a href="#mem_swap">Swap</a></li>
+			<li><a href="#mem_addr">Address Translation</a></li>
+			<li><a href="#mem_err">Errors in the simulation</a></li>
+		</ul>
+		</li>
+		<li><a href="#filesystem">File System Management</a>
+		<ul>
+			<li><a href="#fs_screen">Screen</a></li>
+			<li><a href="#fslogical">Logical file system</a></li>
+			<li><a href="#fsphysical">(Device) Physical File System</a></li>
+			<li><a href="#fsfolder">View current directory</a></li>
+			<li><a href="#fs_set">Settings</a></li>
+			<li><a href="#fsnew_file">Add a file</a></li>
+			<li><a href="#fsnew_folder">Add a folder</a></li>
+			<li><a href="#fsnew_link">Add a link</a></li>
+			<li><a href="#fsdetail_info">Detailed information of an
+			object</a></li>
+			<li><a href="#fs_info">Data and statistics</a></li>
+			<li><a href="#fs_err">Errors in the simulation</a></li>
+		</ul>
+		</li>
+		<li><a href="#disk">Disk scheduling policies</a>
+		<ul>
+			<li><a href="#disk_screen">Screen</a></li>
+			<li><a href="#disk_platter">The disc</a></li>
+			<li><a href="#disk_graph">Head movement graphic</a></li>
+			<li><a href="#disk_info">Data and statistics </a></li>
+			<li><a href="#disk_set">Settings</a></li>
+			<li><a href="#disk_new">Add request</a></li>
+		</ul>
+		</li>
+		<li><a href="#common">Common Tasks</a>
+		<ul>
+			<li><a href="#open_save">Open and Save simulations</a></li>
+			<li><a href="#time">Time Controls</a></li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+	<li><a href="#examples">Samples available ...</a>
+	<ul>
+		<li><a href="#scheduling_examples">... scheduling</a></li>
+		<li><a href="#memory_examples">... memory</a></li>
+		<li><a href="#filesystem_examples">... file system</a></li>
+		<li><a href="#disk_examples">... disk</a></li>
+	</ul>
+	</li>
+	<li><a href="#exercises">Exercises available ...</a>
+	<ul>
+		<li><a href="#scheduling_exercises">... scheduling</a></li>
+		<li><a href="#memory_exercises">... memory</a></li>
+		<li><a href="#filesystem_exercises">... file system</a></li>
+		<li>
+		<p><a href="#disk_exercises">... disk</a></p>
+		</li>
+	</ul>
+	</li>
+</ul>
+<hr>
+<p align="right"><a name="introduction"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h2>Introduction</h2>
+<p><b>OS Sim (Operating Systems Concepts Simulator)</b> is an
+educational purpose application to graphically simulate Operating
+System concepts and support the computer science students learning process.
+<br>
+<br>
+Specifically, the application is divided into four blocks or independent
+simulations: process scheduling, memory management, file system
+management and disk scheduling policies.<br>
+<br>
+Beyond trying to describe complex real systems, it focuses on the
+fundamental Operating Systems concepts as they are explained to computer
+science students, including the main algorithms and their most relevant
+parameters.<br>
+<br>
+It also has a number of examples and exercises with the corresponding
+simulations to be able to explore all application potential.</p>
+<p>The current application version is 1.2.</p>
+<p>It is freely available for any use under the <b>BSD license</b>.</p>
+<p align="right"><a name="welcome"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h2>Start menu</h2>
+<p>The Welcome screen allows direct access to each of the
+simulations, later it is possible to come back from <i>File menu.</i></p>
+<table border="1">
+	<tr>
+		<td>
+		<p align="center"><img src="img/cpu.png"></p>
+		<h4 align="center">Process Scheduling</h4>
+		</td>
+		<td>
+		<p align="center"><img src="img/ram.png"></p>
+		<h4 align="center">Memory management</h4>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p align="center"><img src="img/tree.png"></p>
+		<h4 align="center">File System</h4>
+		</td>
+		<td>
+		<p align="center"><img src="img/hdd.png"></p>
+		<h4 align="center">Disk Scheduling</h4>
+		</td>
+	</tr>
+</table>
+<p>Most menu actions are available through the keyboard shortcuts
+shown below:</p>
+<table border="1" cellpadding="2" cellspacing="2">
+	<tr class="tablehead">
+		<td>
+		<p><b>Action</b></p>
+		</td>
+		<td>
+		<p><b>Shortcut</b></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Exit</p>
+		</td>
+		<td>
+		<p>CTRL + E</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Open a saved simulation</p>
+		</td>
+		<td>
+		<p>CTRL + O</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Save a simulation</p>
+		</td>
+		<td>
+		<p>CTRL + S <br>
+		<i>(Only available if </i><br>
+		<i>Open a simulation)</i></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Open process scheduling</p>
+		</td>
+		<td>
+		<p>CTRL + P</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Open memory management</p>
+		</td>
+		<td>
+		<p>CTRL + M</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Open file system management</p>
+		</td>
+		<td>
+		<p>CTRL + I</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Open disk scheduling policies</p>
+		</td>
+		<td>
+		<p>CTRL + D</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Help</p>
+		</td>
+		<td>
+		<p>F1</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>About ...</p>
+		</td>
+		<td>
+		<p>CTRL + A</p>
+		</td>
+	</tr>
+</table>
+<p align="right"><a name="lang"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h2>Languages</h2>
+<p>At the moment the application is available in three languages:</p>
+<ul>
+	<li><img src="img/en.gif"> English.</li>
+	<li><img src="img/ca.gif"> Catalan.</li>
+	<li><img src="img/es.gif">Spanish</li>
+</ul>
+<p align="right"><a name="simulations"></a><A NAME="scheduling"></A><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h2>Simulations description</h2>
+<h3>Process Scheduling</h3>
+<p>The simulation focuses on <b>short-term</b> processes scheduling
+with a single processor, its objective is to select one of the available
+processes to run on the processor.<br>
+<br>
+A process execution involves alternating cycles of CPU and I/O bursts
+(CPU and I/O Burst Cycle). A process is available only during a CPU
+bursts.<br>
+<br>
+The simulation is based on the three-state model, which defines three
+process states and its possible transitions: Running, Waiting (or Ready)
+and Blocked.</p>
+<p><img border="1" src="img/3statemodel.jpg"
+	style="height: 175px; width: 450px"></p>
+<p>At any moment only one process is running, other processes are
+waiting in the <b>ready queue</b> until the scheduler selects them, or
+are <b>blocked</b> doing I/O operations.</p>
+<p>Scheduler decisions depend mainly on two factors: the scheduling
+algorithm and multiprogramming. The user can choose four different
+algorithms: <i>FCFS (First Come First Served), SJF (Shortest Job
+First), Priority and Round Robin,</i> and may also indicate if you want a
+monoprogramming or multiprogramming system. <br>
+<br>
+Scheduling algorithms differ in how they select the next processes to
+execute:</p>
+<ul>
+	<li><i>FCFS. First Come First Served</i> processes are executed in
+	the order that they arrived. It is implemented with a FIFO queue.</li>
+	<li><i>SJF. Shortest Job First</i> is based on estimating the
+	duration of CPU bursts, processes whose next burst are shorter run
+	first. It is implemented with a priority queue ordered by CPU bursts
+	duration. Although the algorithm is optimal (minimum average waiting
+	time), the problem is to estimate bursts durations. The algorithm can
+	be preemptive, in this case, new processes that enter to the ready
+	queue can take the place of the running process.</li>
+	<li><i>Priority. </i>A priority is associated with each process,
+	the scheduler loads the process with highest priority. It is
+	implemented with a queue sorted by priority. The algorithm can be
+	preemptive, in this case, the new processes that enter to the ready queue
+	can take the place of the running process.</li>
+	<li>
+	<p><i>Round Robin. </i>This algorithm was designed especially for <b>time-sharing
+	systems,</b> a unit of time called <b>quantum</b> limits the time that
+	processes can run every time they enter the processor, when quantum
+	timeout processes queue up again.</p>
+	</li>
+</ul>
+<p><b>Preemptive algorithms:</b> running processes can be forced to
+leave the processor to another more privileged process before
+completion. Otherwise the algorithms are <b>not preemptive or
+cooperative.</b></p>
+<p>Further information<br>
+<a href="http://en.wikipedia.org/wiki/Scheduling_%28computing%29">http://en.wikipedia.org/wiki/Scheduling_
+(computing)</a><br>
+<br>
+<a href="http://en.wikipedia.org/wiki/Computer_multitasking">http://en.wikipedia.org/wiki/Computer_multitasking</a>
+</p>
+<p align="right"><a name="sch_screen"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h4>Screen.</h4>
+<p><img width="500" height="375" src="img/shc_map.png"></p>
+<p align="right"><a name="sch_cpu"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Processor (CPU):</h4>
+<p>Can be idle (free) or busy, in this case it shows the running
+process, its relevant information (PID, name, priority) and the complete
+life cycle (CPU and I/O bursts). <br>
+<br>
+Each box of the burst cycle corresponds to a simulation time unit, in red it
+shows where in cycle is the process.<br>
+<br>
+The running process leaves the processor when finish, returns to the
+ready queue or start an I/O burst.</p>
+<p align="right"><a name="sch_ready"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Ready queue:</h4>
+<p>Contains the processes available to execute (waiting). <br>
+<br>
+The queue is always ordered depending on the scheduling algorithm (first
+right, last one left):</p>
+<ul>
+	<li><i>FCFS (First Come First Served):</i> Order of arrival to the
+	queue.</li>
+	<li><i>SJF (Shortest Job First):</i> Less processor remaining time
+	(current process CPU burst).</li>
+	<li><i>Priority:</i> Ordered by processes priority, a higher
+	priority value indicates a higher priority, the processes of equal
+	priority are placed in order of arrival.</li>
+	<li><i>Round Robin:</i> Order of arrival to the queue.</li>
+</ul>
+<p>For each process it shows the most relevant information (PID,
+name, priority) and the complete life cycle (CPU and I/O bursts). <br>
+<br>
+Each box of the burst cycle corresponds to a unit of simulation time, in red
+it shows where in cycle is the process.<br>
+<br>
+While the simulation is stopped, right-click on any process to display <b>popup
+menu</b> that lets you modify and delete the process.<br>
+<br>
+Processes only leave the ready queue to come into the processor.</p>
+<p>Criteria in the entry order of processes in the queue
+after starting the simulation: new processes (incoming) -> processes that complete I/O -> processes that leave the CPU</p>
+
+<p align="right"><a name="sch_incoming"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Incoming processes :</h4>
+<p>Processes that start later (time start &gt; 0) are placed in this
+queue. As the simulation progresses and the time comes to start, they enter
+the ready queue.<br>
+<br>
+This queue allows the user to plan the whole simulation and then run it
+completely without further intervention.<br>
+<br>
+Processes are sorted by remaining time to start, (or remaining time to
+enter the ready queue).</p>
+<p> While the simulation is stopped, selecting
+any process from the table shows a <b>popup menu</b> that lets you
+modify and delete the process.</p>
+<p align="right"><a name="sch_set"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h4>Settings.</h4>
+<p>Sets simulation behaviour:</p>
+<ul>
+	<li><i>Multiprogramming or monoprogramming:</i> The scheduler when
+	the running process starts an I/O burst, in multiprogramming a new
+	process uses CPU, otherwise the processor will be idle until I/O burst
+	complete.</li>
+	<li>Algorithm:
+	<ul>
+		<li><i>FCFS (First Come First Served):</i> There are no
+		parameters, it is never preemptive.</li>
+		<li><i>SJF (Shortest Job First):</i> Preemptive or non
+		preemptive.</li>
+		<li><i>Priority:</i> Preemptive or non preemptive.</li>
+		<li>
+		<p><i>Round Robin: </i>It is always preemptive, the quantum is the
+		maximum time a process can run continuously. Possible values: 1 to 10
+		time units.</p>
+		</li>
+	</ul>
+	</li>
+</ul>
+<p align="right"><a name="sch_new"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Add a process:</h4>
+<p>Processes can only be added while the simulation is stopped, for
+each new process enter the following information:</p>
+<ul>
+	<li><i>PID</i> process identifier is automatically calculated and
+	is incremental.</li>
+	<li><i>Name (required)</i> Any text.</li>
+	<li><i>Priority</i> higher value indicates higher priority (Range:
+	1 - 10).</li>
+	<li><i>Submission,</i> process arrival time to the ready queue, if
+	0 it is added to the the ready queue, while if it is greater than 0 the
+	process is added to the incoming process table until the simulation
+	reaches the submission time (Range: 1 - 100).</li>
+	<li><i>Color,</i> color that will draw the graphic elements
+	associated with the process.</li>
+	<li><i>Not complete,</i> indicates that the process does not end
+	and burst cycle repeats endlessly.</li>
+	<li>
+	<p><i>Burst cycle,</i> the table allows you to specify the duration
+	of CPU and I/O bursts, each row is a time unit, all processes
+	necessarily start with a CPU burst besides if complete, 
+	the last burst must also be a CPU. Maximum process duration is 10 time units.</p>
+	</li>
+</ul>
+<p>Settings are only available while the simulation is stopped</p>
+<p align="right"><a name="sch_info"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Data and statistics:</h4>
+<p>See resulting scheduling information at any time of the
+simulation.</p>
+<p>Aggregate data are:</p>
+<ul>
+	<li><i>Efficiency,</i> percentage of time the processor is busy.</li>
+	<li><i>Throughput,</i> # processes completed per time unit.</li>
+	<li><i>Average duration,</i> average duration of completed
+	processes (duration = completion - submission).</li>
+	<li><i>Average waiting time,</i> average processes waiting time
+	(amount of time in the ready queue).</li>
+	<li><i>Average response time,</i> average processes response time
+	(response = first process CPU response - submission).</li>
+</ul>
+<p>For each process there is a table with the following information</p>
+<ul>
+	<li><i>PID,</i> process ID (The background color is the process
+	color).</li>
+	<li><i>Name,</i> of the process.</li>
+	<li><i>Priority</i> process priority.</li>
+	<li><i>Submission,</i> arrival time to the ready queue.</li>
+	<li><i>Periodic</i> the process does not complete.</li>
+	<li><i>CPU</i> amount of time the process has been running so far.
+	</li>
+	<li><i>Response</i> time from submission until first input into
+	the processor.</li>
+	<li><i>Waiting,</i> amount of time the process has been in the
+	ready queue so far.</li>
+	<li><i>Duration,</i> amount of time from submission until process
+	complete.</li>
+	<li><i>% CPU,</i> the percentage of CPU on the waiting time.</li>
+	<li><i>% I/O,</i> time rate of I/O on process duration (All
+	bursts).</li>
+</ul>
+<p align="right"><a name="memory"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h3>Memory management</h3>
+<p>The simulation shows the load of processes in main memory
+according to different memory management systems. In addition it offers
+simplified versions of <b>swapping</b> and <b>virtual memory</b>
+behaviours.</p>
+<p>The memory management algorithms are divided into two groups:</p>
+<ul>
+	<li><b>Contiguous memory management,</b> the whole process is
+	allocated into memory, for each process a partition that is not
+	occupied and is large enough to accommodate the entire process is
+	selected.
+	<p><img src="img/contiguous.jpg" border="1"></p>
+	<p>Includes two possible management algorithms:</p>
+	<ul>
+		<li><i>Fixed-sized partitions,</i> the memory is initially
+		divided into partitions of fixed size, which in the simulation the user
+		must create. In general the processes allocated into partitions
+		are smaller than them and therefore there is a partition portion that
+		is unused and wasted, it is called <b>internal fragmentation.</b></li>
+		<li>
+		<p><i>Variable-sized partitions,</i> the memory at the beginning
+		is all available, for each process partition exactly the size of this
+		is created, as the process is complete, the partitions are released
+		and can be reused. Released partitions generate <b>external
+		fragmentation.</b></p>
+		</li>
+	</ul>
+	<p>Another concept of interest is the allocation policy, how the
+	operating system selects one of the available partitions, application
+	provides the most common:</p>
+	<ul>
+		<li><i>First fit.</i> The first partition large enough.</li>
+		<li><i>Best fit.</i> Which best fits process size.</li>
+		<li><i>Worst fit.</i> Which worst fits process size.</li>
+	</ul>
+	</li>
+	<li><b>Non contiguous memory management,</b> processes are divided
+	into parts that can be allocated separately in memory, including:
+	<ul>
+		<li><i>Pagination,</i> memory and processes are divided into
+		equal size parts (frames and pages), the process pages are allocated
+		into available memory frames.
+		<p><img src="img/pagination.jpg" border="1"></p>
+		</li>
+		<li><i>Segmentation</i> processes are divided into logical parts
+		(eg code, data or stack) and they are allocated independently into
+		memory partitions of its size.
+		<p><img src="img/segmentation.jpg" border="1"></p>
+		</li>
+	</ul>
+	</li>
+</ul>
+<p align="right"><a name="mem_screen"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h4>Screen.</h4>
+<p><img width="500" height="375" src="img/mem_map.png"></p>
+<p align="right"><a name="mem_ram"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Main memory</h4>
+<p>The processes are allocated into main memory, either whole or
+divided in pages or segments.<br>
+<br>
+By definition in any of the memory management systems, there is always a
+first process loaded, occupying the base addresses, the Operating
+System, the size of which can vary between 1, 2 or 4 units.<br>
+<br>
+Addresses, processes, partitions available or allocated are always shown,
+also, fragmentation following a color code that allows a quick
+understanding of it state.</p>
+<table border="1" cellpadding="2" cellspacing="2">
+	<tr class="tablehead">
+		<td>
+		<p><b>Colors:</b></p>
+		</td>
+		<td>
+		<p><b>Meaning</b></p>
+		</td>
+	</tr>
+	<tr>
+		<td bgcolor="#dddddd">
+		<p><i>gray</i></p>
+		</td>
+		<td>
+		<p>Operating System</p>
+		</td>
+	</tr>
+	<tr>
+		<td bgcolor="#ffffff">
+		<p><i>white</i></p>
+		</td>
+		<td>
+		<p>Unpartitioned memory</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p><font color="#0000ff"><i>blue dots</i></font></p>
+		</td>
+		<td>
+		<p>Internal fragmentation</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p><font color="#ffc0cb"><i>pink dots</i></font></p>
+		</td>
+		<td>
+		<p>External fragmentation</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p><i>[Other colors]</i></p>
+		</td>
+		<td>
+		<p>Processes, their own color</p>
+		</td>
+	</tr>
+</table>
+<p>The memory size of the simulation varies between 64 and 256
+units.</p>
+<p>Right click on memory to display the <b>pop up menu</b> that lets
+you perform various actions:</p>
+<ul>
+	<li>While the simulation is stopped (only for fixed-size
+	partitions) to update and delete partitions.</li>
+	<li>
+	<p>During simulation time and for each allocated process into
+	memory, delete the process, swap out, open address translation, see its
+	detailed information (only pagination and segmentation) and defragment
+	memory (only for partitions of variable size and segmentation) .</p>
+	</li>
+</ul>
+<p align="right"><a name="mem_queue"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Process queue:</h4>
+<p>Contains the processes available to be allocated into memory
+ordered by their arrival to the queue.</p>
+<p>For each process it shows the most relevant information (PID,
+name and duration that may be infinite), besides the size and its
+distribution, where each box corresponds to one unit of space, which is
+allocated to a single memory address.<br>
+<br>
+In pagination and segmentation the process differentiates components, pages,
+or segments, and highlight in gray the ones that are not initially
+allocated into memory but directly to swap.<br>
+<br>
+While the simulation is stopped, right click on any process to display a
+<b>pop up menu</b> that lets you update and delete.</p>
+<p align="right"><a name="mem_set"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>Settings.</h4>
+<p>Sets simulation behaviour:</p>
+<ul>
+	<li><i>Memory Size</i> (Values between 64 and 256 units).</li>
+	<li><i>Operating System Size</i> (Values 1, 2 or 4 units).</li>
+	<li>Algorithm:
+	<ul>
+		<li><i>Fixed-sized partitions</i> (contiguous memory management)
+		is required to partition the whole memory.</li>
+		<li><i>Variable-sized partitions</i> (contiguous memory
+		management).</li>
+		<li><i>Pagination</i> (non-contiguous memory management) must
+		define system page size (Values: 1, 2 or 4).</li>
+		<li><i>Segmentation</i> (memory management non-contiguous).</li>
+	</ul>
+	</li>
+	<li>Allocation policy, which partition to select among all those
+	available:
+	<ul>
+		<li><i>First fit.</i> The first partition large enough.</li>
+		<li><i>Best fit.</i> Which best fits process size.</li>
+		<li><i>Worst fit.</i> Which worst fits process size.</li>
+	</ul>
+	</li>
+</ul>
+<p>Any change of algorithm, memory size or OS size requires
+restarting the simulation and deletes all existing processes.</p>
+<p align="right"><a name="mem_new"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Add a process:</h4>
+<p>Processes can only be added while the simulation is stopped, for
+each new process enter the following information:</p>
+<ul>
+	<li><i>PID</i> process identifier is automatically calculated and
+	is incremental.</li>
+	<li><i>Name (required)</i> Any text.</li>
+	<li><i>Size,</i> of the process (Values: 1 - 64 units).</li>
+	<li><i>Duration,</i> processes can have an infinite duration
+	(value -1) or concrete (Values 1 - 100), but never 0.</li>
+	<li>
+	<p><i>Color,</i> color that will draw the graphic elements
+	associated with the process.</p>
+	</li>
+</ul>
+<p>Addition in pagination is shown:</p>
+<ul>
+	<li><i>Page table,</i> the number of pages depends on process
+	size, for each page the user must indicate whether initially allocated
+	in memory (default) or swapped (Backing store memory).</li>
+</ul>
+<p>And in segmentation is shown:</p>
+<ul>
+	<li><i>Segment table,</i> all processes necessarily have three
+	segments: code, data, stack, for each segment the user must indicate
+	the size and whether initially allocated in memory (default) or swapped
+	(Backing store memory). <i>Note that the sum of the segments sizes
+	must match the size of the process. </i></li>
+</ul>
+<p align="right"><a name="mem_info"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Data and statistics:</h4>
+<p>Shows memory allocation information at any simulation time. This
+information varies from one algorithm to another.</p>
+<p><b>Contiguous memory management,</b> table with the following
+information</p>
+<ul>
+	<li><i>Direction,</i> starting partition address.</li>
+	<li><i>Size</i> of the partition.</li>
+</ul>
+<p><i>(If the partition contains a process)</i></p>
+<ul>
+	<li><i>PID,</i> process ID (The background color is process
+	color).</li>
+	<li><i>Name </i> of the process.</li>
+	<li><i>Size</i> of the process.</li>
+	<li>
+	<p><i>Duration </i> of the process.</p>
+	</li>
+</ul>
+<p>In <b>pagination,</b> a table with the following information is shown</p>
+<ul>
+	<li><i>Address,</i> starting frame address.</li>
+	<li><i>Frame,</i> frame number.</li>
+</ul>
+<p><i>(If the partition is busy)</i></p>
+<ul>
+	<li><i>PID,</i> process ID (The background color is process
+	color).</li>
+	<li><i>Page,</i> the process that occupies the corresponding
+	frame.</li>
+	<li><i>Name of</i> the process.</li>
+	<li><i>Dimensions,</i> the process (total).</li>
+	<li>
+	<p><i>Duration of</i> the process.</p>
+	</li>
+</ul>
+<p>In <b>segmentation,</b> is a table with the following information</p>
+<ul>
+	<li><i>Address,</i> frame starting address.</li>
+	<li><i>Size </i> of the partition.</li>
+</ul>
+<p><i>(If the partition contains a process)</i></p>
+<ul>
+	<li><i>PID,</i> process ID (The background color is process
+	color).</li>
+	<li><i>Segment</i> of the process: code, data or stack.</li>
+	<li><i>Name </i>of the process.</li>
+	<li><i>Size,</i> of the process (total).</li>
+	<li>
+	<p><i>Duration </i> of the process.</p>
+	</li>
+</ul>
+<P ALIGN=RIGHT><A NAME="mem_detailinfo"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Pages table and Segments table :</H4>
+<P>Shows memory allocation information of a process in non contiguous memory management.</P>
+<P>In <B>pagination</B>, table's content is</P>
+<UL>
+	<LI><I>Page,</I> the process that occupies the corresponding
+	frame. </LI>
+	<LI><I>Frame,</I> frame number.</LI>
+	<LI><I>Valid,</I> page's valid bit. (v - valid, i - no valid). 
+	A page is not valid when it is not allocated into memory</LI>
+</UL>
+<P>In <B>segmentation</B>, table's content is</P>
+<UL>
+	<li><i>Segment</i> of the process: code, data or stack.</li>
+	<LI><I>Size,</I> of the segment.</LI>
+	<LI><I>Address,</I> frame starting address. </LI>
+	<LI><I>Valid,</I> segment's valid bit. (v - valid, i - no valid). 
+	A segment is not valid when it is not allocated into memory</LI>
+</UL>
+<p align="right"><a name="mem_part"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Create a partition (only fixed-sized partitions):</h4>
+<p>Simply indicate <b>starting</b> address and partition <b>size
+</b>.</p>
+<p>Partitions can not overlap, nor can they terminate beyond the end of
+memory.</p>
+<p align="right"><a name="mem_comp"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>Defragment memory (only variable-sized partitions and
+segmentation)</h4>
+<p>Variable-sized partitions and segmentation have in common that
+partitions are created dynamically and are sized to accommodate exactly
+these processes or segments, therefore Operating System selects a
+greater or equal partition and generally divide it into two parts, in
+ one we allocate the process or segment and the other remains
+available.</p>
+<p>Once released (because the process is complete or has been
+swapped out), it is newly available and so on, the available partitions
+become smaller and the memory is <b>degraded.</b></p>
+<p><b>Defragmantation</b> process solves it reorganizing the memory,
+comprises all the processes in the lower areas of memory and then
+creates a partition as big as all the available memory.</p>
+<p>This is an OS responsibility, it is left to the user in the
+simulation <b>(pop up menu</b> from memory).</p>
+<p align="right"><a name="mem_swap"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Swap :</h4>
+<p>Swapping (or backing store) allow running more processes than can
+fit in main memory and is usually implemented in secondary memory.</p>
+<p>The idea is based on having an extra space where to move
+processes or parts of them (pages or segments) less active and
+reallocate them when necessary.</p>
+<p>Simulation simplifies this, delegating swap in and out between
+memory and swap to the user manually.</p>
+<p><b>Swap out</b> from memory&#39;s pop up menu(right click on
+memory). Swaps out a process or a part of this.</p>
+<p><b>Swap in,</b> from memory&#39;s pop up menu(right click on
+memory). Try to swap in a process or part of it to memory, if the memory
+is full it generates an error and does not swap in.</p>
+<p>The pagination and segmentation algorithms allow to initially
+swap out pages or segments. This area is not limited on the amount or
+size of the processes it contains.</p>
+<p align="right"><a name="mem_addr"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Address Translation:</h4>
+<p align="right"><a name="mem_err"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Errors in the simulation:</h4>
+<ol>
+	<li><b>Memory full,</b> as it processes the queue during the
+	simulation, the memory allocates them and finishes filling. From the
+	moment a process can not be allocated for lack of space it does not
+	continue with any of the subsequent processes. The memory can be
+	released automatically (complete any process) or with user intervention
+	(delete or swap out any process).</li>
+	<li><b>Memory not fully partitioned</b> fixed-sized partitions
+	algorithm require that all the memory be partitioned (where one partition
+	ends, the next begins.)</li>
+</ol>
+<p align="right"><a name="filesystem"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h3>File System Management</h3>
+<p>The file system manages the relationship between the logical
+space as the user sees (files, directories, links) with the
+corresponding structure and physical location (real) objects in
+secondary memory.</p>
+<p>The minimum work unit of file system is <b>the block,</b> memory
+and file system objects are divided into blocks of the same size, and the system
+management is to allocate those object blocks into available blocks of
+secondary memory and to maintain the control.</p>
+<p>The simulation implements the two main techniques for File System
+Management:</p>
+<ul>
+	<li>Linked allocation with file allocation table <b>(FAT,
+	MS-DOS environments).</b></li>
+	<li>
+	<p>Indexed allocation with three levels of indirection <b>(UNIX
+	systems).</b></p>
+	</li>
+</ul>
+<p>The simulation parameters are:</p>
+<ul>
+	<li>Block size (1, 2 or 4 units).</li>
+	<li>The total disk size (4, 6 or 8 Mega Units).</li>
+</ul>
+<p>The first 128 disk blocks are not used to simulate the OS
+administrative tasks and are not used.</p>
+<p>The two File System Management algorithms are:</p>
+<ul>
+	<li><b>Linked allocation with file allocation table,</b> the
+	system maintains a table with as many entries as blocks has the system
+	(File Allocation Table, FAT), for each object only a reference to its
+	first block is kept. These references are in the folder that contains
+	the object.<br>
+	In the table each block has a reference to the next block so they can
+	go along chaining blocks of a file from first to last.<br>
+	<br>
+	The FAT table size = disk size / block size<br>
+	Blocks required for each file = file size / block size<br>
+	<br>
+	For simplicity in the simulation the folders occupy only a block, and the links
+	none (points to an existing item and that information is only kept in
+	the directory that contains the link)</li>
+	<li><b>Indexed allocation with three levels of indirection,</b>
+	indexed allocation is based on a structure called the i-node, and each
+	object is associated with an i-node. The structure of an i-node is:
+	<ul>
+		<li>information fields.</li>
+		<li>12 pointers to data blocks.</li>
+		<li>1 pointer to 1 indirect block.</li>
+		<li>1 pointer to 1 double indirect block.</li>
+		<li>1 pointer to 1 triple indirect block.</li>
+	</ul>
+	<p><br>
+	The single indirect block points to data blocks, double indirect block
+	point to blocks which in turn point to data blocks and triple indirect
+	blocks point to blocks that point to block that point to data blocks.<br>
+	To create new files first i-node data blocks are used, then the single
+	indirect , double and triple blocks to fill the information required
+	depending on the file size. For simplicity folders occupy a block (of
+	data), and links none. <img src="img/inode.gif"></p>
+	<p>Reference <a href="http://es.wikipedia.org/wiki/Inodo">http://es.wikipedia.org/wiki/Inodo</a></p>
+	<p>In the simulation the maximum number of i-nodes that can be
+	created are 128, indirect blocks have 20 pointers. In the table below
+	shows how to calculate the blocks needed to create a file.</p>
+	</li>
+</ul>
+<dl>
+	<dd>
+	<table border="1" cellpadding="2" cellspacing="2">
+		<tr class="tablehead">
+			<td></td>
+			<td>
+			<p>Available Data blocks <br>
+			</p>
+			</td>
+			<td>
+			<p>Administration Blocks <br>
+			</p>
+			</td>
+			<td>
+			<p align="center">Total data Blocks<br>
+			</p>
+			</td>
+			<td>
+			<p align="center"><br>
+			Total Adm. Blocks</p>
+			</td>
+			<td>
+			<p align="center">Total Blocks<br>
+			</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><b>One i-node</b></p>
+			</td>
+			<td>
+			<p>12 blocks</p>
+			</td>
+			<td>
+			<p>Head</p>
+			</td>
+			<td>
+			<p align="center">12</p>
+			</td>
+			<td>
+			<p align="center">0</p>
+			</td>
+			<td>
+			<p align="center">12</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><b>First</b><br>
+			<b>indirection</b></p>
+			</td>
+			<td>
+			<p>Past more ...<br>
+			20 blocks</p>
+			</td>
+			<td>
+			<p>1 indirect block</p>
+			</td>
+			<td>
+			<p align="center">32</p>
+			</td>
+			<td>
+			<p align="center">1</p>
+			</td>
+			<td>
+			<p align="center">33</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><b>Second</b><br>
+			<b>indirection</b></p>
+			</td>
+			<td>
+			<p>Past more ...<br>
+			20 * 20 blocks</p>
+			</td>
+			<td>
+			<p>1 indirect block<br>
+			1 +20 Indirect b.</p>
+			</td>
+			<td>
+			<p align="center">432</p>
+			</td>
+			<td>
+			<p align="center">22</p>
+			</td>
+			<td>
+			<p align="center">454</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><b>Third</b><br>
+			<b>indirection</b></p>
+			</td>
+			<td>
+			<p>Past more ...<br>
+			20 * 20 * 20 blocks</p>
+			</td>
+			<td>
+			<p>1 indirect block<br>
+			1 +20 Indirect b.<br>
+			1 +20 +400 Indirect b.</p>
+			</td>
+			<td>
+			<p align="center">8.432</p>
+			</td>
+			<td>
+			<p align="center">433</p>
+			</td>
+			<td>
+			<p align="center">8.875</p>
+			</td>
+		</tr>
+	</table>
+	</dd>
+</dl>
+<p align="right"><a name="fs_screen"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h4>Screen.</h4>
+<p><img width="500" height="375" src="img/fs_map.png"></p>
+<p align="right"><a name="fslogical"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Logical file system:</h4>
+<p>Displays the file system as seen by users, the folder tree, and
+files, links and subfolders within each folder. The (root) depends on
+the file system manager, UNIX is &quot;/&quot; MD-DOS is
+&quot;C:\&quot;.</p>
+<p>Right click on any object to display the pop up menu that lets
+you perform various actions:</p>
+<ul>
+	<li>Add a file to the same object&#39;s folder.</li>
+	<li>Add a subfolder to the same object&#39;s folder.</li>
+	<li>Add a link within the same object&#39;s folder.</li>
+	<li>Update the object.</li>
+	<li>
+	<p>Remove the object.</p>
+	</li>
+</ul>
+<p align="right"><a name="fsphysical"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>(Device) Physical File System:</h4>
+<p>Shows the device (physical file system) divided into blocks, and
+at its right disk addresses.</p>
+<p>The initial addresses (128 units) are reserved for OS
+administration tasks and are not used.</p>
+<p>The blocks are painted in different colors depending on its type:</p>
+<table border="1" cellpadding="2" cellspacing="2">
+	<tr class="tablehead">
+		<td>
+		<p><b>Colors:</b></p>
+		</td>
+		<td>
+		<p><b>Block use</b></p>
+		</td>
+	</tr>
+	<tr>
+		<td bgcolor="#000000">
+		<p><font color="#ffffff"><i>black</i></font></p>
+		</td>
+		<td>
+		<p>Administration (File System)</p>
+		</td>
+	</tr>
+	<tr>
+		<td bgcolor="#ffffff">
+		<p><i>white</i></p>
+		</td>
+		<td>
+		<p>Available</p>
+		</td>
+	</tr>
+	<tr>
+		<td bgcolor="#00ff00">
+		<p><i>Green</i></p>
+		</td>
+		<td>
+		<p>Folder</p>
+		</td>
+	</tr>
+	<tr>
+		<td bgcolor="#00ffff">
+		<p><i>Blue</i></p>
+		</td>
+		<td>
+		<p>Soft link</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p><i>[Other colors]</i></p>
+		</td>
+		<td>
+		<p>Occupied by a file<br>
+		<i>UNIX &quot;I&quot; means it is an indirect block</i></p>
+		</td>
+	</tr>
+</table>
+<p align="right"><a name="fsfolder"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: View the current folder:</h4>
+<p>This view depends on the selected folder logical file system
+displays the contents of this folder, each object is drawn with the
+corresponding color: file (file varies according to color), links
+(blue), folders (green).</p>
+<p>For any object it indicates its reference to the <a
+	href="#fsphysical">physical file system</a> . For UNIX object&#39;s
+i-node, for MS-DOS initial entry in the FAT table.</p>
+<p>Right click on any file system object to display a <b>pop up
+menu</b> that allows you to view the object&#39;s <a href="#fsdetail_info">detailed
+information</a> .</p>
+<p align="right"><a name="fs_set"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>Settings.</h4>
+<p>Sets the simulation&#39;s behaviour:</p>
+<ul>
+	<li><i>Block Size</i> (Values 1, 2 or 4 pieces) (Values between 64
+	and 256 units).</li>
+	<li><i>Memory size</i> (values 4, 6 or 8 x 1024 units).</li>
+	<li>Algorithm:
+	<ul>
+		<li>Linked allocation with file allocation table <i>(FAT,
+		MS-DOS).</i></li>
+		<li>
+		<p>Indexed allocation with triple indirection <i>(UNIX).</i></p>
+		</li>
+	</ul>
+	</li>
+</ul>
+<p>Any change of algorithm, block size or memory size requires
+restarting the simulation and deletes all existing objects.</p>
+<p align="right"><a name="fsnew_file"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>Add a file:</h4>
+<p>The file is added to the folder that is currently selected, for
+each new file you must enter the following information:</p>
+<ul>
+	<li><i>Name (required)</i> Any text.</li>
+	<li><i>Size </i> of the file (Range: 1 to 4096 units).</li>
+	<li>
+	<p><i>Color,</i> color that will draw the graphic elements
+	associated with the file.</p>
+	</li>
+</ul>
+<p align="right"><a name="fsnew_folder"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>Add a folder:</h4>
+<p>The folder is added to the folder that is currently selected,<br>
+It is only necessary to indicate the new folder&#39;s name (required).</p>
+<p align="right"><a name="fsnew_link"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>Add a link:</h4>
+<p>The link is added to the folder that is currently selected for
+each new link it is necessary to enter the following information:</p>
+<ul>
+	<li><i>Name (required)</i> Any text.</li>
+	<LI><I>Soft,</I> link type, soft link (selected) or hard link (not selected). MS-DOS only allows soft links</LI>
+	<li>
+	<p><i>Target,</i> link target.</p>
+	</li>
+</ul>
+<p align="right"><a name="fsdetail_info"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Detailed Information of an object:</h4>
+<p>From the folder view, user can open detailed information of any
+object within the folder, this information depends on the file system.</p>
+<p>UNIX shows i-node structure:</p>
+<ul>
+	<li>Information, in this case only the number of links pointing to
+	the i-node.</li>
+	<li>12 blocks of data, block number where the data is, or
+	&quot;nil&quot; if not used.</li>
+	<li>Indireccions, 1 st, 2 nd and 3 rd, block number where the
+	indirect block is, or &quot;nil&quot; if not used.
+	<ul>
+		<li>For each indirection can also get its concrete information:
+		<ul>
+			<li>Index pointer.</li>
+			<li>Pointed block number, or &quot;nil&quot; if not used.</li>
+			<li>
+			<p>Type: &quot;block&quot; if data or &quot;indirection&quot; if
+			it is indirect.</p>
+			</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+</ul>
+<p>For MS-DOS displays the FAT table entries for the object:</p>
+<ul>
+	<li>Block number (FAT table entry).</li>
+	<li>
+	<p>Next object&#39;s block number or &quot;nil&quot; if last.</p>
+	</li>
+</ul>
+<p align="right"><a name="fs_info"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Data and statistics:</h4>
+<p>Shows the device&#39;s information. This information varies from one
+algorithm to another.</p>
+<p>In <b>UNIX,</b> shows a table with all device data blocks, for
+each block:</p>
+<ul>
+	<li><i>Block,</i> block number (starting at first data block,
+	@128).</li>
+	<li><i>Type </i>&quot;data block&quot; or &quot;indirect
+	block.&quot;</li>
+</ul>
+<p>In <b>MS-DOS, </b> shows the FAT table, that is a snapshot of all the
+device&#39;s blocks, each table entry contains the following
+information:</p>
+<ul>
+	<li><i>Block,</i> block number (starting at first data block,
+	@128).</li>
+	<li><i>Next,</i> next object&#39;s block number when block
+	contains an object&#39;s data, &quot;nil&quot; if block contains the
+	last block of an object or 0 if it is available.</li>
+	<li><i>State</i> of the block, &quot;used&quot; or
+	&quot;free.&quot;</li>
+</ul>
+<p align="right"><a name="fs_err"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Errors in the simulation:</h4>
+<ol>
+	<li><b>Memory full,</b> as new objects are created the device&#39;s
+	blocks are occupied but there is a limited number of them. If it is not
+	possible to create new objects for lack of space it is necessary to reduce the size
+	of existing ones or delete them.</li>
+	<li><b>There is another object with the same name</b> within a
+	directory there can not be multiple objects (files, links or subdirectories)
+	with the same name.</li>
+</ol>
+<p align="right"><a name="disk"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h3>Disk scheduling policies</h3>
+<p>It is the disk scheduling policies within Operating System I/O
+devices management.</p>
+<p>Despite their heterogeneity, optical or magnetic disk, rigid or
+flexible, read-only or read / write CD, DVD&#39;s or HHD for example,
+the whole can be treated similarly.</p>
+<p>Disks are organized in <b>sectors,</b> they are grouped into <b>tracks,</b>
+the tracks are on one <b>side or surface on a platter,</b> and each disk
+can have several <b>platters.</b></p>
+<p><img src="img/disc_structure.png"></p>
+<p>Reference <a href="http://es.wikipedia.org/wiki/Disco_duro">http://es.wikipedia.org/wiki/Disco_duro</a></p>
+<p>The set of tracks that are in the same head position are called
+cylinders. The platters rotate constantly and each one has one head just
+above, that reads and writes sectors, heads move perpendicular to the
+tracks.</p>
+<p>Disk sectors are referenced sequentially, the first sector is 0,
+and it is in the first track of the first platter in the outer cylinder.</p>
+<p>In the simulation disk geometry is: a platter, 16 cylinders, 12
+sectors per cylinder, totally 192 sectors or data blocks.</p>
+<p>The Operating System constantly receives requests to write and
+read from disk, how to serve these requests is defined by the disk
+scheduling policy.</p>
+<p>A good scheduling policy should minimize head movement, which
+means a longer life for the device, and requests-to-response time.</p>
+<p>In the simulation there are available the following scheduling
+policies:</p>
+<ul>
+	<li>
+	<p><i>FIFO. Fist In First Out</i> This scheduling is quite simple,
+	serves requests in strict order of arrival. The head moves always
+	looking for the next request wherever it is, do not try to minimize
+	head movement but it&#39;s correct because it does not prioritize any
+	request.</p>
+	</li>
+	<li>
+	<p><i>LIFO. Last In First Out</i> unlike FIFO, serves requests in
+	the reverse order of arrival, the last came first served. The latest
+	requests are served immediately, but may cause starvation, the first
+	requests will never be served if new ones are arriving
+	constantly.</p>
+	</li>
+	<li>
+	<p><i>STF. Shortest (Seek) First Time</i> always serves first
+	closest request to head&#39;s position. Such scheduling minimizes head
+	movement, but can also cause starvation.</p>
+	</li>
+	<li>
+	<p><i>SCAN.</i> Also called &quot;Elevator&quot;, head moves from
+	the outermost cylinder to the innermost when it reaches the end it changes
+	direction and returns to the beginning, and so on indefinitely. Handle
+	requests when they turn up during its movement.</p>
+	</li>
+	<li>
+	<p><i>C-SCAN. Circular SCAN.</i> Same as SCAN, the difference is
+	that when it reaches the inner cylinder at the disk end&#39;s, it moves
+	directly to the beginning and starts again, so always handle requests
+	in the same direction. Improving one of the SCAN drawbacks, which goes
+	over track that have just been seen when it changes direction.</p>
+	</li>
+	<li>
+	<p><i>LOOK.</i> Is a variation that improves SCAN scheduling, the
+	difference is that it only goes up to the last request and not until the
+	last cylinder. At the moment it detects that there are no more requests
+	forward, then it changes direction.</p>
+	</li>
+	<li>
+	<p><i>C-LOOK.Circular LOOK.</i> Includes both LOOK and C-SCAN
+	improvements only go up to the last request and also when it reaches
+	the outer, moves to the first one and starts again, it always serves
+	requests in the same direction.</p>
+	</li>
+</ul>
+<p align="right"><a name="disk_screen"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h4>Screen.</h4>
+<p><img width="500" height="375" src="img/disk_map.png"></p>
+<p align="right"><a name="disk_platter"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4><b>: Disk :</b></h4>
+<p>Shows sectors and cylinders disk divisions.</p>
+<p>The sector 0 (first) is at outermost cylinder, above and right of
+vertical.</p>
+<p>At any simulation time head position is shown in black, and
+requests in the corresponding color</p>
+<p>While the simulation is stopped, right-click on any request to
+display a pop up menu that allows you to modify and delete.</p>
+<p align="right"><a name="disk_graph"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4><b>: Head movement graph :</b></h4>
+<p>The graph represents head motion through cylinders as the
+requests are served.</p>
+<p>In the x-axis cylinders and ordinate the time.</p>
+<p>Each served request is marked with a dot (appropriate color)
+indicating the cylinder where the sector is served and the time, points
+are joined with lines that represent head movement through the cylinder.</p>
+<p align="right"><a name="disk_info"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4><b>: Data and statistics:</b></h4>
+<p>View all the requests, the information in the table is as
+follows:</p>
+<ul>
+	<li><i>Sector,</i> sector number requested.</li>
+	<li><i>Cylinder,</i> where the sector is.</li>
+	<li><i>Delay</i>, time it takes for the request to arrive. For example,
+	a request 3 units delayed, enter into the request queue at simulation
+	time 3.</li>
+	<li><i>Movement</i>, only for served requests, shows head movement
+	since the previous request, that is the total number of cylinders that
+	have gone up until current request cylinder.</li>
+	<li><i>Accumulated</i> total cylinder movement accumulated since
+	the simulation started.</li>
+</ul>
+<p>Requests can be in three different states:</p>
+<ul>
+	<li><i>Served,</i> have already been served.</li>
+	<li><i>Waiting,</i> they are queued waiting to be served.</li>
+	<li><i>Delayed</i>, requests that come later.</li>
+</ul>
+<p>Served are shown first, then those that are waiting and finally
+those that have not yet arrived.</p>
+<p>While the simulation is stopped, right-click on any request to
+display a pop up menu that allows you to modify and delete.</p>
+<p align="right"><a name="disk_set"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4><b>Settings.</b></h4>
+<p>Sets simulation behaviour:</p>
+<ul>
+	<li><i>Head Start position:</i> The user can select where is head
+	initially (Range: 0 - 192 sectors).</li>
+	<li>Algorithm:
+	<ul>
+		<li><i>FIFO,</i> First in first out.</li>
+		<li><i>LIFO,</i> Last in First Out.</li>
+		<li><i>STF,</i> Shortest Seek Time First.</li>
+		<li><i>SCAN.</i></li>
+		<li><i>C-SCAN,</i> Circular SCAN.</li>
+		<li><i>LOOK.</i></li>
+		<li><i>C-LOOK,</i> LOOK circular.</li>
+	</ul>
+	</li>
+</ul>
+<p>Settings are only available while simulation is stopped</p>
+<p align="right"><a name="disk_new"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4><b>Add a request:</b></h4>
+<p>Requests can be added only while the simulation is stopped, for
+each new request must enter the following information:</p>
+<ul>
+	<li><i>Sector,</i> sector number on which the request is generated
+	(Values: 1 - 192).</li>
+	<li><i>Delay</i> when the request will enter the request queue, if
+	0 is added directly to the queue, otherwise it is added later (Range: 1
+	- 100).</li>
+	<li><i>Color,</i> color that will draw the graphic elements
+	associated with the request.</li>
+</ul>
+<p>Additionally, the system calculates and shows cylinder that
+corresponds with requested sector.</p>
+<h3><a name="common"></a> <b>Common Tasks</b></h3>
+<p align="right"><a name="open_save"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h4>Open and save simulations:</h4>
+<p> While the simulation is stopped, users
+can save their simulations and open them later to complete, review, etc
+...</p>
+<p>Saves all simulation objects and settings.</p>
+<p>It is not possible to open nor save simulations while running
+ OS Sim as an Applet has some limitations due to java security issues.</p>
+<p align="right"><a name="time"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4><b>Time Controls</b></h4>
+<p>To manage simulation progress, normal run, step by step (a unit
+of time each step), stop and restart the simulation.</p>
+<p>Additionally you can vary speed rate from 0.5 seconds to 2
+seconds per unit time.</p>
+<p>Simulation time is always shown.</p>
+<p align="right"><a name="examples"></a><a name="scheduling_examples"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h2>Available Examples</h2>
+<h3> <b>Process
+scheduling examples</b></h3>
+<table dir="ltr" align="left" width="100%" border="1" cellpadding="2"
+	cellspacing="2">
+	<tr class="tablehead">
+		<td colspan="3">Content</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Simple FIFO scheduling example</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_sch01htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_sch01"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>SJF scheduling non preemptive</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_sch02htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_sch02"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Priority scheduling preemptive</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_sch03htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_sch03"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Round Robin scheduling (quantum: 2)</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_sch04htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_sch04"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Multiprogramming I/O</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_sch05htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_sch05"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Monoprogramming I/O</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_sch06htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_sch06"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+</table>
+<p align="right"><a name="memory_examples"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h3> <b>Memory Management
+Examples </b></h3>
+<table dir="ltr" align="left" width="100%" border="1" cellpadding="2"
+	cellspacing="2">
+	<tr class="tablehead">
+		<td colspan="3">Content</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Contiguous memory management with fixed-size partitions (first
+		adjustment)</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_mem01htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_mem01"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Contiguous memory management with fixed-size partitions (best
+		fit)</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_mem02htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_mem02"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Contiguous memory management with variable-sized partitions
+		(Defragmentation)</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_mem03htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_mem03"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Contiguous memory management with variable-sized partitions
+		(Swap)</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_mem04htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_mem04"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Pagination</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_mem05htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_mem05"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Segmentation, partial allocation</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_mem06htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_mem06"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+</table>
+<p align="right"><a name="filesystem_examples"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h3>File System Management examples</h3>
+<table dir="ltr" align="left" width="100%" border="1" cellpadding="2"
+	cellspacing="2">
+	<tr class="tablehead">
+		<td colspan="3">Content</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Linked Allocation with FAT. File System objects</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_fs01htm"><img src="img/view.png"
+			border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_fs01"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Linked Allocation with FAT. Large block size</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_fs02htm"><img src="img/view.png"
+			border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_fs02"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Indexed Allocation (UNIX). References to i-nodes</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_fs03htm"><img src="img/view.png"
+			border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_fs03"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Indexed Allocation (UNIX). Indireccions</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_fs04htm"><img src="img/view.png"
+			border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_fs04"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+</table>
+<p align="right"><a name="disk_examples"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h3>Disk Scheduling Policies examples</h3>
+<table dir="ltr" align="left" width="100%" border="1" cellpadding="2"
+	cellspacing="2">
+	<tr class="tablehead">
+		<td colspan="3">Content</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Fair scheduling. FIFO</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_disk01htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_disk01"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>STF scheduling example. Starvation</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_disk02htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_disk02"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>The elevator (SCAN)</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_disk03htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_disk03"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>The improved elevator 1. Circular SCAN</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_disk04htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_disk04"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>The improved elevator 2. LOOK circular</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_disk05htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_disk05"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+</table>
+<p align="right"><a name="exercises"></a><a
+	name="scheduling_exercises"></a> <a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h2>Available Exercises</h2>
+<h3>Process Scheduling Exercises</h3>
+<table dir="ltr" align="left" width="100%" border="1" cellpadding="2"
+	cellspacing="2">
+	<tr class="tablehead">
+		<td colspan="3">Content</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Ready queue order</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_sch01htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_sch01"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Multiprogramming or monoprogramming?</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_sch02htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_sch02"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Differences between premptive and non preemptive scheduling</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_sch03htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_sch03"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Scheduling algorithms performance comparison</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_sch04htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_sch04"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+</table>
+<p align="right"><a	name="memory_exercises"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h3>Memory Management Exercises</h3>
+<table dir="ltr" align="left" width="100%" border="1" cellpadding="2"
+	cellspacing="2">
+	<tr bgcolor="#dddddd">
+		<td class="tablehead" colspan="3">Content</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Fixed-sized partitions, allocation policies</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_mem01htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_mem01"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Variable-sized partitions, address translation</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_mem02htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_mem02"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Pagination</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_mem03htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_mem03"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Segmentation</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_mem04htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_mem04"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+</table>
+<p align="right"><a	name="filesystem_exercises"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h3>File System Exercises</h3>
+<table dir="ltr" align="left" width="100%" border="1" cellpadding="2"
+	cellspacing="2">
+	<tr class="tablehead">
+		<td colspan="3">Content</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Linked Allocation, FAT</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_fs01htm"><img src="img/view.png"
+			border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_fs01"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Indexed Allocation, UNIX</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_fs02htm"><img src="img/view.png"
+			border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_fs02"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+</table>
+<p align="right"><a	name="disk_exercises"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h3>Disk Scheduling Exercises</h3>
+<table dir="ltr" align="left" width="100%" border="1" cellpadding="2"
+	cellspacing="2">
+	<tr class="tablehead">
+		<td colspan="3">Content</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Algorithm comparison</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_disk01htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_disk01"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+</table>
+<br>
+<br>
+</body>
+</html>

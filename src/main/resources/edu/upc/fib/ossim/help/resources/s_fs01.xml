@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<filesystem_manager>
+  <params>
+    <object fileSystem="DOS">
+      <blockSize>1</blockSize>
+      <devSize>4096</devSize>
+    </object>
+  </params>
+  <fsobjects>
+    <object id="4">
+      <name>folder1</name>
+      <parent>1</parent>
+      <type>folder</type>
+    </object>
+    <object id="7">
+      <name>file1.txt</name>
+      <parent>4</parent>
+      <type>file</type>
+      <size>101</size>
+      <color>-2570825</color>
+    </object>
+    <object id="8">
+      <name>file2.txt</name>
+      <parent>4</parent>
+      <type>file</type>
+      <size>200</size>
+      <color>-402466</color>
+    </object>
+    <object id="9">
+      <name>folder2</name>
+      <parent>1</parent>
+      <type>folder</type>
+    </object>
+    <object id="12">
+      <name>file3.txt</name>
+      <parent>9</parent>
+      <type>file</type>
+      <size>35</size>
+      <color>-1852727</color>
+    </object>
+    <object id="14">
+      <name>folder3</name>
+      <parent>9</parent>
+      <type>folder</type>
+    </object>
+    <object id="17">
+      <name>file4.txt</name>
+      <parent>14</parent>
+      <type>file</type>
+      <size>120</size>
+      <color>-1448727</color>
+    </object>
+    <object id="13">
+      <name>link1</name>
+      <parent>9</parent>
+      <type>link</type>
+      <target>7</target>
+      <soft>true</soft>
+    </object>
+  </fsobjects>
+</filesystem_manager>
+

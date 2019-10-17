@@ -1,0 +1,42 @@
+<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link REL=StyleSheet HREF="resources.css" TYPE="text/css">
+</head>
+<body>
+<h3>Exemple.  Gestió de memòria contigua, amb particions de mida variable (Intercanvi)</h3>
+<hr></hr>
+<p>La memòria inicialment no té particions, les particions es creen a mesura que es carreguen
+ els processos i són de la mida exacta d'aquests, després les particions que queden lliures 
+ (si acaba un procés per exemple) són ocupades per nous processos, 
+ si el procés té una mida menor que la partició, aquesta es divideix en dues parts, 
+ una de la mida exacta del procés i l'altre la part restant.</p>
+ <p>La memòria té una mida finita, només un nombre limitat de processos poden estar en memòria alhora,
+ però l'<b>espai d'intercanvi</b> (swap, memòria de recolzament) permet moure alguns d'aquests processos, 
+ generalment els menys actius, i deixar espai a memòria per a l'entrada de nous. Els processos a intercanvi
+ es tornen a carregar a memòria quan són necessaris i altres ocupen el seu lloc</p> 
+<br>
+<table>
+<tr class="tablehead"><td>Procés</td><td>Mida<br>(Unitats)</td></tr>
+<tr><td>P1</td><td>5</td></tr>
+<tr><td>P2</td><td>8</td></tr>
+<tr><td>P3</td><td>3</td></tr>
+<tr><td>P4</td><td>15</td></tr>
+<tr><td>P5</td><td>2</td></tr>
+<tr><td>P6</td><td>20</td></tr>
+<tr><td>P7</td><td>8</td></tr>
+<tr><td>P8</td><td>10</td></tr>
+</table>
+<p>Es carreguen a memòria en l'ordre de la taula.</p>
+<p>Observacions:</p>
+<ul>
+<li>No hi ha fragmentació interna, les particions sempre són de la mida del procés</li>
+<li>Els dos últims processos ("P7" i "P8") no es poden carregar perquè la memòria està plena</li>
+<li>Si es <b>moure a intercanvi (swap out)</b> algun procés que alliberi prou espai es podran carregar. 
+Per exemple "P2" i "P4" (botó dret sobre el procés, menú contextual)</li>
+<li>Per tornar a carregar els processos que es troben a intercanvi cal fer espai a la memòria,
+per exemple moure a intercanvi "P6". Aleshores "P2" i "P4" poden <b>tornar a memòria (swap in)</b> 
+(botó dret sobre la memòria, menú contextual)</li>
+</ul>
+</body>
+</html>

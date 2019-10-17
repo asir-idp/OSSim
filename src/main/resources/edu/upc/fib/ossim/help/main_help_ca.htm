@@ -1,0 +1,1808 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<head><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link REL=StyleSheet HREF="help.css" TYPE="text/css">
+</head>
+<BODY><A NAME="index"></A>
+<H2>Ajuda de OS Sim v.1.0</H2>
+<HR>
+<H2>Índex</H2>
+<UL>
+	<LI><A HREF="#introduction">Introducció</A></LI>
+	<LI><A HREF="#welcome">Inici i menú</A></LI>
+	<LI><A HREF="#lang">Idioma</A></LI>
+	<LI><A HREF="#simulations">Simulacions</A>
+	<UL>
+		<LI><A HREF="#scheduling">Planificació de processos</A>
+		<UL>
+			<LI><A HREF="#sch_screen">Pantalla</A></LI> 
+			<LI><A HREF="#sch_cpu">Processador (CPU)</A></LI> 
+			<LI><A HREF="#sch_ready">Cua de preparat</A></LI>
+			<LI><A HREF="#sch_incoming">Processos entrants</A></LI>
+			<LI><A HREF="#sch_set">Configuració</A></LI>
+			<LI><A HREF="#sch_new">Afegir processos</A> </LI>
+			<LI><A HREF="#sch_info">Dades i	estadístiques</A></LI>
+		</UL></LI>
+		<LI><A HREF="#memory">Gestió de memòria</A>
+		<UL>
+			<LI><A HREF="#mem_screen">Pantalla</A></LI> 
+			<LI><A HREF="#mem_ram">Memòria principal</A> </LI>
+			<LI><A HREF="#mem_queue">Cua de	processos</A> </LI>
+			<LI><A HREF="#mem_set">Configuració</A></LI>
+			<LI><A HREF="#mem_new">Afegir processos</A> </LI>
+			<LI><A HREF="#mem_info">Dades i	estadístiques</A> </LI>
+			<LI><A HREF="#mem_detailinfo">Taula de pàgines i taula de segments</A> </LI>
+			<LI><A HREF="#mem_part">Crear una partició (només particions de mida fixada)</A> </LI>
+			<LI><A HREF="#mem_comp">Compactar la memòria (només particions de mida variable i segmentació)</A> </LI>
+			<LI><A HREF="#mem_swap">Memòria	d'intercanvi</A> </LI>
+			<LI><A HREF="#mem_addr">Traducció d'adreces</A> </LI>
+			<LI><A HREF="#mem_err">Errors en la simulació</A> </LI>
+		</UL></LI>
+		<LI><A HREF="#filesystem">Gestió del sistema de fitxers</A> 
+		<UL>
+			<LI><A HREF="#fs_screen">Pantalla</A></LI> 
+			<LI><A HREF="#fslogical">Sistema de fitxers lògic</A> </LI>
+			<LI><A HREF="#fsphysical">(Dispositiu) Sistema de fitxers físic</A> </LI>
+			<LI><A HREF="#fsfolder">Vista del directori actual</A> </LI>
+			<LI><A HREF="#fs_set">Configuració</A></LI>
+			<LI><A HREF="#fsnew_file">Afegir un fitxer</A> </LI>
+			<LI><A HREF="#fsnew_folder">Afegir un directori</A> </LI>
+			<LI><A HREF="#fsnew_link">Afegir un enllaç</A> </LI>
+			<LI><A HREF="#fsdetail_info">Informació	detalla d'un objecte</A> </LI>
+			<LI><A HREF="#fs_info">Dades i	estadístiques</A> </LI>
+			<LI><A HREF="#fs_err">Errors en la simulació</A> </LI>
+		</UL></LI>
+		<LI><A HREF="#disk">Polítiques de planificació de disc</A> 
+		<UL>
+			<LI><A HREF="#disk_screen">Pantalla</A></LI> 
+			<LI><A HREF="#disk_platter">El disc</A></LI>
+			<LI><A HREF="#disk_graph">Gràfica de moviment del capçal</A> </LI>
+			<LI><A HREF="#disk_info">Dades i estadístiques </A></LI>
+			<LI><A HREF="#disk_set">Configuració</A></LI>
+			<LI><A HREF="#disk_new">Afegir petició</A> </LI>
+		</UL></LI>
+		<LI><A HREF="#common">Tasques comuns</A>
+		<UL>
+			<LI><A HREF="#open_save">Obrir i desar simulacions</A> </LI>
+			<LI><A HREF="#time">Control de temps</A></LI>
+		</UL></LI>
+	</UL></LI>
+	<LI><A HREF="#examples">Exemples disponibles de ...</A> 
+	<UL>
+		<LI><A HREF="#scheduling_examples">...	planificació</A> </LI>
+		<LI><A HREF="#memory_examples">... memòria</A> </LI>
+		<LI><A HREF="#filesystem_examples">... sistema de fitxers</A> </LI>
+		<LI><A HREF="#disk_examples">... disc</A></LI>
+	</UL></LI>
+	<LI><A HREF="#exercises">Exercicis disponibles de ...</A> 
+	<UL>
+		<LI><A HREF="#scheduling_exercises">... planificació</A> </LI>
+		<LI><A HREF="#memory_exercises">... memòria</A> </LI>
+		<LI><A HREF="#filesystem_exercises">... sistema de fitxers</A> </LI>
+		<LI><P><A HREF="#disk_exercises">... disc</A></LI>
+	</UL></LI>
+</UL>
+<HR>
+<P ALIGN=RIGHT><A NAME="introduction"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H2>Introducció</H2>
+<P><B>OS Sim (Simulador de Conceptes de Sistemes Operatius)</B> és
+una aplicació de propòsit educatiu per simular gràficament
+conceptes relacionats amb els Sistemes Operatius i complementar així
+l'aprenentatge dels estudiants d'informàtica. <BR><BR>Concretament
+l'aplicació es divideix en quatre blocs o simulacions independents:
+planificació de processos, gestió de memòria, gestió del sistema
+de fitxers i polítiques de planificació de discs.<BR><BR>Més enllà
+de pretendre descriure els complexes sistemes reals, es centra en
+mostrar els conceptes fonamentals dels Sistemes Operatius tal com
+s'expliquen als estudiants d'informàtica, s'inclouen els principals
+algoritmes i els seus paràmetres més rellevants.<BR><BR>A més
+disposa d'un seguit d'exemples i exercicis amb les simulacions
+corresponents que permeten explorar les possibilitats que ofereix
+l'aplicació.</P>
+<P>La versió actual de l'aplicació és la 1.2.</P>
+<P>Està disponible lliurement per a qualsevol ús sota <B>llicència
+BSD.</B></P>
+<P ALIGN=RIGHT><A NAME="welcome"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H2>Inici i menú</H2>
+<P>La pantalla de benvinguda dona accés directe a cadascuna de les
+simulacions, en qualsevol moment es pot tornar a l'inici des del menú
+<I>Fitxer</I>.</P>
+<TABLE BORDER=1 >
+	<TR>
+		<TD>
+			<P ALIGN=CENTER><IMG SRC="img/cpu.png"></P>
+			<H4 ALIGN=CENTER>Planificació processos</H4>
+		</TD>
+		<TD>
+			<P ALIGN=CENTER><IMG SRC="img/ram.png"></P>
+			<H4 ALIGN=CENTER>Gestió de memòria</H4>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P ALIGN=CENTER><IMG SRC="img/tree.png"></P>
+			<H4 ALIGN=CENTER>Sistema de fitxers</H4>
+		</TD>
+		<TD>
+			<P ALIGN=CENTER><IMG SRC="img/hdd.png"></P>
+			<H4 ALIGN=CENTER>Planificació de discs</H4>
+		</TD>
+	</TR>
+</TABLE>
+<P>La majoria de les accions del menú estan disponibles a través de
+les dreceres de teclat que es mostren a continuació:</P>
+<TABLE BORDER=1 CELLPADDING=2 CELLSPACING=2>
+	<TR class="tablehead">
+		<TD>
+			<P><B>Acció</B></P>
+		</TD>
+		<TD>
+			<P><B>Drecera</B></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Sortir</P>
+		</TD>
+		<TD>
+			<P>CTRL + E</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Obrir una simulació desada</P>
+		</TD>
+		<TD>
+			<P>CTRL + O</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Desar una simulació</P>
+		</TD>
+		<TD>
+			<P>CTRL + S <BR><I>(Només disponible si està <BR>oberta alguna
+			simulació)</I></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Accedir a planificació de processos</P>
+		</TD>
+		<TD>
+			<P>CTRL + P</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Accedir a gestió de memòria</P>
+		</TD>
+		<TD>
+			<P>CTRL + M</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Accedir a gestió del sistema de fitxers</P>
+		</TD>
+		<TD>
+			<P>CTRL + I</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Accedir a polítiques de planificació de disc</P>
+		</TD>
+		<TD>
+			<P>CTRL + D</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Ajuda</P>
+		</TD>
+		<TD>
+			<P>F1</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>En quant a ...</P>
+		</TD>
+		<TD>
+			<P>CTRL + A</P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=RIGHT><A NAME="lang"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H2>Idioma</H2>
+<P>De moment l'aplicació està disponible en tres idiomes:</P>
+<UL>
+	<LI><IMG SRC="img/en.gif">&nbsp;Anglès. </LI>
+	<LI><IMG SRC="img/ca.gif">&nbsp;Català. </LI>
+	<LI><IMG SRC="img/es.gif">&nbsp;Castellà. </LI>
+</UL>
+<P ALIGN=RIGHT><A NAME="simulations"></A><A NAME="scheduling"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H2>Descripció de les simulacions</H2>
+<H3>Planificació de processos</H3>
+<P>La simulació es centra en la planificació de processos a <B>curt
+termini</B> amb un únic processador, el seu objectiu és seleccionar
+un dels processos disponibles per executar-se al processador.<BR><BR>La
+execució d'un procés consisteix en cicles alternats de ràfegues de
+CPU i ràfegues d'E/S (Cicle de ràfegues CPU i E/S). Un procés està
+disponible només durant les ràfegues de CPU.<BR><BR>La simulació
+es basa en el model de tres estats, que defineix tres estats d'un
+procés i les seves possibles transicions: En execució, en espera (o
+preparat) i bloquejat.</P>
+<P><IMG border="1" SRC="img/3statemodel.jpg" style="height: 175px; width: 450px"></P>
+<P>En qualsevol moment només un procés es troba executant-se, la
+resta de processos esperen a la <B>cua de preparats</B> fins que el
+planificador els seleccioni, o bé es troben <B>bloquejats</B>
+realitzant operacions d'E/S.</P>
+<P>Les decisions del planificador depenen de dos factors
+principalment: L'algorisme de planificació i la multiprogramació.
+L'usuari pot escollir quatre algorismes diferents: <I>FCFS (First
+Come First Served), SJF (Shortest Job First), Prioritat i Round
+Robin</I>, i també pot indicar si vol un sistema monoprogramat o
+multiprogramat <BR><BR>Els algorismes de planificació es diferencien
+per tant en la manera en que seleccionen el processos per
+executar-se:</P>
+<UL>
+	<LI><I>FCFS. First Come First Served</I>
+	Els processos s'executen en l'ordre d'arribada. S'implementa amb una
+	cua FIFO. </LI>
+	<LI><I>SJF. Shortest Job First</I> Es
+	basa en la estimació de la durada de les ràfegues de CPU, els
+	processos amb la següent ràfega més curta es s'executen primer.
+	S'implementa amb una cua de prioritat ordenada per durada de les
+	ràfegues de CPU. Encara que l'algorisme és òptim (mínim temps
+	d'espera mitjà), la dificultat és estimar les durades de les
+	ràfegues. L'algorisme pot ser expulsiu, en aquest cas els nous
+	processos que entren a la cua de preparats poden ocupar el lloc del
+	procés en execució. </LI>
+	<LI><I>Prioritat. </I>S'associa una
+	prioritat a cada procés, el planificador carrega el procés amb més
+	alta prioritat. S'implementa amb una cua ordenada per prioritat.
+	L'algorisme pot ser expulsiu, en aquest cas els nous processos que
+	entren a la cua de preparats poden ocupar el lloc del procés en
+	execució. </LI>
+	<LI><P><I>Round Robin. </I>Aquest algorisme es va dissenyar
+	especialment per als sistemes de <B>temps compartit</B>, una unitat
+	de temps anomenada <B>quantum</B> limita el temps que els processos
+	es poden executar cada vegada que entren al processador, quan els
+	processos esgoten el temps tornen al final de la cua. </LI>
+</UL>
+<P><B>Algorismes expulsius</B>: Els processos en execució poden ser
+obligats a deixar el processador a un altre procés més privilegiat
+abans de finalitzar. D'altre manera els algorismes són <B>no
+expulsiu o cooperatius</B>. 
+</P>
+<P>Més
+informació<BR><A HREF="http://en.wikipedia.org/wiki/Scheduling_%28computing%29" TARGET="_blank">http://en.wikipedia.org/wiki/Scheduling_(computing)</A><BR><BR><A HREF="http://en.wikipedia.org/wiki/Computer_multitasking" TARGET="_blank">http://en.wikipedia.org/wiki/Computer_multitasking</A>
+</P>
+<P ALIGN=RIGHT><A NAME="sch_screen"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Pantalla :</H4>
+<P><IMG width="500" height="375" SRC="img/shc_map.png"></P>
+<P ALIGN=RIGHT><A NAME="sch_cpu"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Processador (CPU) :</H4>
+<P>Pot estar ociós (lliure) o ocupat, en aquest cas es mostra el
+procés que en execució, la seva informació més rellevant (PID,
+nom i prioritat) i el cicle de vida complet (ràfegues de processador
+i operacions d'E/S). <BR><BR>Cada quadre del cicle correspon a una
+unitat del temps de la simulació, en vermell es mostra en quin punt
+del cicle es troba el procés<BR><BR>El procés en execució surt del
+processador quan finalitza, torna a la cua de preparats o comença
+una ràfega d'E/S</P>
+<P ALIGN=RIGHT><A NAME="sch_ready"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Cua de preparats :</H4>
+<P>Conté els processos disponibles per entrar a executar-se (en
+espera). <BR><BR>La cua sempre es mostra ordenada (primer a la dreta,
+últim a l'esquerra) segons l'algorisme de planificació:</P>
+<UL>
+	<LI><I>FCFS (First Come First Served):</I>
+	Ordre d'arribada a la cua. </LI>
+	<LI><I>SJF (Shortest Job First): </I>Menor
+	temps restant de processador (Respecte l'actual ràfega de CPU de
+	cada procés). </LI>
+	<LI><I>Prioritat: </I>Ordre de
+	prioritat, un valor major de la prioritat indica una major
+	prioritat, els processos amb igual prioritat es posen en ordre
+	d'arribada. </LI>
+	<LI><I>Round Robin:</I> Odre d'arribada a la cua. </LI>
+</UL>
+<P>Per a cada procés es mostra la seva informació més rellevant
+(PID, nom i prioritat) i el cicle de vida complet (ràfegues de
+processador i operacions d'E/S). <BR><BR>Cada quadre del cicle
+correspon a una unitat del temps de la simulació, en vermell es
+mostra en quin punt del cicle es troba el procés.<BR><BR>Mentre la
+simulació està aturada, amb el botó dret sobre qualsevol procés,
+es mostra un <B>menú contextual</B> que permet modificar i
+esborrar-lo.<BR><BR>De la cua de preparats els processos només
+surten per entrar al processador.</P>
+<p>Criteri en l'ordre d'entrada de processos a la cua 
+un cop iniciada la simulació: nous processos (entrants) -> processos que acaben E/S -> processos que deixen la CPU </p>
+<P ALIGN=RIGHT><A NAME="sch_incoming"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Processos entrants :</H4>
+<P>Els processos que s'inicien amb posterioritat (temps inici &gt; 0)
+es situen en aquesta cua. A mesura que avança la simulació i arriba
+el temps d'iniciar-se entren a la cua de preparats.<BR><BR>Aquesta
+cua permet que l'usuari planifiqui tota la simulació i després
+s'executi completa sense cap més intervenció.<BR><BR>Els processos
+s'ordenen segons el temps restant per iniciar-se, o sigui entrar a la
+cua de preparats.</P>
+<P>Mentre la simulació està aturada,
+seleccionat qualsevol procés de la taula, es mostra un <B>menú
+contextual</B> que permet modificar i esborrar-lo.</P>
+<P ALIGN=RIGHT><A NAME="sch_set"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Configuració :</H4>
+<P>Estableix el comportament de la simulació:</P>
+<UL>
+	<LI><I>Multiprogramació o
+	monoprogramació</I>: El planificador quan el procés en execució
+	comença una ràfega de E/S, si és multiprogramat un nou procés
+	entrarà a executar-se, en cas contrari el processador quedarà
+	ociós (desaprofitat) fins que finalitzi la ràfega E/S. </LI>
+	<LI>Algorisme:
+	<UL>
+		<LI><I>FCFS (First Come First
+		Served):</I> No té paràmetres, no és expulsiu. </LI>
+		<LI><I>SJF (Shortest Job First):
+		</I>Aquest pot ser expulsiu o no. </LI>
+		<LI><I>Prioritat: </I>Aquest pot ser
+		expulsiu o no. </LI>
+		<LI><P><I>Round Robin:</I> Sempre és expulsiu, el quantum és el
+		temps màxim que un procés pot executar-se de manera continuada.
+		Valors possibles: 1 - 10 unitats de temps. </LI>
+	 </UL></LI>
+</UL>
+<P ALIGN=RIGHT><A NAME="sch_new"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Afegir processos :</H4>
+<P>Només es poden afegir processos mentre la simulació està
+aturada, per a cada nou procés cal introduir la següent informació:
+</P>
+<UL>
+	<LI><I>PID,</I> Identificador de
+	procés, es calcula automàticament i és incremental.  </LI>
+	<LI><I>Nom,</I> (obligatori) Qualsevol
+	text és vàlid.  </LI>
+	<LI><I>Prioritat,</I> Valor més alts
+	indiquen major prioritat (Valors: 1 - 10).  </LI>
+	<LI><I>Inici,</I> moment en que el
+	procés entrarà a la cua de preparats, si és 0 s'afegirà a la cua
+	de preparats, mentre que si és superior a 0 el procés s'afegirà a
+	la taula de processos entrants fins que la simulació arribi al
+	temps d'inici del procés (Valors: 1 - 100).  </LI>
+	<LI><I>Color,</I> color amb el qual es
+	dibuixaran els elements gràfics relacionats amb el procés.  </LI>
+	<LI><I>No finalitza,</I> indica que el
+	procés no acaba i el seu cicle de ràfegues es repeteix
+	indefinidament.  </LI>
+	<LI><P><I>Cicle de ràfegues,</I> la taula permet indicar la durada
+	de les ràfegues de CPU i E/S del procés, cada fila és una unitat
+	de temps, obligatòriament tots els processos comencen amb una
+	ràfega de CPU, a més si finalitzen (no és un cicle periòdic), 
+	la última ràfega també ha de ser de CPU. La durada màxima del
+	procés és 10 unitats de temps.  </LI>
+</UL>
+<P>Només es pot accedir a la configuració mentre la simulació està
+aturada</P>
+<P ALIGN=RIGHT><A NAME="sch_info"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Dades i estadístiques :</H4>
+<P>Mostra la informació resultant de la planificació a cada moment
+de la simulació.</P>
+<P>Les dades globals són:</P>
+<UL>
+	<LI><I>Eficiència,</I> percentatge de
+	temps que està ocupat el processador. </LI>
+	<LI><I>Rendiment,</I> # processos
+	finalitzats per unitat de temps.  </LI>
+	<LI><I>Durada mitjana,</I> durada
+	mitjana dels processos finalitzats (durada = t. finalització - t.
+	inici).  </LI>
+	<LI><I>Temps mig d'espera,</I> mitjana
+	del temps d'espera dels processos (temps a la cua de preparats).  </LI>
+	<LI><I>Temps mig de resposta,</I> mitjana del temps de resposta
+	dels processos (resposta = t. primera entrada CPU - t. inici).  </LI>
+</UL>
+<P>Per a cada procés es mostra una taula amb la següent informació</P>
+<UL>
+	<LI><I>PID,</I> Identificador de
+	procés (El color de fons és el color del procés).  </LI>
+	<LI><I>Nom,</I> Nom del procés.  </LI>
+	<LI><I>Prioritat,</I> Prioritat del
+	procés.  </LI>
+	<LI><I>Inici,</I> moment d'entrada a
+	la cua de preparats.  </LI>
+	<LI><I>Periòdic,</I> Indica si el
+	procés finalitza o no.  </LI>
+	<LI><I>CPU,</I> temps que ha estat el
+	procés a la CPU fins al moment.  </LI>
+	<LI><I>Resposta,</I> temps des de
+	l'entrada a la cua de preparats fins que es produeix la primera
+	entrada al processador.</LI>
+	<LI><I>Esperant,</I> temps total que
+	porta el procés a la cua de preparats fins al moment.  </LI>
+	<LI><I>Durada,</I> temps des de
+	l'entrada a la cua de preparats fins la finalització del procés.  </LI>
+	<LI><I>% CPU,</I> percentatge de temps
+	de CPU respecte el temps d'espera.  </LI>
+	<LI><I>% E/S,</I> percentatge de temps de E/S respecte la durada
+	del procés (Totes les ràfegues).  </LI>
+</UL>
+<P ALIGN=RIGHT><A NAME="memory"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H3>Gestió de memòria</H3>
+<P>La simulació mostra la càrrega de processos a memòria principal
+segons diferents sistemes de gestió de memòria. Addicionalment
+ofereix versions simplificades dels mecanismes d'<B>intercanvi</B>
+(swap) i <B>memòria virtual</B>.</P>
+<P>Els algorismes de gestió de memòria es divideixen en dos grups:</P>
+<UL>
+	<LI><B>Gestió de memòria contigua</B>, els processos es
+	carregen sencers a la memòria, per a cada procés que cal carregar
+	es selecciona una de les particions que no estigui ocupada i que
+	sigui prou gran per encabir-hi el procés sencer.  
+	<P><IMG SRC="img/contiguous.jpg" border="1"></P>
+	<P>S'inclouen dues possibles algorismes de gestió:</P>
+	<UL>
+		<LI><I>Particions de mida fixada</I>,
+		la memòria està inicialment dividida en particions de mida
+		fixada, que a la simulació ha de crear l'usuari. En general el
+		processos que ocupen les particions tenen una mida inferior a
+		aquestes i per tant hi ha una part de la partició que no s'usa i
+		queda desaprofitada, això s'anomena <B>fragmentació interna</B>. </LI>
+		<LI><P><I>Particions de mida variable</I>, la memòria a l'inici
+		està tota lliure i per a cada procés es crea una partició
+		exactament de la mida d'aquest, a mesura que els processos
+		finalitzen s'alliberen les particions i poden ser reutilitzades.
+		Les particions que no estan ocupades generen <B>fragmentació
+		externa</B>.  </LI>
+	 </UL>
+	<P>Un altre concepte d'interès és la política d'assignació, de
+	quina manera selecciona el Sistema Operatiu una de les particions
+	disponibles, l'aplicació contempla les més habituals:</P>
+	<UL>
+		<LI><I>Primer ajust</I>. La primera
+		partició prou gran.  </LI>
+		<LI><I>Millor ajust</I>. La que
+		s'ajusta millor a la mida del procés.  </LI>
+		<LI><I>Pitjor ajust</I>. La que
+		s'ajusta pitjor a la mida del procés. </LI>
+	</UL></LI>
+	<LI><B>Gestió de memòria no
+	contigua</B>, els processos es divideixen en parts que es poden
+	carregar independentment a la memòria, inclou:  
+	<UL>
+		<LI><I>Paginació</I>, la memòria i els processos es divideixen
+		en parts d'igual mida (marcs i pàgines), les pàgines dels
+		processos es carreguen als marcs lliures de memòria.
+		<P><IMG SRC="img/pagination.jpg" border="1"></P> </LI>
+		<LI><I>Segmentació</I>, els processos es divideixen en parts
+		lògiques (per exemple el codi, les dades o la pila) i aquestes es
+		carreguen independentment a memòria en particions de la seva mida. 
+		<P><IMG SRC="img/segmentation.jpg" border="1"></P> </LI>
+ 	</UL></LI>
+</UL>
+<P ALIGN=RIGHT><A NAME="mem_screen"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Pantalla :</H4>
+<P><IMG width="500" height="375" SRC="img/mem_map.png"></P>
+<P ALIGN=RIGHT><A NAME="mem_ram"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Memòria principal :</H4>
+<P>Els processos és carreguen a memòria principal, ocupant l'espai
+que decideix el Sistema Operatiu, ja sigui sencer o dividit en
+pàgines o segments.<BR><BR>Per definició en qualsevol del sistemes
+de gestió de memòria, sempre hi ha un primer procés carregat,
+ocupant les adreces baixes, el Sistema Operatiu, la mida del qual pot
+variar entre 1, 2 o 4 unitats.<BR><BR>En tot moment es mostren les
+adreces, els processos, les particions, ocupades o disponibles, i la
+fragmentació seguint un codi de color que permet una ràpida
+comprensió del seu estat.</P>
+<TABLE BORDER=1 CELLPADDING=2 CELLSPACING=2>
+	<TR class="tablehead">
+		<TD>
+			<P><B>Color</B></P>
+		</TD>
+		<TD>
+			<P><B>Significat</B></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD BGCOLOR="#dddddd">
+			<P><I>gris</I></P>
+		</TD>
+		<TD>
+			<P>Sistema Operatiu</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD BGCOLOR="#ffffff">
+			<P><I>blanc</I></P>
+		</TD>
+		<TD>
+			<P>Memòria sense particionar</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P><FONT COLOR="#0000ff"><I>puntejat blau</I></FONT></P>
+		</TD>
+		<TD>
+			<P>Fragmentació interna</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P><FONT COLOR="#ffc0cb"><I>puntejat rosa</I></FONT></P>
+		</TD>
+		<TD>
+			<P>Fragmentació externa</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P><I>[altres colors]</I></P>
+		</TD>
+		<TD>
+			<P>Els processos, cadascun del seu color</P>
+		</TD>
+	</TR>
+</TABLE>
+<P>La mida de la memòria a la simulació varia entre 64 i 256
+unitats.</P>
+<P>Amb el botó dret sobre la memòria, es mostra el <B>menú
+contextual</B> que permet realitzar diverses accions:</P>
+<UL>
+	<LI>Mentre la simulació està
+	aturada: (Només per particions de mida fixada) modificar i esborrar
+	particions. </LI>
+	<LI><P>En temps de simulació i per a cada procés carregat a
+	memòria, esborrar el procés, moure'l a intercanvi, accedir a la
+	traducció d'adreces, veure la informació detallada (Només
+	paginació i segmentació) i compactar la memòria (Només per
+	particions de mida variable i segmentació). </LI>
+</UL>
+<P ALIGN=RIGHT><A NAME="mem_queue"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Cua de processos :</H4>
+<P>Conté els processos disponibles per carregar-se a memòria
+ordenats per odre d'arribada a la cua.</P>
+<P>Per a cada procés es mostra la seva informació més rellevant
+(PID, nom i durada, que pot ser indefinida), a més de la mida i la
+seva distribució, on cada quadre correspon a una unitat d'espai, que
+es carrega a una única adreça de memòria.<BR><BR>En paginació i
+segmentació la distribució diferencia els components dels
+processos, pàgines o segments, i ressalta en gris aquells que no es
+carreguen inicialment a memòria sinó directament a
+intercanvi.<BR><BR>Mentre la simulació està aturada, amb el botó
+dret sobre qualsevol procés, es mostra un <B>menú contextual</B>
+que permet modificar i esborrar-lo.</P>
+<P ALIGN=RIGHT><A NAME="mem_set"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Configuració :</H4>
+<P>Estableix el comportament de la simulació:</P>
+<UL>
+	<LI><I>Mida de la memòria</I> (Valors
+	entre 64 - 256 unitats). </LI>
+	<LI><I>Mida del Sistema Operatiu</I>
+	(Valors 1, 2 o 4 unitats). </LI>
+	<LI>Algorisme: 
+	<UL>
+		<LI><I>Mida fixada</I> (Gestió de
+		memòria contigua), és obligatori particionar tota la memòria. </LI>
+		<LI><I>Mida variable</I> (Gestió de
+		memòria contigua). </LI>
+		<LI><I>Paginació</I> (Gestió de
+		memòria NO contigua) cal definir la mida de la pàgina del sistema
+		(Valors: 1, 2 o 4). </LI>
+		<LI><I>Segmentació</I> (Gestió de
+		memòria NO contigua). </LI>
+	</UL></LI>
+	<LI>Política d'assignació, quina
+	partició escollirà el sistema entre totes les disponibles: 
+	<UL>
+		<LI><I>Primer ajust</I>. La primera
+		partició prou gran. </LI>
+		<LI><I>Millor ajust</I>. La que
+		s'ajusta millor a la mida del procés. </LI>
+		<LI><I>Pitjor ajust</I>. La que s'ajusta pitjor a la mida del
+		procés.</LI>
+	</UL></LI>
+</UL>
+<P>Qualsevol canvi d'algorisme, de mida de la memòria o del SO
+obliga a reiniciar la simulació i esborra tots els processos
+existents.</P>
+<P ALIGN=RIGHT><A NAME="mem_new"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Afegir processos :</H4>
+<P>Només es poden afegir processos mentre la simulació està
+aturada, per a cada nou procés cal introduir la següent informació:
+</P>
+<UL>
+	<LI><I>PID,</I> Identificador de
+	procés, es calcula automàticament i és incremental. </LI>
+	<LI><I>Nom,</I> (obligatori) Qualsevol
+	text és vàlid. </LI>
+	<LI><I>Mida,</I> del procés (Valors:
+	1 - 64 unitats). </LI>
+	<LI><I>Durada,</I> els processos poden
+	tenir una durada indefinida (Valor -1) o concreta (Valors 1 - 100),
+	però en cap cas 0. </LI>
+	<LI><P><I>Color,</I> color amb el qual es dibuixaran els elements
+	gràfics relacionats amb el procés. </LI>
+</UL>
+<P>Addicionalment per a processos paginats es mostra: 
+</P>
+<UL>
+	<LI><I>Taula de pàgines,</I> el nombre de pàgines depèn de la
+	mida del procés, per a cada pàgina l'usuari ha d'indicar si es
+	carregarà inicialment a memòria (valor per defecte) o a intercanvi
+	(memòria de recolzament). </LI>
+</UL>
+<P>I per a processos segmentats es mostra: 
+</P>
+<UL>
+	<LI><I>Taula de segments,</I> tots els processos obligatòriament
+	tenen tres segments: codi, dades, pila, per a cada segment l'usuari
+	ha d'indicar la mida i si es carregarà inicialment a memòria
+	(valor per defecte) o a intercanvi (memòria de recolzament). <I>Cal
+	observar que la suma dels segments ha de coincidir amb la mida del
+	procés. </I></LI>
+</UL>
+<P ALIGN=RIGHT><A NAME="mem_info"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Dades i estadístiques :</H4>
+<P>Mostra la informació d'ocupació de la memòria a cada moment de
+la simulació. Aquesta informació varia d'un algorisme a un altre.</P>
+<P>En gestió de <B>memòria contigua</B>, es mostra una taula amb la
+següent informació</P>
+<UL>
+	<LI><I>Adreça,</I> inici de la
+	partició. </LI>
+	<LI><I>Mida,</I> de la partició.</LI>
+</UL>
+<P><I>(Si la partició està ocupada)</I> 
+</P>
+<UL>
+	<LI><I>PID,</I> Identificador de
+	procés (El color de fons és el color del procés). </LI>
+	<LI><I>Nom,</I> del procés. </LI>
+	<LI><I>Mida,</I> del procés. </LI>
+	<LI><P><I>Durada,</I> del procés. </LI>
+</UL>
+<P>En <B>paginació</B>, es mostra una taula amb la següent
+informació</P>
+<UL>
+	<LI><I>Adreça,</I> inici del marc. </LI>
+	<LI><I>Marc,</I> número de marc.</LI>
+</UL>
+<P><I>(Si la partició està ocupada)</I> 
+</P>
+<UL>
+	<LI><I>PID,</I> Identificador de
+	procés (El color de fons és el color del procés). </LI>
+	<LI><I>Pàgina,</I> del procés que
+	ocupa el marc corresponent. </LI>
+	<LI><I>Nom,</I> del procés. </LI>
+	<LI><I>Mida,</I> del procés (total). </LI>
+	<LI><I>Durada,</I> del procés. </LI>
+</UL>
+<P>En <B>segmentació</B>, es mostra una taula amb la següent
+informació</P>
+<UL>
+	<LI><I>Adreça,</I> inici del marc. </LI>
+	<LI><I>Mida,</I> de la partició.</LI>
+</UL>
+<P><I>(Si la partició està ocupada)</I> 
+</P>
+<UL>
+	<LI><I>PID,</I> Identificador de
+	procés (El color de fons és el color del procés). </LI>
+	<LI><I>Segment,</I> del procés: codi,
+	dades o pila. </LI>
+	<LI><I>Nom,</I> del procés. </LI>
+	<LI><I>Mida,</I> del procés (total).</LI>
+	<LI><P><I>Durada,</I> del procés. </LI>
+</UL>
+<P ALIGN=RIGHT><A NAME="mem_detailinfo"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Taula de pàgines i taula de segments :</H4>
+<P>Mostra la informació d'ocupació d'un procés en gestió de memòria no contigua.</P>
+<P>En <B>paginació</B>, es mostra una taula amb la següent
+informació</P>
+<UL>
+	<LI><I>Pàgina,</I> del procés que
+	ocupa el marc corresponent. </LI>
+	<LI><I>Marc,</I> número de marc.</LI>
+	<LI><I>Vàlid,</I> bit de validesa de la pàgina. (v - vàlid, i - invàlid). 
+	Una pàgina no és vàlida si no està carregada a memòria</LI>
+</UL>
+<P>En <B>segmentació</B>, es mostra una taula amb la següent
+informació</P>
+<UL>
+	<LI><I>Segment,</I> del procés: codi,
+	dades o pila. </LI>
+	<LI><I>Mida,</I> del segment.</LI>
+	<LI><I>Adreça,</I> inici del marc. </LI>
+	<LI><I>Vàlid,</I> bit de validesa del segment. (v - vàlid, i - invàlid). 
+	Un segment no és vàlid si no està carregat a memòria</LI>
+</UL>
+<P ALIGN=RIGHT><A NAME="mem_part"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Crear una partició (només particions de mida fixada) :</H4>
+<P>Només cal indicar l'adreça d'<B>inici</B> i la <B>mida</B>.</P>
+<P>Les particions no es poden encavalcar, ni poden finalitzar més
+enllà del final de la memòria.</P>
+<P ALIGN=RIGHT><A NAME="mem_comp"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Compactar la memòria (només particions de mida variable i
+segmentació) :</H4>
+<P>La gestió amb particions de mida variable i la segmentació tenen
+en comú que creen particions dinàmicament i de la mida exacte
+necessària per encabir-hi processos o segments d'aquests, per tant
+el Sistema Operatiu selecciona una partició generalment de de mida
+superior i la divideix en dues parts, en una ubica el procés i
+l'altre que disponible.</P>
+<P>un cop alliberades (perquè finalitza el procés o s'ha mogut a
+intercanvi), queden novament disponibles i aquest procés continua
+indefinidament, les particions disponibles cada vegada són més
+petites i la memòria es <B>degrada</B>.</P>
+<P>El procés de <B>compactació</B> ho soluciona, reorganitza la
+memòria, agrupa tots els processos en les zones baixes de memòria i
+a continuació crea una única partició tant gran com tota la
+memòria disponible.</P>
+<P>Això que és una responsabilitat del Sistema Operatiu, queda a
+les mans de l'usuari en la simulació (<B>menú contextual</B> de la
+memòria).</P>
+<P ALIGN=RIGHT><A NAME="mem_swap"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Memòria d'intercanvi :</H4>
+<P>La memòria d'intercanvi (o recolzament) permet que s'executin més
+processos dels que caben a la memòria principal i generalment
+s'implementa en memòria secundària.</P>
+<P>La idea es basa en reservar un espai addicional on moure els
+processos o parts d'aquests (pàgines o segments) menys actius i
+reubicar-los quan siguin necessaris.</P>
+<P>De manera simplificada la simulació permet fer l'intercanvi de
+processos o parts d'aquests entre la memòria i intercanvi a l'usuari
+manualment.</P>
+<P><B>Swap out</B>, des del menú contextual de la memòria. Mou un
+procés o part d'aquest a intercanvi.</P>
+<P><B>Swap in</B>, des del menú contextual d'intercanvi. Intenta
+moure un procés o part d'aquest a memòria, si la memòria està
+ocupada genera un error i no es mou.</P>
+<P>Els algorismes de paginació i segmentació permeten que
+directament les pàgines o segments es carreguin inicialment a
+intercanvi. Aquest espai no està limitat ni per la quantitat ni la
+mida dels processos que conté.</P>
+<P ALIGN=RIGHT><A NAME="mem_addr"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Traducció d'adreces :</H4>
+<P ALIGN=RIGHT><A NAME="mem_err"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Errors en la simulació :</H4>
+<OL>
+	<LI><B>Memòria plena</B>, a mesura
+	que es processa la cua durant la simulació, la memòria va
+	ocupant-se i s'acaba omplint. Des del moment que un procés no es
+	pot carregar per falta d'espai, no es continua amb cap dels
+	processos posteriors. La memòria es pot alliberar automàticament
+	(finalitza algun dels processos) o amb la intervenció de l'usuari
+	(esborrar o moure a intercanvi algun procés). </LI>
+	<LI><B>Memòria no totalment particionada</B> per l'algorisme de
+	particions de mida fixada és obligatori que tota la memòria
+	estigui particionada (on acaba una partició seguidament comença la
+	següent).</LI>
+</OL>
+<P ALIGN=RIGHT><A NAME="filesystem"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H3>Gestió dels Sistema de Fitxers</H3>
+<P>El sistema de fitxers gestiona la relació entre l'espai lògic
+que veu l'usuari (fitxers, directoris, enllaços) amb l'estructura
+corresponent i la ubicació física (real) dels objectes a la memòria
+secundària.</P>
+<P>La unitat mínima de treball del sistema de fitxers és <B>el
+bloc</B>, la memòria i els objectes del sistema de fitxers es
+divideixen en blocs de la mateixa mida, i la gestió del sistema
+operatiu consisteix en ubicar els blocs dels objectes en blocs
+disponibles de la memòria secundària i mantenir-ne el control.</P>
+<P>La simulació implementa les dues principals tècniques de gestió
+de sistema de fitxers:</P>
+<UL>
+	<LI>Llista enllaçada amb taula
+	d'assignació de fitxers <B>(FAT, entorns MS-DOS).</B> </LI>
+	<LI><P>Accés indexat amb triple nivell d'indirecció <B>(Sistemes
+	UNIX).</B> </LI>
+</UL>
+<P>Els paràmetres de la simulació són:</P>
+<UL>
+	<LI>El bloc (1, 2 o 4 unitats). </LI>
+	<LI>La mida total del disc (4, 6 o 8 Mega unitats).</LI>
+</UL>
+<P>Els primers 128 blocs del disc no es fan servir per simular que es
+reserven per a tasques administratives del Sistema Operatiu. 
+</P>
+<P>Els dos algorismes de gestió del sistema de fitxers són:</P>
+<UL>
+	<LI><B>Llista enllaçada amb taula
+	d'assignació de fitxers</B>, El sistema manté una taula amb tantes
+	entrades com blocs té el sistema (File Allocation Table, FAT), per
+	a cada objecte només es disposa d'una referència al seu primer
+	bloc. Aquestes referències es troben al directori que conté
+	l'objecte.<BR>A la taula cada bloc té una referència al següent
+	bloc de manera que es poden anar seguint encadenadament els blocs
+	d'un fitxer del primer a l'últim.<BR><BR>La mida de la taula FAT =
+	Mida del disc / Mida del block<BR>Els blocs necessaris per a cada
+	fitxer= Mida fitxer / Mida del block<BR><BR>Per simplicitat a la
+	simulació els directoris ocupen només un bloc, i els enllaços cap
+	(fan referència a un element existent i aquesta referència només
+	es guarda al directori que conté l'enllaç). </LI>
+	<LI><B>Accés indexat amb triple
+	nivell d'indirecció</B>, l'accés indexat es basa en una estructura
+	anomenada i-node, i cada objecte està associat a un i-node. La
+	estructura d'un i-node és: 
+	<UL>
+		<LI>1 camp d'informació.</LI>
+		<LI>12 apuntadors a blocs de dades.</LI>
+		<LI>1 apuntador a 1 bloc indirecte.</LI>
+		<LI>1 apuntador a 1 bloc doble indirecte. </LI>
+		<LI>1 apuntador a 1 bloc triple	indirecte. </LI>
+	</UL>
+	<P><BR>El bloc indirecte simple apunta a blocs de dades, el doble a
+	blocs indirectes que alhora apunten a blocs de dades i el triple a
+	blocs indirectes que apunten blocs indirectes que apunten a blocs de
+	dades.<BR>Per crear nous fitxers primer s'ocupen els blocs de dades,
+	després el indirecte simple, el doble i el triple fins ocupar els
+	blocs de dades necessaris segons la mida del fitxer. Per simplicitat
+	els directoris ocupen un bloc (de dades), i els enllaços cap. <IMG SRC="img/inode.gif">	</P>
+	<P>Referència <A HREF="http://es.wikipedia.org/wiki/Inodo" TARGET="_blank">http://es.wikipedia.org/wiki/Inodo</A></P>
+	<P>A la simulació el màxim nombre d'i-nodes que es poden crear són
+	128 i els blocs indirectes tenen 20 apuntadors, a la taula següent
+	es mostra com calcular els blocs necessaris per a crear un fitxer.</P>
+	</LI>
+</UL>
+<DL>
+	<DD>
+	<TABLE BORDER=1 CELLPADDING=2 CELLSPACING=2>
+		<TR class="tablehead">
+			<TD></TD>
+			<TD>
+				<P>Blocs de dades <BR>disponibles</P>
+			</TD>
+			<TD>
+				<P>Blocs <BR>administratius</P>
+			</TD>
+			<TD>
+				<P ALIGN=CENTER>Total Blocs<BR>dades</P>
+			</TD>
+			<TD>
+				<P ALIGN=CENTER>Total<BR>Blocs adm.</P>
+			</TD>
+			<TD>
+				<P ALIGN=CENTER>Total<BR>Blocs</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P><B>Un i-node</B></P>
+			</TD>
+			<TD>
+				<P>12 blocs</P>
+			</TD>
+			<TD>
+				<P>Cap</P>
+			</TD>
+			<TD>
+				<P ALIGN=CENTER>12</P>
+			</TD>
+			<TD>
+				<P ALIGN=CENTER>0</P>
+			</TD>
+			<TD>
+				<P ALIGN=CENTER>12</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P><B>Primera<BR>indirecció</B></P>
+			</TD>
+			<TD>
+				<P>Anteriors més...<BR>20 blocs</P>
+			</TD>
+			<TD>
+				<P>1 bloc indirecte</P>
+			</TD>
+			<TD>
+				<P ALIGN=CENTER>32</P>
+			</TD>
+			<TD>
+				<P ALIGN=CENTER>1</P>
+			</TD>
+			<TD>
+				<P ALIGN=CENTER>33</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P><B>Segona<BR>indirecció</B></P>
+			</TD>
+			<TD>
+				<P>Anteriors més...<BR>20 * 20 blocs</P>
+			</TD>
+			<TD>
+				<P>1 bloc indirecte<BR>1+20 b. indirectes</P>
+			</TD>
+			<TD>
+				<P ALIGN=CENTER>432</P>
+			</TD>
+			<TD>
+				<P ALIGN=CENTER>22</P>
+			</TD>
+			<TD>
+				<P ALIGN=CENTER>454</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<P><B>Tercera<BR>indirecció</B></P>
+			</TD>
+			<TD>
+				<P>Anteriors més...<BR>20 * 20 * 20 blocs</P>
+			</TD>
+			<TD>
+				<P>1 bloc indirecte<BR>1+20 b. indirectes<BR>1+20+400 b.
+				indirectes</P>
+			</TD>
+			<TD>
+				<P ALIGN=CENTER>8.432</P>
+			</TD>
+			<TD>
+				<P ALIGN=CENTER>433</P>
+			</TD>
+			<TD>
+				<P ALIGN=CENTER>8.875</P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P ALIGN=RIGHT><A NAME="fs_screen"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Pantalla :</H4>
+<P><IMG width="500" height="375" SRC="img/fs_map.png"></P>
+<P ALIGN=RIGHT><A NAME="fslogical"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Sistema de fitxers lògic :</H4>
+<P>Mostra el sistema de fitxers tal i com el veuen els usuaris,
+l'arbre de directoris i els fitxers i enllaços dins de cada
+directori. L'arrel (<B>root</B>) depèn del gestor sistema de fitxer,
+a UNIX és &quot;/&quot; a MD-DOS és &quot;C:\&quot; 
+</P>
+<P>Amb el botó dret sobre un objecte qualsevol, es mostra el <B>menú
+contextual</B> que permet realitzar diverses accions:</P>
+<UL>
+	<LI>Afegir un fitxer al mateix
+	directori de l'objecte. </LI>
+	<LI>Afegir un subdirectori dins el
+	mateix directori de l'objecte.</LI>
+	<LI>Afegir un enllaç dins el mateix
+	directori de l'objecte.</LI>
+	<LI>Modificar l'objecte.</LI>
+	<LI><P>Esborrar l'objecte.</LI>
+</UL>
+<P ALIGN=RIGHT><A NAME="fsphysical"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: (Dispositiu) Sistema de fitxers físic :</H4>
+<P>Mostra el dispositiu (sistema de fitxers físic) dividit en blocs,
+a la dreta l'adreçament.</P>
+<P>L'espai inicial (128 unitats) es reserven per a tasques
+administratives del Sistema Operatiu i no s'utilitzen.</P>
+<P>Els blocs es pinten de diferents colors segons a quin objecte
+corresponguin o la seva finalitat:</P>
+<TABLE BORDER=1 CELLPADDING=2 CELLSPACING=2>
+	<TR class="tablehead">
+		<TD>
+			<P><B>Color</B></P>
+		</TD>
+		<TD>
+			<P><B>Ús del bloc</B></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD BGCOLOR="#000000">
+			<P><FONT COLOR="#ffffff"><I>negre</I></FONT></P>
+		</TD>
+		<TD>
+			<P>Administració (Sistema de fitxers)</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD BGCOLOR="#ffffff">
+			<P><I>blanc</I></P>
+		</TD>
+		<TD>
+			<P>Disponible</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD BGCOLOR="#00ff00">
+			<P><I>Verd</I></P>
+		</TD>
+		<TD>
+			<P>Directori</P>
+		</TD>
+	</TR>
+		<TR>
+		<TD BGCOLOR="#00ffff">
+			<P><I>Blau</I></P>
+		</TD>
+		<TD>
+			<P>Enllaç feble</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P><I>[altres colors]</I></P>
+		</TD>
+		<TD>
+			<P>Ocupat per un fitxer,<BR><I>a UNIX &quot;I&quot; significa que
+			és un bloc indirecte</I></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=RIGHT><A NAME="fsfolder"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Vista del directori actual :</H4>
+<P>Aquesta vista depèn del directori que estigui seleccionat al
+<A HREF="#fslogical">sistema de fitxers lògic</A>, es mostra el
+contingut del directori, cada objecte es dibuixa amb el color
+corresponent: fitxers (color variable segons fitxer), enllaços
+(blau), directoris (verd).</P>
+<P>Per a cadascun dels objectes s'indica la seva referència al
+<A HREF="#fsphysical">sistema de fitxers físic</A>. Per a UNIX
+l'i-node de l'objecte, per a MS-DOS l'entrada inicial a la taula FAT.</P>
+<P>Amb el botó dret sobre qualsevol dels objectes, es mostra un <B>menú
+contextual</B> que permet veure'n la <A HREF="#fsdetail_info">informació
+detallada</A>.</P>
+<P ALIGN=RIGHT><A NAME="fs_set"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Configuració :</H4>
+<P>Estableix el comportament de la simulació:</P>
+<UL>
+	<LI><I>Mida del bloc</I> (Valors 1, 2
+	o 4 unitats)(Valors entre 64 - 256 unitats). </LI>
+	<LI><I>Mida de la memòria </I>(Valors
+	4, 6 o 8, x 1024 unitats). </LI>
+	<LI>Algorisme: 
+	<UL>
+		<LI>Assignació enllaçada amb taula
+		d'assignació de fitxers <I>(FAT, MS-DOS)</I>. </LI>
+		<LI><P>Assignació indexada amb triple indirecció Mida variable
+		<I>(UNIX)</I>. </LI>
+	</UL></LI>
+</UL>
+<P>Qualsevol canvi d'algorisme, de mida del bloc, de la memòria o de
+l'algorisme obliga a reiniciar la simulació i esborra tots els
+objectes existents.</P>
+<P ALIGN=RIGHT><A NAME="fsnew_file"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Afegir un fitxer :</H4>
+<P>El fitxer s'afegeix al directori que estigui seleccionat en aquest
+moment, per a cada nou fitxer cal introduir la següent informació:</P>
+<UL>
+	<LI><I>Nom,</I> (obligatori) Qualsevol
+	text és vàlid. </LI>
+	<LI><I>Mida,</I> del fitxer (Valors: 1
+	- 4096 unitats). </LI>
+	<LI><P><I>Color,</I> color amb el qual es dibuixaran els elements
+	gràfics relacionats amb el fitxer. </LI>
+</UL>
+<P ALIGN=RIGHT><A NAME="fsnew_folder"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Afegir un directori :</H4>
+<P>El directori s'afegeix dins el directori que estigui seleccionat
+en aquest moment,<BR>només cal indicar el nom del nou directori, és
+obligatori i qualsevol text és vàlid.</P>
+<P ALIGN=RIGHT><A NAME="fsnew_link"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Afegir un enllaç :</H4>
+<P>L'enllaç s'afegeix al directori que estigui seleccionat en aquest
+moment, per a cada nou enllaç cal introduir la següent informació:</P>
+<UL>
+	<LI><I>Nom,</I> (obligatori) Qualsevol
+	text és vàlid. </LI>
+	<LI><I>Feble,</I> tipus d'enllaç, feble (seleccionat) o fort (no seleccionat). MS-DOS només admet enllaços febles </LI>
+	<LI><P><I>Destí,</I> objecte destí de l'enllaç. </LI>
+</UL>
+<P ALIGN=RIGHT><A NAME="fsdetail_info"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Informació detalla d'un objecte :</H4>
+<P>Des de la vista de directori, es pot accedir a la informació
+detallada de qualsevol objecte dins del directori, aquesta depèn del
+sistema de fitxers.</P>
+<P>Per a UNIX es mostra el detall de l'i-node:</P>
+<UL>
+	<LI>Informació, en aquest cas només
+	el nombre d'enllaços que apunten a l'i-node. </LI>
+	<LI>12 blocs de dades, directament el
+	número de bloc on es troben les dades, o &quot;nil&quot; si no es
+	fa servir. </LI>
+	<LI>Indireccions, 1a, 2a i 3a, número
+	de bloc on es troba el bloc indirecte, o &quot;nil&quot; si no es fa
+	servir. 
+	<UL>
+		<LI>Per a cada indirecció també es
+		pot accedir a la seva informació: 
+		<UL>
+			<LI>Índex de l'apuntador.</LI>
+			<LI>bloc on apunta, o &quot;nil&quot;
+			si no es fa servir. </LI>
+			<LI><P>Tipus: &quot;Bloc&quot; si es de dades o &quot;Indirecció&quot;
+			si és indirecte. </LI>
+		</UL></LI>
+	</UL></LI>
+</UL>
+<P>Per a MS-DOS es mostren les entrades de la taula FAT corresponents
+a l'objecte:</P>
+<UL>
+	<LI>Número de bloc (Entrada a la
+	taula FAT).</LI>
+	<LI><P>Número del següent bloc de l'objecte o &quot;nil&quot; si
+	és l'últim.</LI>
+</UL>
+<P ALIGN=RIGHT><A NAME="fs_info"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Dades i estadístiques :</H4>
+<P>Mostra la informació d'ocupació del dispositiu. Aquesta
+informació varia d'un algorisme a un altre.</P>
+<P>En <B>UNIX</B>, es mostra una taula amb tots els blocs de dades
+del dispositiu, per a cada bloc:</P>
+<UL>
+	<LI><I>Bloc,</I> número de bloc
+	(Inicia amb el primer bloc de dades, 128).</LI>
+	<LI><I>Tipus:</I> &quot;Bloc de dades&quot; o &quot;Bloc
+	indirecte&quot;.</LI>
+</UL>
+<P>En <B>MS-DOS</B>, es mostra la taula FAT que és una representació
+de tots els blocs del dispositiu, per a cada entrada de la taula la
+següent informació:</P>
+<UL>
+	<LI><I>Bloc,</I> número de bloc
+	(Inicia amb el primer bloc de dades, 128). </LI>
+	<LI><I>Següent,</I> número del
+	següent bloc de l'objecte que l'ocupa, &quot;nil&quot; si és
+	l'últim bloc de l'objecte que l'ocupa o 0 si està lliure.</LI>
+	<LI><I>Estat,</I> del bloc, &quot;usat&quot; o &quot;lliure&quot;.</LI>
+</UL>
+<P ALIGN=RIGHT><A NAME="fs_err"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Errors en la simulació :</H4>
+<OL>
+	<LI><B>Memòria plena</B>, els nous
+	objectes que es creen ocupen els blocs del dispositiu que són
+	limitats, si no es poden crear nous objectes per falta d'espai cal
+	reduir la mida dels existents o esborrar-los. </LI>
+	<LI><B>Existeix un altre objecte amb el mateix nom</B> dins un
+	mateix directori no hi poden existir objectes (fitxers, enllaços o
+	subdirectoris) amb el mateix nom.</LI>
+</OL>
+<P ALIGN=RIGHT><A NAME="disk"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H3>Polítiques de planificació de discs</H3>
+<P>Es tracta la part de polítiques de planificació de discs inclosa
+dins de la gestió de dispositius d'E/S del Sistema Operatiu.</P>
+<P>Tot i la heterogeneïtat tat d'aquests, disc òptics o magnètics,
+rígids o flexibles, només de lectura o de lectura i escriptura, CD,
+DVD's o HHD per exemple, es poden tractar de manera similar.</P>
+<P>Els discs s'organitzen en <B>sectors</B>, aquests s'agrupen en
+<B>pistes</B>, les pistes estan en una <B>cara o superfície en un
+plat</B>, i cada disc pot tenir varis <B>plats</B>.</P>
+<P><IMG SRC="img/disc_structure.png">
+</P>
+<P>Referència <A HREF="http://es.wikipedia.org/wiki/Disco_duro" TARGET="_blank">http://es.wikipedia.org/wiki/Disco_duro</A></P>
+<P>Les pistes que estan a la mateixa
+posició del capçal s'anomenen cilindres.</P>
+<P>Els sectors es referencien
+seqüencialment, el primer sector 0, està a la primera pista, del
+primer plat, al cilindre més exterior. Els plats giren constantment
+i cadascun té un capçal just a sobre que llegeix o escriu els
+sectors, els capçals es poden desplaçar perpendicularment a les
+pistes a mesura que el dis gira.</P>
+
+<P>La geometria del disc de la simulació
+és: un plat, 16 cilindres, 12 sectors per cilindre, en total 192
+sectors o blocs de dades</P>
+<P>El Sistema Operatiu rep constantment
+peticions per escriure o llegir del disc, la manera com es serveixen
+aquestes peticions ve definida per la política de planificació de
+discs.</P>
+<P>Una bona política de planificació ha
+de minimitzar el moviment del capçal, que es tradueix en una vida
+més llarga del dispositiu, i alhora atendre les peticions tant aviat
+com sigui possible (reduir el temps d'accés a les peticions de
+sectors del Sistema Operatiu).</P>
+<P>A la simulació estan disponibles les
+següents polítiques de planificació:</P>
+<UL>
+	<LI><P><I>FIFO. Fist
+	In First Out</I> Aquesta planificació és molt senzilla, atenen les
+	peticions en l'ordre estricte d'arribada. El capçal es mou sempre
+	cercant la següent petició independentment d'on estigui, no
+	intenta minimitzar el moviment del capçal però és justa perquè
+	no prioritza cap petició.</LI> 
+	<LI><P><I>LIFO. Last
+	In First Out</I> Al contrari que FIFO, ara s'atenen les peticions en
+	l'ordre invers d'arribada, la última en arribar es atesa primer.
+	Les últimes peticions es serveixen immediatament, però pot
+	provocar inanició, les primeres peticions mai seran servides si van
+	entrant de noves constantment. </LI> 
+	<LI><P><I>STF.
+	Shortest (Seek) Time First </I>S'atén sempre primer la petició que
+	es troba més aprop de la posició del capçal. Aquesta planificació
+	minimitza el moviment del capçal, però també pot provocar
+	inanició. </LI> 
+	<LI><P><I>SCAN.</I>
+	També anomenada “Ascensor”, el capçal es mou del cilindre més
+	extern al més intern, quan arriba al final canvia el sentit i torna
+	al començament, i així indefinidament. Atén les peticions a
+	mesura que les va trobant durant el seu moviment. </LI> 
+	<LI><P><I>C-SCAN.
+	Circular SCAN.</I> Semblant a SCAN, la diferència és que quan
+	arriba al cilindre més intern al final de la cara, es desplaça
+	directament al començament i torna a començar, per tant sempre
+	aten les peticions en la mateixa sentit del moviment. Millora un
+	dels inconvenients de SCAN, que quan canvia de sentit torna a passar
+	per les pistes que acaba de mirar. </LI> 
+	<LI><P><I>LOOK.</I>
+	És una variació que millora la planificació SCAN, la diferència
+	és que només arriba fins la última petició no pas fins a l'últim
+	cilindre. En el moment que es detecta que no queden més peticions
+	en la mateixa direcció, aleshores canvia el sentit. </LI> 
+	<LI><P><I>C-LOOK. Circular LOOK</I>
+	Inclou les millores de LOOK i C-SCAN, només arriba fins a la última
+	petició i a més quan arriba a la més externa, es desplaça al
+	començament i torna a començar, sempre atén les peticions en el
+	mateixa sentit. </LI> 
+</UL>
+<P ALIGN=RIGHT><A NAME="disk_screen"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Pantalla :</H4>
+<P><IMG width="500" height="375" SRC="img/disk_map.png"></P>
+<P ALIGN=RIGHT><A NAME="disk_platter"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4><B>: El disc :</B></H4>
+<P>Mostra el plat del disc amb les
+divisions de sectors i cilindres.</P>
+<P>El sector 0 (primer) es troba a la
+part superior del cilindre més extern, a la dreta de la vertical.</P>
+<P>En tot moment de la simulació la
+posició del capçal es mostra en color negre, i les peticions en el
+color corresponent</P>
+<P>Mentre la simulació està aturada,
+amb el botó dret sobre qualsevol petició, es mostra un menú
+contextual que permet modificar-la i esborrar-la.</P>
+<P ALIGN=RIGHT><A NAME="disk_graph"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4><B>: Gràfica de moviment del capçal :</B></H4>
+<P>La gràfica representa el moviment del
+capçal a mesura que es serveixen les peticions.</P>
+<P>A l'eix de les abscisses els cilindres
+i a l'eix d'ordenades el temps.</P>
+<P>Cada petició atesa es marca amb un
+punt (del color de la petició) indicant el cilindre on es troba el
+sector atès i el temps, els punts s'uneixen amb rectes que
+representen el moviment del capçal a través dels cilindres.</P>
+<P ALIGN=RIGHT><A NAME="disk_info"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4><B>: Dades i estadístiques :</B></H4>
+<P>Mostra totes les peticions, la
+informació de la taula és següent:</P>
+<UL>
+	<LI><I>Sector,</I>
+	número de sector de la petició. </LI> 
+	<LI><I>Cilindre,</I>
+	on es troba el sector. </LI> 
+	<LI><I>Retard,</I>
+	temps que triga a arribar la petició. Per exemple una petició amb
+	retard 3 unitats, entrarà a la cua de peticions al temps 3 de la
+	simulació. </LI> 
+	<LI><I>Moviment,</I>
+	per a les peticions ateses, mostra el moviment del capçal des de
+	l'anterior petició, el nombre de cilindres pels quals ha passat
+	fins arribar al cilindre de l'actual petició. </LI> 
+	<LI><I>Acumulat,</I> moviment del
+	cilindre acumulat des de l'inici de la simulació. </LI> 
+</UL>
+<P>Les peticions poden estar en tres
+estats diferents:</P>
+<UL>
+	<LI><I>Servides,</I>
+	ja han estat ateses. </LI> 
+	<LI><I>Esperant,</I>
+	es troben a la cua pendents de ser ateses. </LI> 
+	<LI><I>Pendents d'arribar,</I>
+	arriben amb retard. </LI> 
+</UL>
+<P>Primerament es mostren les servides,
+després les que es troben esperant a la cua i finalment les que
+encara no han arribat.</P>
+<P>Mentre la simulació està aturada,
+amb el botó dret sobre qualsevol petició, es mostra un menú
+contextual que permet modificar-la i esborrar-la.</P>
+<P ALIGN=RIGHT><A NAME="disk_set"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4><B>: Configuració :</B></H4>
+<P>Estableix el comportament de la
+simulació:</P>
+<UL>
+	<LI><I>Posició
+	inicial del capçal</I>: L'usuari pot seleccionar a quin dels
+	sectors estarà el capçal inicialment (Valors : 0 - 192). </LI> 
+	<LI>Algorisme: 
+	<UL>
+		<LI><I>FIFO</I>,
+		Primer en entrar primer en sortir. </LI> 
+		<LI><I>LIFO</I>,
+		Últim en entrar primer en sortir. </LI> 
+		<LI><I>STF</I>,
+		Primer el temps de cerca més curt. </LI> 
+		<LI><I>SCAN.</I></LI> 
+		<LI><I>C-SCAN</I>, SCAN circular. </LI> 
+		<LI><I>LOOK.</I></LI> 
+		<LI><I>C-LOOK</I>, LOOK circular. </LI> 
+	</UL></LI> 
+</UL>
+<P>Només es pot accedir a la
+configuració mentre la simulació està aturada</P>
+<P ALIGN=RIGHT><A NAME="disk_new"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4><B>: Afegir petició :</B></H4>
+<P>Només es poden afegir peticions
+mentre la simulació està aturada, per a cada nova petició cal
+introduir la següent informació: 
+</P>
+<UL>
+	<LI><I>Sector,</I>
+	número de sector sobre el qual es genera la petició (Valors: 1 -
+	192).</LI> 
+	<LI><I>Retard,</I>
+	moment en que la petició entrarà a la cua de peticions, si és 0
+	s'afegirà directament a la cua, en cas contrari s'afegirà amb el
+	retard indicat (Valors: 1 - 100). </LI> 
+	<LI><I>Color,</I> color amb el qual
+	es dibuixaran els elements gràfics relacionats amb la petició.</LI> 
+</UL>
+<P>Addicionalment el sistema mostra el
+cilindre corresponent al sector indicat.</P>
+<H3><A NAME="common"></A><B>Tasques comuns</B></H3>
+<P ALIGN=RIGHT><A NAME="open_save"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Obrir i desar simulacions :</H4>
+<P>Mentre la
+simulació està aturada els usuaris poden desar les simulacions que
+han creat i obrir-les posteriorment per completar-les, revisar-les,
+etc...</P>
+<P>Es desen tots els processos, tant de
+la cua de preparats com de la taula de processos entrants, i les
+dades de configuració</P>
+<p>No és possible obrir o desar simulacions si s'executa l'aplicació 
+a través de l'Applet degut a limitacions de seguretat de java.</p>
+<P ALIGN=RIGHT><A NAME="time"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4><B>: Control de temps :</B></H4>
+<P>Permet gestionar el progrés de la
+simulació, avanç normal, avanç pas a pas (una unitat de temps cada
+vegada), aturar o reiniciar la simulació.</P>
+<P>Addicionalment es pot variar la
+velocitat, entre 0,5 segons i 2 segons per cada unitat de temps. 
+</P>
+<P>En tot moment es mostra el temps
+actual de la simulació.</P>
+<P ALIGN=RIGHT><A NAME="examples"></A><A NAME="scheduling_examples"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H2>Exemples disponibles</H2>
+<H3><B>Exemples
+de planificació de processos</B></H3>
+<TABLE DIR="LTR" ALIGN=LEFT WIDTH=100% BORDER=1 CELLPADDING=2 CELLSPACING=2>
+	<TR class="tablehead">
+		<TD COLSPAN=3>Descripció</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Exemple simple de planificació
+			FIFO</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_sch01htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_sch01"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Planificació SJF no expulsiu</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_sch02htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_sch02"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Planificació per Prioritat
+			expulsiu</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_sch03htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_sch03"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Planificació Round Robin (quantum
+			: 2)</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_sch04htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_sch04"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Planificació multiprogramació amb
+			E/S</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_sch05htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_sch05"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Planificació monoprogramació amb
+			E/S</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_sch06htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_sch06"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=RIGHT><A NAME="memory_examples"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H3><B>Exemples de gestió de memòria</B></H3>
+<TABLE DIR="LTR" ALIGN=LEFT WIDTH=100% BORDER=1 CELLPADDING=2 CELLSPACING=2>
+	<TR class="tablehead">
+		<TD COLSPAN=3>Descripció</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Gestió de memòria contigua, amb
+			particions de mida fixada (primer ajust)</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_mem01htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_mem01"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Gestió de memòria contigua, amb
+			particions de mida fixada (millor ajust)</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_mem02htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_mem02"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Gestió de memòria contigua, amb
+			particions de mida variable (Compactació)</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_mem03htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_mem03"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Gestió de memòria contigua, amb
+			particions de mida variable (Intercanvi)</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_mem04htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_mem04"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Paginació</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_mem05htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_mem05"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Segmentació, càrrega parcial de
+			processos a memòria</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_mem06htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_mem06"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+</TABLE><P ALIGN=RIGHT><a name="filesystem_examples"></a><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H3>Exemples de gestió del sistema de fitxers</H3>
+<TABLE DIR="LTR" ALIGN=LEFT WIDTH=100% BORDER=1 CELLPADDING=2 CELLSPACING=2>
+	<TR class="tablehead">
+		<TD COLSPAN=3>Descripció</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Llista enllaçada amb FAT. Objectes
+			del sistema de fitxers</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_fs01htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_fs01"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Llista enllaçada amb FAT. Mida del
+			bloc gran 
+			</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_fs02htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_fs02"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Accés indexat (UNIX). Referències
+			a i-nodes</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_fs03htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_fs03"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Accés indexat (UNIX). Indireccions</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_fs04htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_fs04"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+</TABLE><P ALIGN=RIGHT><a name="disk_examples"></a><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H3>Exemples polítiques de planificació de discs</H3>
+<TABLE DIR="LTR" ALIGN=LEFT WIDTH=100% BORDER=1 CELLPADDING=2 CELLSPACING=2>
+	<TR class="tablehead">
+		<TD COLSPAN=3>
+			Descripció
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>La planificació justa. FIFO</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_disk01htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_disk01"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Exemple de planificació STF.
+			Inanició</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_disk02htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_disk02"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>L'ascensor (SCAN)</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_disk03htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_disk03"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>L'ascensor millorat 1. SCAN
+			circular</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_disk04htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_disk04"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>L'ascensor millorat 2. LOOK
+			circular</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_disk05htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#s_disk05"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+</TABLE>
+<P ALIGN=RIGHT><A NAME="exercises"></A><A NAME="scheduling_exercises"></A>
+<A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H2>Exercicis disponibles </H2>
+<H3>Exercicis de planificació de processos</H3>
+<TABLE DIR="LTR" ALIGN=LEFT WIDTH=100% BORDER=1 CELLPADDING=2 CELLSPACING=2>
+	<TR class="tablehead">
+		<TD COLSPAN=3>
+			Descripció
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Ordre de la cua de preparats</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#e_sch01htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#e_sch01"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Multiprogramació o
+			monoprogramació?</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#e_sch02htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#e_sch02"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Diferències entre una planificació
+			expulsiva i no expulsiva</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#e_sch03htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#e_sch03"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Comparativa rendiment algorismes de
+			planificació</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#e_sch04htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#e_sch04"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+</TABLE><P ALIGN=RIGHT><a name="memory_exercises"></a><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H3>Exercicis de gestió de memòria</H3>
+<TABLE DIR="LTR" ALIGN=LEFT WIDTH=100% BORDER=1 CELLPADDING=2 CELLSPACING=2>
+	<TR BGCOLOR="#dddddd">
+		<TD class="tablehead" colspan="3">
+			Descripció
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Particions de mida fixada,
+			polítiques d'assignació</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#e_mem01htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#e_mem01"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Particions de mida variable,
+			traducció d'adreces</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#e_mem02htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#e_mem02"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Paginació</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#e_mem03htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#e_mem03"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Segmentació</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#e_mem04htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#e_mem04"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+</TABLE><P ALIGN=RIGHT><a	name="filesystem_exercises"></a><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H3>Exercicis del Sistema de Fitxers</H3>
+<TABLE DIR="LTR" ALIGN=LEFT WIDTH=100% BORDER=1 CELLPADDING=2 CELLSPACING=2>
+	<TR class="tablehead">
+		<TD COLSPAN=3>
+			Descripció
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Llista enllaçada, FAT</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#e_fs01htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#e_fs01"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Accés indexat, UNIX</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#e_fs02htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#e_fs02"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+</TABLE><P ALIGN=RIGHT><a name="disk_exercises"></a><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H3>Exercicis Planificació de Disc</H3>
+<TABLE DIR="LTR" ALIGN=LEFT WIDTH=100% BORDER=1 CELLPADDING=2 CELLSPACING=2>
+	<TR class="tablehead">
+		<TD COLSPAN=3>
+			Descripció
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<P>Comparativa algorismes</P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#e_disk01htm"><IMG SRC="img/view.png" BORDER=0></A></P>
+		</TD>
+		<TD WIDTH=40>
+			<P ALIGN=CENTER><A HREF="#e_disk01"><IMG SRC="img/open.png" BORDER=0></A></P>
+		</TD>
+	</TR>
+</TABLE><BR><BR>
+</BODY>
+</HTML>

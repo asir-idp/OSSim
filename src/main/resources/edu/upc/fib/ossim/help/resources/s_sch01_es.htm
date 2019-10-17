@@ -1,0 +1,43 @@
+﻿<html>
+<head><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Ejemplo simple de planificación FIFO</h3>
+<hr>
+<p>Procesos de diferente duración en la cola de preparados, los
+procesos sólo tienen ráfagas de CPU.</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td>Proceso</td>
+		<td>Duración<br>
+		ráfaga<br>
+		(CPU)</td>
+	</tr>
+	<tr>
+		<td>P1</td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<td>P2</td>
+		<td>4</td>
+	</tr>
+	<tr>
+		<td>P3</td>
+		<td>7</td>
+	</tr>
+	<tr>
+		<td>P4</td>
+		<td>3</td>
+	</tr>
+</table>
+<p>Llegan en el orden de la tabla, todos a tiempo 0.</p>
+<p>Observaciones:</p>
+<ul>
+	<li>Se sitúan a la cola en el orden de llegada</li>
+	<li>Se ejecutan siguiendo este orden</li>
+</ul>
+</body>
+</html>

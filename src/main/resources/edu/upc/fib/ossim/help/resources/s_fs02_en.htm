@@ -1,0 +1,118 @@
+﻿<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Example: Linked Allocation with FAT (block size: 4 units)</h3>
+<hr>
+<p>In this example a folder tree is created with different types of
+file system objects: folders, files and links.</p>
+<p><b>Reminder 1:</b> the folders' color is green and the links are blue.
+The files color is defined when created.</p>
+<p><b>Reminder 2:</b> In the simulation the folder size is 1 block,
+while the links do not occupy disk space, they are simply entries in its
+folder data.</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td colspan="4">Tree</td>
+		<td>Type</td>
+		<td>Size <br>
+		Units</td>
+		<td>Blocks</td>
+	</tr>
+	<tr>
+		<td>C:</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Folder</td>
+		<td>1</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>folder1</td>
+		<td></td>
+		<td></td>
+		<td>Folder</td>
+		<td>1</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>file1.txt</td>
+		<td></td>
+		<td>File</td>
+		<td>101</td>
+		<td>26</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>file2.txt</td>
+		<td></td>
+		<td>File</td>
+		<td>200</td>
+		<td>50</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>folder2</td>
+		<td></td>
+		<td></td>
+		<td>Folder</td>
+		<td>1</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>file3.txt</td>
+		<td></td>
+		<td>File</td>
+		<td>35</td>
+		<td>9.</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>Folder3</td>
+		<td></td>
+		<td>Folder</td>
+		<td>1</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>file4.txt</td>
+		<td>File</td>
+		<td>120</td>
+		<td>30</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>link1</td>
+		<td></td>
+		<td>Soft link<br>
+		(to file1.txt)</td>
+		<td>0</td>
+		<td>0</td>
+	</tr>
+</table>
+<p>Block size is 4 units.</p>
+<p>Comments:</p>
+<ul>
+	<li>The last block of files &quot;file1.txt&quot; and
+	&quot;file3.txt&quot; is not full, but the extra space can not be
+	exploited, entire blocks are used</li>
+	<li>(Compared with Example 1) Folders contain the same information
+	but take up much more space, in this example 4 units</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link REL=StyleSheet HREF="resources.css" TYPE="text/css">
+</head>
+<body>
+<h3>Exercici. Particions de mida variable, traducció d'adreces</h3>
+<hr></hr>
+<h4>Enunciat.</h4>
+<p class="settings">La memòria del sistema és 64 unitats, el Sistema Operatiu ocupa 4 unitats. 
+Els processos es carreguen en l'ordre de la taula de processos.</p>
+<p>Donada la  taula de  processos de l'exercici, respon a les preguntes:  </p>
+<ol>
+<li>Omple la taula indicant a quina partició es carrega cada procés segons la política 
+d'assignació :
+<table>
+<tr class="tablehead"><td>@inici<br>partició</td><td>Primer Ajust</td><td>Millor Ajust</td><td>Pitjor Ajust</td></tr>
+<tr><td>@4</td><td></td><td></td><td></td></tr>
+<tr><td>@14</td><td></td><td></td><td></td></tr>
+<tr><td>@19</td><td></td><td></td><td></td></tr>
+<tr><td>@23</td><td></td><td></td><td></td></tr>
+<tr><td>@38</td><td></td><td></td><td></td></tr>
+<tr><td>@48</td><td></td><td></td><td></td></tr>
+</table>
+</li>
+<li>Quina és la fórmula que permet conèixer l'adreça física corresponent a 
+l'adreça lògica d'un procés en gestió de memòria contigua?<br></li>
+<li>Indica l'adreça física corresponent dels processos de la taula. Si l'adreça no 
+correspon a l'espai d'adreces lògiques del procés indica  <i>error </i>
+<table>
+<tr class="tablehead"><td>Procés</td><td>@adreça<br>lògica</td><td>@adreça<br>física</td></tr>
+<tr><td>P1</td><td>@3</td><td></td></tr>
+<tr><td>P1</td><td>@6</td><td></td></tr>
+<tr><td>P3</td><td>@0</td><td></td></tr>
+<tr><td>P5</td><td>@10</td><td></td></tr>
+</table>
+</li></ol>
+<h4>Dades. </h4>
+<table>
+<tr class="tablehead"><td>Procés</td><td>Mida<br>(Unitats)</td><td>Durada<br>(Temps)</td></tr>
+<tr><td>P1</td><td>5</td><td>&#8734;</td></tr>
+<tr><td>P2</td><td>8</td><td>&#8734;</td></tr>
+<tr><td>P3</td><td>3</td><td>&#8734;</td></tr>
+<tr><td>P4</td><td>15</td><td>&#8734;</td></tr>
+<tr><td>P5</td><td>2</td><td>&#8734;</td></tr>
+<tr><td>P6</td><td>20</td><td>&#8734;</td></tr>
+</table>
+<p>Es carreguen a memòria en l'ordre de la taula.</p>
+</body>
+</html>

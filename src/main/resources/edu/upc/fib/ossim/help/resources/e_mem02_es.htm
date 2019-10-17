@@ -1,0 +1,145 @@
+﻿<html>
+<head><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Ejercicio. Particiones de tamaño variable, traducción de
+direcciones</h3>
+<hr>
+<h4>Enunciado.</h4>
+<p class="settings">La memoria del sistema es 64 unidades, el
+Sistema Operativo ocupa 4 unidades. Los procesos se cargan en el orden
+de la tabla de procesos.</p>
+<p>Dada la tabla de procesos del ejercicio, responde a las
+preguntas:</p>
+<ol>
+	<li>Rellena la tabla indicando en qué partición se carga cada
+	proceso según la política de asignación:
+	<table>
+		<tr class="tablehead">
+			<td>@ Inicio<br>
+			partición</td>
+			<td>Primer Ajuste</td>
+			<td>Mejor Ajuste</td>
+			<td>Peor Ajuste</td>
+		</tr>
+		<tr>
+			<td>@ 4</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>@ 14</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>@ 19</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>@ 23</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>@ 38</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>@ 48</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	</li>
+	<li>¿Cuál es la fórmula que permite conocer la dirección física
+	correspondiente a la dirección lógica de un proceso en gestión de
+	memoria contigua?<br>
+	</li>
+	<li>Indica la dirección física correspondiente de los procesos de
+	la tabla. Si la dirección no corresponde al espacio de direcciones
+	lógicas del proceso indica <i>error</i>
+	<table>
+		<tr class="tablehead">
+			<td>Proceso</td>
+			<td>@ Dirección<br>
+			lógica</td>
+			<td>@ Dirección<br>
+			física</td>
+		</tr>
+		<tr>
+			<td>P1</td>
+			<td>@ 3</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>P1</td>
+			<td>@ 6</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>P3</td>
+			<td>@ 0</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>P5</td>
+			<td>@ 10</td>
+			<td></td>
+		</tr>
+	</table>
+	</li>
+</ol>
+<h4>Datos.</h4>
+<table>
+	<tr class="tablehead">
+		<td>Proceso</td>
+		<td>Tamaño<br>
+		(Unidades)</td>
+		<td>Duración<br>
+		(Tiempo)</td>
+	</tr>
+	<tr>
+		<td>P1</td>
+		<td>5.</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P2</td>
+		<td>8.</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P3</td>
+		<td>3</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P4</td>
+		<td>15</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P5</td>
+		<td>2</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P6</td>
+		<td>20</td>
+		<td>∞</td>
+	</tr>
+</table>
+<p>Se cargan en memoria en el orden de la tabla.</p>
+</body>
+</html>

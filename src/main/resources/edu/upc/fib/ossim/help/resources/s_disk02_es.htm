@@ -1,0 +1,85 @@
+﻿<html>
+<head><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Ejemplo. Ejemplo de planificación STF. Inanición</h3>
+<hr>
+<p>Se sirven primero las solicitudes más cercanas al cabezal, esto
+puede provocar que mientras lleguen peticiones cercanas al cabezal, las
+que se encuentren más alejadas no se sirvan (Inanición)</p>
+<p><b>Recordatorio:</b> La geometría del disco de la simulación es:
+un plato, 16 cilindros, 12 sectores por cilindro, en total 192 sectores
+o bloques de datos.</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td>Sector</td>
+		<td>Cilindro</td>
+		<td>Retraso</td>
+	</tr>
+	<tr>
+		<td>170</td>
+		<td>14</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>150</td>
+		<td>12</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>120</td>
+		<td>10</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>40</td>
+		<td>3</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td>20</td>
+		<td>1</td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>35</td>
+		<td>2</td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>0</td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<td>10</td>
+		<td>0</td>
+		<td>8</td>
+	</tr>
+	<tr>
+		<td>50</td>
+		<td>4</td>
+		<td>15</td>
+	</tr>
+	<tr>
+		<td>0</td>
+		<td>0</td>
+		<td>15</td>
+	</tr>
+</table>
+<p>El cabezal está posicionado inicialmente en el sector 50
+(cilindro 4).</p>
+<p>Las solicitudes llegan en el orden de la tabla, según el retraso
+indicado.</p>
+<p>Observaciones:</p>
+<ul>
+	<li>Las primeras solicitudes que se encuentran en cilindros
+	internos, no se sirven mientras llegan nuevas solicitudes cercanas al
+	cabezal</li>
+	<li>Esta situación podría continuar indefinidamente</li>
+</ul>
+</body>
+</html>

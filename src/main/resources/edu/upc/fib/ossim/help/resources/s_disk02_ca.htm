@@ -1,0 +1,35 @@
+<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link REL=StyleSheet HREF="resources.css" TYPE="text/css">
+</head>
+<body>
+<h3>Exemple. Exemple de planificació STF. Inanició</h3>
+<hr></hr>
+<p>Es serveixen primer les sol·licituds més properes al capçal, això pot provocar que mentre arribin peticions 
+properes al capçal, les que es trobin més allunyades no es serviran (Inanició)</p>
+<p><b>Recordatori</b>: La geometria del disc de la simulació és: un plat, 16 cilindres, 12 sectors per cilindre, en total 192 sectors o blocs de dades.</p>
+<br>
+<table>
+<tr class="tablehead"><td>Sector</td><td>Cilindre</td><td>Retard</td></tr>
+<tr><td>170</td><td>14</td><td>0</td></tr>
+<tr><td>150</td><td>12</td><td>0</td></tr>
+<tr><td>120</td><td>10</td><td>0</td></tr>
+<tr><td>40</td><td>3</td><td>1</td></tr>
+<tr><td>20</td><td>1</td><td>2</td></tr>
+<tr><td>35</td><td>2</td><td>5</td></tr>
+<tr><td>2</td><td>0</td><td>6</td></tr>
+<tr><td>10</td><td>0</td><td>8</td></tr>
+<tr><td>50</td><td>4</td><td>15</td></tr>
+<tr><td>0</td><td>0</td><td>15</td></tr>
+</table>
+<p>El capçal està posicionat inicialment al sector 50 (cilindre 4).</p>
+<p>Les sol·licituds arriben en l'ordre de la taula, segons el retard indicat.</p>
+<p>Observacions:</p>
+<ul>
+<li>Les primeres sol·licituds que es troben a cilindres interns, no es serveixen mentre arriben 
+noves sol·licituds pròximes al capçal</li>
+<li>Aquesta situació podria continuar indefinidament</li>
+</ul>
+</body>
+</html>

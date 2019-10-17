@@ -1,0 +1,48 @@
+﻿<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Example: Fair scheduling. FIFO</h3>
+<hr>
+<p>Requests for disk sectors are served in strict arrival order.</p>
+<p><b>Reminder</b>: disk geometry is one platter, 16 cylinders, 12
+sectors per cylinder, 192 sectors in total.</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td>Sector</td>
+		<td>Cylinder</td>
+	</tr>
+	<tr>
+		<td>100</td>
+		<td>8</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>150</td>
+		<td>12</td>
+	</tr>
+	<tr>
+		<td>23</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td>120</td>
+		<td>10</td>
+	</tr>
+</table>
+<p>The head is initially positioned at sector 0 (Cylinder 0).</p>
+<p>All requests arrive in the table order at time 0.</p>
+<p>Comments:</p>
+<ul>
+	<li>The head moves always looking for the next request</li>
+	<li>The head goes through cylinders containing requests, but not
+	served because they are not the ones been searched</li>
+</ul>
+</body>
+</html>

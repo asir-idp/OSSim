@@ -1,0 +1,129 @@
+﻿<html>
+<head><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Ejercicio. Paginación</h3>
+<hr>
+<h4>Enunciado.</h4>
+<p class="settings">La memoria del sistema es 64 unidades, el
+Sistema Operativo ocupa 4 unidades. Los procesos se cargan en el orden
+de la tabla de procesos. El tamaño de la página es 2 unidades.</p>
+<p>Dada la tabla de procesos del ejercicio, responde a las
+preguntas:</p>
+<ol>
+	<li>Crea la tabla de páginas de cada proceso al final de la
+	simulación:
+	<table>
+		<tr class="tablehead">
+			<td colspan="3">Proceso ...</td>
+		</tr>
+		<tr class="tablehead">
+			<td>Página</td>
+			<td>Marco</td>
+			<td>Bit validez</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td colspan="3">etc ...</td>
+		</tr>
+	</table>
+	</li>
+	<li>¿Cuál es la fórmula que permite conocer la dirección física
+	correspondiente a la dirección lógica de un proceso en gestión de
+	memoria paginada?<br>
+	</li>
+	<li>Si se mueven a intercambio las siguientes páginas: P1 página
+	2, P3 páginas 0 y 3 <br>
+	Indica la dirección física correspondiente de los procesos de la tabla.
+	Si la dirección no corresponde al espacio de direcciones lógicas del
+	proceso indica <i>error,</i> y si la la dirección está a una página en
+	intercambio indica <i>error de página</i>
+	<table>
+		<tr class="tablehead">
+			<td>Proceso</td>
+			<td>@ Dirección<br>
+			lógica</td>
+			<td>@ Dirección<br>
+			física</td>
+		</tr>
+		<tr>
+			<td>P1</td>
+			<td>@ 3</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>P1</td>
+			<td>@ 6</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>P3</td>
+			<td>@ 0</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>P3</td>
+			<td>@ 8</td>
+			<td></td>
+		</tr>
+	</table>
+	</li>
+</ol>
+<h4>Datos.</h4>
+<table>
+	<tr class="tablehead">
+		<td>Proceso</td>
+		<td>Dimensiones</td>
+		<td>Duración<br>
+		(Tiempo)</td>
+	</tr>
+	<tr>
+		<td>P1</td>
+		<td>5 u.</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P2</td>
+		<td>4 u.</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P3</td>
+		<td>11 u.</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P4</td>
+		<td>5 u.</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P5</td>
+		<td>7 u.</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P6</td>
+		<td>3 u.</td>
+		<td>∞</td>
+	</tr>
+</table>
+<p>Se cargan en memoria en el orden de la tabla.</p>
+</body>
+</html>

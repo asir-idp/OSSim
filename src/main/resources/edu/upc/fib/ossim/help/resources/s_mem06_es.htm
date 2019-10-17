@@ -1,0 +1,106 @@
+﻿<html>
+<head><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Ejemplo. Segmentación, carga parcial de procesos en memoria</h3>
+<hr>
+<p>Los procesos se dividen en segmentos, cada segmento puede tener
+un tamaño diferente. Los segmentos se cargan en memoria
+independientemente, se crea una partición del tamaño exacto del
+segmento. La división es funcional y se basa en la estructura lógica del
+proceso: datos, pila, código, etc ...</p>
+<p>No necesariamente todos los segmentos tienen que estar cargados en
+memoria para que el programa funcione, mientras un segmento no se
+utiliza puede estar en el espacio de intercambio.</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td>Proceso</td>
+		<td>Tamaño<br>
+		total<br>
+		(Unidades)</td>
+		<td>Segmento</td>
+		<td>Tamaño<br>
+		(Unidades)</td>
+		<td>Cargado<br>
+		inicialmente</td>
+	</tr>
+	<tr>
+		<td>P1</td>
+		<td>20</td>
+		<td>Código</td>
+		<td>2</td>
+		<td>Si</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td>Datos</td>
+		<td>10</td>
+		<td>Si</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td>Pila</td>
+		<td>8</td>
+		<td>No</td>
+	</tr>
+	<tr>
+		<td>P2</td>
+		<td>20</td>
+		<td>Código</td>
+		<td>5</td>
+		<td>Si</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td>Datos</td>
+		<td>14</td>
+		<td>No</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td>Pila</td>
+		<td>1</td>
+		<td>Si</td>
+	</tr>
+	<tr>
+		<td>P3</td>
+		<td>40</td>
+		<td>Código</td>
+		<td>10</td>
+		<td>Si</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td>Datos</td>
+		<td>20</td>
+		<td>Si</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td>Pila</td>
+		<td>10</td>
+		<td>Si</td>
+	</tr>
+</table>
+<p>Se cargan en memoria en el orden de la tabla. La memoria tiene un
+tamaño de 64 unidades, el Sistema Operativo ocupa 4 unidades</p>
+<p>Observaciones:</p>
+<ul>
+	<li>No hay fragmentación interna, las particiones siempre son del
+	tamaño del segmento</li>
+	<li>El tamaño total de los procesos es 80 unidades y es superior a
+	la memoria disponible (60 unidades), pero todos los procesos están
+	cargados en memoria total o parcialmente, y por tanto podrían estar
+	todos funcionando</li>
+</ul>
+</body>
+</html>

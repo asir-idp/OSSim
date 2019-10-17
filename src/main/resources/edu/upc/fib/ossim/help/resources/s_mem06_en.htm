@@ -1,0 +1,104 @@
+﻿<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Example: Segmentation, partial allocation</h3>
+<hr>
+<p>The processes are divided into segments, each segment can be a
+different size. The segments are loaded into memory independently, a
+partition of the exact segment size is created. The division is
+functional and is based on the logical process structure: data, stack,
+code, etc ...</p>
+<p>Not necessarily all the segments have to be loaded into memory
+for the program to work, while a segment is not used it can be swapped out.</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td>Process</td>
+		<td>Total<br>
+		Size<br>
+		Units</td>
+		<td>Segment</td>
+		<td>Size<br>
+		Units</td>
+		<td>Initially <br>
+		allocated</td>
+	</tr>
+	<tr>
+		<td>P1</td>
+		<td>20</td>
+		<td>Code</td>
+		<td>2</td>
+		<td>YES</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td>Data</td>
+		<td>10</td>
+		<td>YES</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td>Stack</td>
+		<td>8</td>
+		<td>NO</td>
+	</tr>
+	<tr>
+		<td>P2</td>
+		<td>20</td>
+		<td>Code</td>
+		<td>5</td>
+		<td>YES</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td>Data</td>
+		<td>14</td>
+		<td>NO</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td>Stack</td>
+		<td>1</td>
+		<td>YES</td>
+	</tr>
+	<tr>
+		<td>P3</td>
+		<td>40</td>
+		<td>Code</td>
+		<td>10</td>
+		<td>YES</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td>Data</td>
+		<td>20</td>
+		<td>YES</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td>Stack</td>
+		<td>10</td>
+		<td>YES</td>
+	</tr>
+</table>
+<p>Processes are allocated in the table order. Memory size is 64
+units, Operating System takes 4 units</p>
+<p>Comments:</p>
+<ul>
+	<li>There is no internal fragmentation, partitions are always of
+	the segment size</li>
+	<li>The total size is 80 units and processes exceeds the available
+	memory (60 units), but all processes are allocated completely or
+	partially, and therefore they may all be working</li>
+</ul>
+</body>
+</html>

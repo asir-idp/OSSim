@@ -1,0 +1,56 @@
+﻿<html>
+<head><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Ejemplo. El ascensor mejorado 2. LOOK circular</h3>
+<hr>
+<p>El cabezal se mueve independientemente de las solicitudes
+escaneando en un único sentido, de los cilindros exteriores a los
+interiores, y sólo llega hasta la petición más interna, las solicitudes
+son servidas a medida que las encuentra.</p>
+<p><b>Recordatorio:</b> La geometría del disco de la simulación es:
+un plato, 16 cilindros, 12 sectores por cilindro, en total 192 sectores
+o bloques de datos.</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td>Sector</td>
+		<td>Cilindro</td>
+	</tr>
+	<tr>
+		<td>100</td>
+		<td>8</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>150</td>
+		<td>12</td>
+	</tr>
+	<tr>
+		<td>23</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td>120</td>
+		<td>10</td>
+	</tr>
+</table>
+<p>El cabezal está posicionado inicialmente en el sector 90
+(cilindro 7), moviéndose en dirección de los cilindros más internos.</p>
+<p>Las solicitudes llegan en el orden de la tabla, todas a tiempo 0.</p>
+<p>Observaciones:</p>
+<ul>
+	<li><i>(Mejora respecto SCAN)</i> La solicitud más interna está en
+	el cilindro 12, cuando la sirve ya no continúa hasta el último cilindro</li>
+	<li><i>(Mejora respecto SCAN)</i> En el momento que llega al
+	último cilindro, como acaba de servir las solicitudes más internas y
+	las que quedan están los cilindros más externos, desplaza el cabezal
+	directamente al inicio y vuelve a empezar</li>
+</ul>
+</body>
+</html>

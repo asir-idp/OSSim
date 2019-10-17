@@ -1,0 +1,79 @@
+﻿<html>
+<head><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Ejemplo. Gestión de memoria contigua, con particiones de tamaño
+variable (Intercambio)</h3>
+<hr>
+<p>La memoria inicialmente no tiene particiones, las particiones se
+crean a medida que se cargan los procesos y son de la medida exacta de
+estos, después las particiones que quedan libres (si acaba un proceso
+por ejemplo) son ocupadas por nuevos procesos, si el proceso tiene un
+tamaño menor que la partición, ésta se divide en dos partes, una de la
+medida exacta del proceso y el otro la parte restante.</p>
+<p>La memoria tiene un tamaño finito, sólo un número limitado de
+procesos pueden estar en memoria a la vez, pero el <b>espacio de
+intercambio</b> (swap, memoria de apoyo) permite mover algunos de estos
+procesos, generalmente los menos activos, y dejar espacio a memoria para
+la entrada de nuevos. Los procesos en intercambio se vuelven a cargar en
+memoria cuando son necesarios y otros ocupan su lugar</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td>Proceso</td>
+		<td>Tamaño<br>
+		(Unidades)</td>
+	</tr>
+	<tr>
+		<td>P1</td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<td>P2</td>
+		<td>8</td>
+	</tr>
+	<tr>
+		<td>P3</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>P4</td>
+		<td>15</td>
+	</tr>
+	<tr>
+		<td>P5</td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>P6</td>
+		<td>20</td>
+	</tr>
+	<tr>
+		<td>P7</td>
+		<td>8</td>
+	</tr>
+	<tr>
+		<td>P8</td>
+		<td>10</td>
+	</tr>
+</table>
+<p>Se cargan en memoria en el orden de la tabla.</p>
+<p>Observaciones:</p>
+<ul>
+	<li>No hay fragmentación interna, las particiones siempre son del
+	tamaño del proceso</li>
+	<li>Los dos últimos procesos (&quot;P7&quot; y &quot;P8&quot;) no
+	se pueden cargar porque la memoria está llena</li>
+	<li>Si se <b>mueve a intercambio (swap out)</b> algún proceso que
+	libere suficiente espacio se podrán cargar. Por ejemplo &quot;P2&quot;
+	y &quot;P4&quot; (botón derecho sobre el proceso, menú contextual)</li>
+	<li>Para volver a cargar los procesos que se encuentran en
+	intercambio hay que hacer espacio en la memoria, por ejemplo mover a
+	intercambio &quot;P6&quot;. Entonces &quot;P2&quot; y &quot;P4&quot;
+	pueden <b>volver a memoria (swap in)</b> (botón derecho sobre la
+	memoria, menú contextual)</li>
+</ul>
+</body>
+</html>

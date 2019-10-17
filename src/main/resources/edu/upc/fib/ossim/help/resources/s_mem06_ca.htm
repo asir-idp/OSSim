@@ -1,0 +1,37 @@
+<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link REL=StyleSheet HREF="resources.css" TYPE="text/css">
+</head>
+<body>
+<h3>Exemple. Segmentació, càrrega parcial de processos a memòria</h3>
+<hr></hr>
+<p>Els processos es divideixen en segments, cada segment pot tenir una mida diferent. 
+Els segments es carreguen a memòria independentment, es crea una partició 
+de la mida exacte del segment. La divisió és funcional i es basa en la estructura lògica 
+del procés: dades, pila, codi, etc...</p>
+<p>No necessàriament cal que tots els segments estiguin carregats a memòria per a que el 
+programa funcioni, mentre un segment no es fa servir pot estar a l'espai d'intercanvi. </p>
+<br>
+<table>
+<tr class="tablehead"><td>Procés</td><td>Mida<br>total<br>(Unitats)</td><td>Segment</td><td>Mida<br>(Unitats)</td><td>Carregat <br>inicialment</td></tr>
+<tr><td>P1</td><td>20</td><td>Codi</td><td>2</td><td>Si</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td><td>Dades</td><td>10</td><td>Si</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td><td>Pila</td><td>8</td><td>No</td></tr>
+<tr><td>P2</td><td>20</td><td>Codi</td><td>5</td><td>Si</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td><td>Dades</td><td>14</td><td>No</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td><td>Pila</td><td>1</td><td>Si</td></tr>
+<tr><td>P3</td><td>40</td><td>Codi</td><td>10</td><td>Si</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td><td>Dades</td><td>20</td><td>Si</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td><td>Pila</td><td>10</td><td>Si</td></tr>
+</table>
+<p>Es carreguen a memòria en l'ordre de la taula. La memòria té una mida de 64 unitats, el Sistema Operatiu ocupa 4 unitats</p>
+<p>Observacions:</p>
+<ul>
+<li>No hi ha fragmentació interna, les particions sempre són de la mida del segment</li>
+<li>La mida total dels processos és 80 unitats i és superior a la memòria disponible (60 unitats), 
+però tots els processos estan carregats a memòria total o parcialment, i per 
+tant podrien estar tots funcionant </li>
+</ul>
+</body>
+</html>

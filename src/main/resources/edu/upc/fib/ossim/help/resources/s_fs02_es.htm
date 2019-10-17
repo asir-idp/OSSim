@@ -1,0 +1,119 @@
+﻿<html>
+<head><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Ejemplo. Lista enlazada con FAT (tamaño del bloque: 4 unidades)</h3>
+<hr>
+<p>En el ejemplo se crea un árbol de directorios con los diferentes
+tipos de objetos del sistema de ficheros: directorios, ficheros y
+enlaces.</p>
+<p><b>Recordatorio 1:</b> El color de los directorios es verde y el
+de los enlaces azul. El color de los ficheros se define cuando se crean.</p>
+<p><b>Recordatorio 2:</b> En la simulación el tamaño de los
+directorios es 1 bloque, mientras que los enlaces no ocupan espacio de
+disco, simplemente son entradas de datos en su directorio.</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td colspan="4">Árbol</td>
+		<td>tipo</td>
+		<td>Tamaño <br>
+		(Unidades)</td>
+		<td>Bloques</td>
+	</tr>
+	<tr>
+		<td>C:</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Directorio</td>
+		<td>1</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>folder1</td>
+		<td></td>
+		<td></td>
+		<td>Directorio</td>
+		<td>1</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>file1.txt</td>
+		<td></td>
+		<td>Archivo</td>
+		<td>101</td>
+		<td>26</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>file2.txt</td>
+		<td></td>
+		<td>Archivo</td>
+		<td>200</td>
+		<td>50</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>folder2</td>
+		<td></td>
+		<td></td>
+		<td>Directorio</td>
+		<td>1</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>file3.txt</td>
+		<td></td>
+		<td>Archivo</td>
+		<td>35</td>
+		<td>9.</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>folder3</td>
+		<td></td>
+		<td>Directorio</td>
+		<td>1</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>file4.txt</td>
+		<td>Archivo</td>
+		<td>120</td>
+		<td>30</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>link1</td>
+		<td></td>
+		<td>Enlace<br>
+		(A file1.txt)</td>
+		<td>0</td>
+		<td>0</td>
+	</tr>
+</table>
+<p>El tamaño del bloque es 4 unidades.</p>
+<p>Observaciones:</p>
+<ul>
+	<li>El último bloque de los archivos &quot;file1.txt&quot; y
+	&quot;file3.txt&quot; no está lleno, pero el espacio sobrante no se
+	puede aprovechar, los bloques se utilizan enteros</li>
+	<li>(Comparado con el ejemplo 1) Los directorios contienen la
+	misma información pero ocupan mucho más, en este ejemplo 4 unidades</li>
+</ul>
+</body>
+</html>

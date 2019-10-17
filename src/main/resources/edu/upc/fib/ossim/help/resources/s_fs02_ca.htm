@@ -1,0 +1,38 @@
+<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link REL=StyleSheet HREF="resources.css" TYPE="text/css">
+</head>
+<body>
+<h3>Exemple. Llista enllaçada amb FAT (mida del bloc : 4 unitats) </h3>
+<hr></hr>
+<p>A l'exemple es crea un arbre de directoris amb els diferents tipus d'objectes del sistema de fitxers:
+directoris, fitxers i enllaços.</p>
+<p><b>Recordatori 1</b>: El color dels directoris és verd i el dels enllaços blau. El color dels fitxers 
+es defineix quan es creen.</p>
+<p><b>Recordatori 2</b>:  A la simulació la mida dels directoris és 1 bloc, mentre que els enllaços no ocupen
+espai de disc, simplement són entrades de dades al seu directori.</p>
+<br>
+<table>
+<tr class="tablehead"><td colspan="4">Arbre</td><td>tipus</td><td>Mida <br>(unitats)</td><td>Blocs</td></tr>
+<tr><td>C:</td><td></td><td></td><td></td><td>Directori</td><td>1</td><td>1</td></tr>
+<tr><td></td><td>folder1</td><td></td><td></td><td>Directori</td><td>1</td><td>1</td></tr>
+<tr><td></td><td></td><td>file1.txt</td><td></td><td>Fitxer</td><td>101</td><td>26</td></tr>
+<tr><td></td><td></td><td>file2.txt</td><td></td><td>Fitxer</td><td>200</td><td>50</td></tr>
+<tr><td></td><td>folder2</td><td></td><td></td><td>Directori</td><td>1</td><td>1</td></tr>
+<tr><td></td><td></td><td>file3.txt</td><td></td><td>Fitxer</td><td>35</td><td>9</td></tr>
+<tr><td></td><td></td><td>folder3</td><td></td><td>Directori</td><td>1</td><td>1</td></tr>
+<tr><td></td><td></td><td></td><td>file4.txt</td><td>Fitxer</td><td>120</td><td>30</td></tr>
+<tr><td></td><td></td><td>link1</td><td></td><td>Enllaç feble<br>(a file1.txt)</td><td>0</td><td>0</td></tr>
+</table>
+
+<p>La mida del bloc és 4 unitats.</p>
+<p>Observacions:</p>
+<ul>
+<li>L'últim bloc dels fitxers "file1.txt" i "file3.txt" no està ple, però l'espai sobrant no es pot aprofitar,
+els blocs s'utilitzen sencers </li>
+<li>(Comparat amb l'exemple 1) Els directoris contenen la mateixa informació però ocupen molt més, en aquest 
+exemple 4 unitats</li>
+</ul>
+</body>
+</html>

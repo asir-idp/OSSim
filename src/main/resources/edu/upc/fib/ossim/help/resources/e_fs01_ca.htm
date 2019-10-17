@@ -1,0 +1,45 @@
+<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link REL=StyleSheet HREF="resources.css" TYPE="text/css">
+</head>
+<body>
+<h3>Exercici. Llista enllaçada, FAT</h3>
+<hr></hr>
+<h4>Enunciat.</h4>
+<p class="settings">La memòria secundària te una mida de 4 x 1024 unitats, la mida del bloc és de 4 unitats.</p>
+<p class="settings">La memòria està inicialment buida, els objectes es creen en l'ordre de la taula. Les adreces 
+@0 fins a @127 estan reservades i no es poden fer servir.</p>
+<p>Donada la taula d'objectes del sistema de fitxers de l'exercici, respon a les preguntes:  </p>
+<ol>
+<li>Indica la mida en blocs dels diferents objectes i el seu primer bloc: 
+<table>
+<tr class="tablehead"><td>Objecte</td><td>Mida<br>(En blocs)</td><td>Bloc<br>Inicial</td></tr>
+<tr><td>C:</td><td></td><td></td></tr>
+<tr><td>folder1</td><td></td><td></td></tr>
+<tr><td>file1.txt</td><td></td><td></td></tr>
+<tr><td>file2.txt</td><td></td><td></td></tr>
+<tr><td>folder2</td><td></td><td></td></tr>
+<tr><td>file3.txt</td><td></td><td></td></tr>
+<tr><td>folder3</td><td></td><td></td></tr>
+<tr><td>file4.txt</td><td></td><td></td></tr>
+<tr><td>link1</td><td></td><td></td></tr>
+</table>
+</li>
+<li>Quina és la mida màxima d'un fitxer en aquest esquema? Quants blocs per a dades hi ha disponibles?<br></li>
+</ol>
+<h4>Dades. </h4>
+<table>
+<tr class="tablehead"><td colspan="4">Arbre</td><td>tipus</td><td>Mida <br>(unitats)</td></tr>
+<tr><td>C:</td><td></td><td></td><td></td><td>Directori</td><td>1</td></tr>
+<tr><td></td><td>folder1</td><td></td><td></td><td>Directori</td><td>1</td></tr>
+<tr><td></td><td></td><td>file1.txt</td><td></td><td>Fitxer</td><td>101</td></tr>
+<tr><td></td><td></td><td>file2.txt</td><td></td><td>Fitxer</td><td>200</td></tr>
+<tr><td></td><td>folder2</td><td></td><td></td><td>Directori</td><td>1</td></tr>
+<tr><td></td><td></td><td>file3.txt</td><td></td><td>Fitxer</td><td>35</td></tr>
+<tr><td></td><td></td><td>folder3</td><td></td><td>Directori</td><td>1</td></tr>
+<tr><td></td><td></td><td></td><td>file4.txt</td><td>Fitxer</td><td>120</td></tr>
+<tr><td></td><td></td><td>link1</td><td></td><td>Enllaç feble<br>(a file1.txt)</td><td>0</td></tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿<html>
+<head><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Ejemplo. La planificación justa. FIFO</h3>
+<hr>
+<p>Las solicitudes de sectores del disco son servidas en el orden
+estricto de llegada.</p>
+<p><b>Recordatorio:</b> La geometría del disco de la simulación es:
+un plato, 16 cilindros, 12 sectores por cilindro, en total 192 sectores
+o bloques de datos.</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td>Sector</td>
+		<td>Cilindro</td>
+	</tr>
+	<tr>
+		<td>100</td>
+		<td>8</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>150</td>
+		<td>12</td>
+	</tr>
+	<tr>
+		<td>23</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td>120</td>
+		<td>10</td>
+	</tr>
+</table>
+<p>El cabezal está posicionado inicialmente en el sector 0 (cilindro
+0).</p>
+<p>Las solicitudes llegan en el orden de la tabla, todas a tiempo 0.</p>
+<p>Observaciones:</p>
+<ul>
+	<li>El cabezal siempre se mueve buscando la siguiente solicitud</li>
+	<li>El cabezal pasa por cilindros que contienen solicitudes, pero
+	no las sirve porque no son la que busca</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link REL=StyleSheet HREF="resources.css" TYPE="text/css">
+</head>
+<body>
+<h3>Exercici. Paginació</h3>
+<hr></hr>
+<h4>Enunciat.</h4>
+<p class="settings">La memòria del sistema és 64 unitats, el Sistema Operatiu ocupa 4 unitats. 
+Els processos es carreguen en l'ordre de la taula de processos. La mida de la pàgina és 2 unitats.</p>
+<p>Donada la  taula de  processos de l'exercici, respon a les preguntes:  </p>
+<ol>
+<li>Crea la taula de pàgines de cada procés al final de la simulació:
+<table>
+<tr class="tablehead"><td colspan="3">Procés ...</td></tr>
+<tr class="tablehead"><td>Pàgina</td><td>Marc</td><td>Bit validesa</td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td></tr>
+<tr><td colspan="3">etc...</td></tr>
+</table>
+</li>
+<li>Quina és la fórmula que permet conèixer l'adreça física corresponent a 
+l'adreça lògica d'un procés en gestió de memòria paginada?<br></li>
+<li>Si es mouen a intercanvi les següents pàgines: P1 pàgina 2, P3 pàgines 0 i 3 <br>
+Indica l'adreça física corresponent dels processos de la taula. Si l'adreça no 
+correspon a l'espai d'adreces lògiques del procés indica <i>error</i>, i si la l'adreça està 
+a una pàgina a intercanvi indica <i>error de pàgina</i> 
+<table>
+<tr class="tablehead"><td>Procés</td><td>@adreça<br>lògica</td><td>@adreça<br>física</td></tr>
+<tr><td>P1</td><td>@3</td><td></td></tr>
+<tr><td>P1</td><td>@6</td><td></td></tr>
+<tr><td>P3</td><td>@0</td><td></td></tr>
+<tr><td>P3</td><td>@8</td><td></td></tr>
+</table>
+</li>
+</ol>
+<h4>Dades. </h4>
+<table>
+<tr class="tablehead"><td>Procés</td><td>Mida</td><td>Durada<br>(Temps)</td></tr>
+<tr><td>P1</td><td>5 u.</td><td>&#8734;</td></tr>
+<tr><td>P2</td><td>4 u.</td><td>&#8734;</td></tr>
+<tr><td>P3</td><td>11 u.</td><td>&#8734;</td></tr>
+<tr><td>P4</td><td>5 u.</td><td>&#8734;</td></tr>
+<tr><td>P5</td><td>7 u.</td><td>&#8734;</td></tr>
+<tr><td>P6</td><td>3 u.</td><td>&#8734;</td></tr>
+</table>
+<p>Es carreguen a memòria en l'ordre de la taula.</p>
+</body>
+</html>

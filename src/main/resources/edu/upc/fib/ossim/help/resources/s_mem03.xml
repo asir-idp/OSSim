@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<memory_manager>
+  <params>
+    <object management="VAR">
+      <memorySize>64</memorySize>
+      <soSize>4</soSize>
+      <pageSize>1</pageSize>
+      <policy>FF</policy>
+    </object>
+  </params>
+  <memory />
+  <programs_queue>
+    <object pid="1">
+      <name>P1</name>
+      <size>5</size>
+      <duration>5</duration>
+      <color>-6624263</color>
+    </object>
+    <object pid="3">
+      <name>P2</name>
+      <size>8</size>
+      <duration>4</duration>
+      <color>-5261338</color>
+    </object>
+    <object pid="4">
+      <name>P3</name>
+      <size>3</size>
+      <duration>3</duration>
+      <color>-3549271</color>
+    </object>
+    <object pid="5">
+      <name>P4</name>
+      <size>15</size>
+      <duration>-1</duration>
+      <color>-5441811</color>
+    </object>
+    <object pid="8">
+      <name>P5</name>
+      <size>2</size>
+      <duration>1</duration>
+      <color>-2033708</color>
+    </object>
+    <object pid="10">
+      <name>P6</name>
+      <size>20</size>
+      <duration>-1</duration>
+      <color>-3284582</color>
+    </object>
+    <object pid="11">
+      <name>P7</name>
+      <size>3</size>
+      <duration>-1</duration>
+      <color>-3940962</color>
+    </object>
+    <object pid="21">
+      <name>P8</name>
+      <size>10</size>
+      <duration>-1</duration>
+      <color>-6315056</color>
+    </object>
+  </programs_queue>
+</memory_manager>
+

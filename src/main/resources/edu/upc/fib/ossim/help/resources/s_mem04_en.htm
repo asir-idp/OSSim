@@ -1,0 +1,77 @@
+﻿<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Example: Contiguous memory management with variable-sized
+partitions (Swap)</h3>
+<hr>
+<p>The first memory is not partitioned, partitions are created as
+processes are loaded and have the same size of these, later partitions
+are free (when a process completes, for example) and are occupied by new
+processes, if a process is smaller than a partition, this is divided
+into two parts, the first one as large as the process and the other the
+remainder.</p>
+<p>Memory has a finite size, only a limited number of processes can
+be in memory at once, but the <b>swap space</b> (backing store) allows to
+keep some of these processes, generally the less active, and leave
+available memory for the new ones. Swapped out processes are allocated
+back into memory when needed.</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td>Process</td>
+		<td>Size:<br>
+		Units</td>
+	</tr>
+	<tr>
+		<td>P1</td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<td>P2</td>
+		<td>8</td>
+	</tr>
+	<tr>
+		<td>P3</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>P4</td>
+		<td>15</td>
+	</tr>
+	<tr>
+		<td>P5</td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>P6</td>
+		<td>20</td>
+	</tr>
+	<tr>
+		<td>P7</td>
+		<td>8</td>
+	</tr>
+	<tr>
+		<td>P8</td>
+		<td>10</td>
+	</tr>
+</table>
+<p>Processes are allocated in the table order.</p>
+<p>Comments:</p>
+<ul>
+	<li>There is no internal fragmentation, partitions are always of
+	the size of the process</li>
+	<li>The last two processes (&quot;P7&quot; and &quot;P8&quot;) can
+	not be loaded because memory is full</li>
+	<li>If some process is <b>swapped out)</b> that will free up
+	enough space to allocate. For example &quot;P2&quot; and &quot;P4&quot;
+	(right click on the process, pop up menu)</li>
+	<li>To allocate back processes that are swapped must make room in
+	memory, for example swapping &quot;P6&quot;. Then &quot;P2&quot; and
+	&quot;P4&quot; may be <b> swapped in</b> (right click on memory, pop up
+	menu)</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,65 @@
+﻿<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Preemptive Priority scheduling example</h3>
+<hr>
+<p>Different duration and priority processes in the ready queue,
+processes have only cpu bursts, a high priority process comes later</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td>Process</td>
+		<td>Burst<br>
+		duration<br>
+		(CPU)</td>
+		<td>Priority</td>
+		<td>Submission<br>
+		Time</td>
+	</tr>
+	<tr>
+		<td>P1</td>
+		<td>5</td>
+		<td>4</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>P2</td>
+		<td>4</td>
+		<td>1</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>P3</td>
+		<td>7</td>
+		<td>9</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>P4</td>
+		<td>3</td>
+		<td>1</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>P5</td>
+		<td>2</td>
+		<td class="highlight">10</td>
+		<td class="highlight">2</td>
+	</tr>
+</table>
+<p>All processes arrive in the table order, process &quot;P5&quot;
+arrive at time 2 and has priority 10.</p>
+<p>Comments:</p>
+<ul>
+	<li>Processes are queued and sorted according to its priority, a higher
+	value indicates a higher priority</li>
+	<li>At the time it arrives &quot;P5&quot; (Priority 10), is
+	running &quot;P3&quot; (priority 9)</li>
+	<li>Algorithm is preemptive and therefore &quot;P5&quot; replaces
+	&quot;P3&quot; and starts running</li>
+</ul>
+</body>
+</html>

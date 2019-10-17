@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<memory_manager>
+  <params>
+    <object management="FIX">
+      <memorySize>64</memorySize>
+      <soSize>4</soSize>
+      <pageSize>1</pageSize>
+      <policy>FF</policy>
+    </object>
+  </params>
+  <memory>
+    <object start="4">
+      <size>10</size>
+    </object>
+    <object start="14">
+      <size>5</size>
+    </object>
+    <object start="19">
+      <size>4</size>
+    </object>
+    <object start="23">
+      <size>15</size>
+    </object>
+    <object start="38">
+      <size>10</size>
+    </object>
+    <object start="48">
+      <size>16</size>
+    </object>
+  </memory>
+  <programs_queue>
+    <object pid="1">
+      <name>P1</name>
+      <size>5</size>
+      <duration>-1</duration>
+      <color>-1125919</color>
+    </object>
+    <object pid="2">
+      <name>P2</name>
+      <size>10</size>
+      <duration>-1</duration>
+      <color>-5263447</color>
+    </object>
+    <object pid="3">
+      <name>P3</name>
+      <size>3</size>
+      <duration>-1</duration>
+      <color>-3563059</color>
+    </object>
+  </programs_queue>
+</memory_manager>
+

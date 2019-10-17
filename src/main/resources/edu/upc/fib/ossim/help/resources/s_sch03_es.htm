@@ -1,0 +1,66 @@
+﻿<html>
+<head><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Ejemplo de planificación para Prioridad expulsivo</h3>
+<hr>
+<p>Procesos de diferentes duraciones y prioridades en la cola de
+preparados, los procesos sólo tienen ráfagas de CPU, un proceso muy
+prioritario llega con posterioridad a la cola</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td>Proceso</td>
+		<td>Duración<br>
+		ráfaga<br>
+		(CPU)</td>
+		<td>Prioridad</td>
+		<td>Inicio<br>
+		(Tiempo)</td>
+	</tr>
+	<tr>
+		<td>P1</td>
+		<td>5</td>
+		<td>4</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>P2</td>
+		<td>4</td>
+		<td>1</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>P3</td>
+		<td>7</td>
+		<td>9</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>P4</td>
+		<td>3</td>
+		<td>1</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>P5</td>
+		<td>2</td>
+		<td class="highlight">10</td>
+		<td class="highlight">2</td>
+	</tr>
+</table>
+<p>Llegan en el orden de la tabla, el proceso &quot;P5&quot; llega
+en el momento 2 y tiene prioridad 10.</p>
+<p>Observaciones:</p>
+<ul>
+	<li>Se sitúan a la cola ordenados según la prioridad de de cada
+	proceso, un valor mayor indica una prioridad mayor</li>
+	<li>En el momento que llega &quot;P5&quot; (prioridad 10), se
+	encuentra en ejecución &quot;P3&quot; (prioridad 9)</li>
+	<li>El algoritmo es expulsivo por lo tanto &quot;P5&quot; expulsa
+	&quot;P3&quot; y entra a ejecutarse</li>
+</ul>
+</body>
+</html>

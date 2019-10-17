@@ -1,0 +1,36 @@
+<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link REL=StyleSheet HREF="resources.css" TYPE="text/css">
+</head>
+<body>
+<h3>Exemple. Gestió de memòria contigua, amb particions de mida variable (Compactació)</h3>
+<hr></hr>
+<p>La memòria inicialment no té particions, les particions es creen a mesura que es carreguen
+ els processos i són de la mida exacta d'aquests, després les particions que queden lliures 
+ (si acaba un procés per exemple) són ocupades per nous processos, 
+ si el procés té una mida menor que la partició, aquesta es divideix en dues parts, 
+ una de la mida exacta del procés i l'altre la part restant.</p>
+<br>
+<table>
+<tr class="tablehead"><td>Procés</td><td>Mida<br>(Unitats)</td><td>Durada<br>(Temps)</td></tr>
+<tr><td>P1</td><td>5</td><td>5</td></tr>
+<tr><td>P2</td><td>8</td><td>4</td></tr>
+<tr><td>P3</td><td>3</td><td>3</td></tr>
+<tr><td>P4</td><td>15</td><td>&#8734;</td></tr>
+<tr><td>P5</td><td>2</td><td>1</td></tr>
+<tr><td>P6</td><td>20</td><td>&#8734;</td></tr>
+<tr><td>P7</td><td>3</td><td>&#8734;</td></tr>
+<tr><td>P8</td><td>10</td><td>&#8734;</td></tr>
+</table>
+<p>Es carreguen a memòria en l'ordre de la taula.</p>
+<p>Observacions:</p>
+<ul>
+<li>El procés "P7" es carrega en una partició alliberada per un procés finalitzat</li>
+<li>L'últim procés no es pot carregar donat que no hi ha cap partició disponible prou gran per encabir-lo, 
+en canvi en el conjunt de la memòria si hi ha prou espai</li>
+<li>Si es <b>compacta</b> la memòria (botó dret sobre la memòria, menú contextual), tot l'espai disponible s'agrupa en una única partició i l'últim procés 
+es pot carregar</li>
+</ul>
+</body>
+</html>

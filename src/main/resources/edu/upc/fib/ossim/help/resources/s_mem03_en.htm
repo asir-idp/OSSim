@@ -1,0 +1,79 @@
+﻿<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Example: Contiguous memory management with variable-sized
+partitions (Defragmentation)</h3>
+<hr>
+<p>The first memory is not partitioned, partitions are created as
+processes are loaded and have the same size of these, later partitions
+are free (when a process completes, for example) and are occupied by new
+processes, if a process is smaller than a partition, this is divided
+into two parts, the first one as large as the process and the other the
+remainder.</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td>Process</td>
+		<td>Size<br>
+		Units</td>
+		<td>Duration<br>
+		Time</td>
+	</tr>
+	<tr>
+		<td>P1</td>
+		<td>5</td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<td>P2</td>
+		<td>8</td>
+		<td>4</td>
+	</tr>
+	<tr>
+		<td>P3</td>
+		<td>3</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>P4</td>
+		<td>15</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P5</td>
+		<td>2</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td>P6</td>
+		<td>20</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P7</td>
+		<td>3</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P8</td>
+		<td>10</td>
+		<td>∞</td>
+	</tr>
+</table>
+<p>Processes are allocated in the table order.</p>
+<p>Comments:</p>
+<ul>
+	<li>The process &quot;P7&quot; is allocated into a partition
+	released by a completed process</li>
+	<li>The latest process can not be load because there is no available
+	partition large enough to accommodate it, however, on the whole memory
+	there is enough space</li>
+	<li>If memory is <b>defragmented </b> (right click on memory, pop
+	up menu), all available space is grouped into a single partition and
+	the latest process can be allocated</li>
+</ul>
+</body>
+</html>

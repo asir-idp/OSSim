@@ -1,0 +1,133 @@
+﻿<html>
+<head><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Ejemplo. Acceso indexado (UNIX). Referencias a i-nodos</h3>
+<hr>
+<p>En el ejemplo se crea un árbol de directorios con los diferentes
+tipos de objetos del sistema de ficheros: directorios, ficheros y
+enlaces.</p>
+<p>En sistemas UNIX cada objeto está asociado con una estructura
+llamada i-nodo, esta referencia está en las entradas de los directorios
+donde se encuentran los objetos.</p>
+<p>Los enlaces hacen referencia a otros objetos, y se asocian al
+mismo i-nodo del objeto al que hacen referencia, los i-nodos mantienen
+un registro de objetos asociados a ellos.</p>
+<p><b>Recordatorio 1:</b> El color de los directorios es verde y el
+de los enlaces azul. El color de los ficheros se define cuando se crean.</p>
+<p><b>Recordatorio 2:</b> En la simulación el tamaño de los
+directorios es 1 bloque, mientras que los enlaces no ocupan espacio de
+disco, simplemente son entradas de datos en su directorio.</p>
+<p><b>Recordatorio 3:</b> La estructura de un i-nodo es</p>
+<ul>
+	<li>Información, que contiene el número de referencias al i-nodo
+	entre otro</li>
+	<li>12 apuntadores a bloques de datos</li>
+	<li>1 apuntador a 1 bloque indirecto</li>
+	<li>1 apuntador a 1 bloque doble indirecto</li>
+	<li>1 apuntador a 1 bloque triple indirecto.</li>
+</ul>
+<br>
+<table>
+	<tr class="tablehead">
+		<td colspan="4">Árbol</td>
+		<td>tipo</td>
+		<td>Tamaño <br>
+		(Unidades)</td>
+	</tr>
+	<tr>
+		<td>/</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Directorio</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>folder1</td>
+		<td></td>
+		<td></td>
+		<td>Directorio</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>file1.txt</td>
+		<td></td>
+		<td>Archivo</td>
+		<td>101</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>file2.txt</td>
+		<td></td>
+		<td>Archivo</td>
+		<td>200</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>link1</td>
+		<td></td>
+		<td>Enlace fuerte<br>
+		(A file1.txt)</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>folder2</td>
+		<td></td>
+		<td></td>
+		<td>Directorio</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>file3.txt</td>
+		<td></td>
+		<td>Archivo</td>
+		<td>460</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>folder3</td>
+		<td></td>
+		<td>Directorio</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>file4.txt</td>
+		<td>Archivo</td>
+		<td>120</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>link2</td>
+		<td></td>
+		<td>Enlace fuerte<br>
+		(A link1)</td>
+		<td>0</td>
+	</tr>
+</table>
+<p>El tamaño del bloque es 1 unidad.</p>
+<p>Observaciones:</p>
+<ul>
+	<li>Los objetos que tienen enlaces link2 -&gt; link1 -&gt;
+	file1.txt, hacen referencia al mismo i-nodo.</li>
+	<li>Accediendo a la información del i-nodo correspondiente (botón
+	derecho, menú contextual vista de directorio) se ve que el número de
+	enlaces es 3, o sea que tiene 3 referencias: file1.txt, link1 y link2</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Example: The elevator (SCAN)</h3>
+<hr>
+<p>The head movement does not depends on requests, it scans requests in
+both directions, requests are served as they are found.</p>
+<p><b>Reminder</b>: disk geometry is one platter, 16 cylinders, 12
+sectors per cylinder, 192 sectors in total.</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td>Sector</td>
+		<td>Cylinder</td>
+	</tr>
+	<tr>
+		<td>100</td>
+		<td>8</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>150</td>
+		<td>12</td>
+	</tr>
+	<tr>
+		<td>23</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td>120</td>
+		<td>10</td>
+	</tr>
+</table>
+<p>The head is initially positioned at sector 90 (Cylinder 7),
+moving forward innermost cylinders.</p>
+<p>All requests arrive in the table order at time 0.</p>
+<p>Comments:</p>
+<ul>
+	<li>The innermost request is in cylinder 12, but the head continues
+	until the last cylinder</li>
+	<li>At the time it reaches the last cylinder, as it has just served the
+	innermost, and those that remain are at outermost cylinders, but head
+	changes direction and moves from the inner to the outer.</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,79 @@
+﻿<html>
+<head><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Ejemplo. Gestión de memoria contigua, con particiones de tamaño
+variable (Compactación)</h3>
+<hr>
+<p>La memoria inicialmente no tiene particiones, las particiones se
+crean a medida que se cargan los procesos y son de la medida exacta de
+estos, después las particiones que quedan libres (si acaba un proceso
+por ejemplo) son ocupadas por nuevos procesos, si el proceso tiene un
+tamaño menor que la partición, ésta se divide en dos partes, una de la
+medida exacta del proceso y el otro la parte restante.</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td>Proceso</td>
+		<td>Tamaño<br>
+		(Unidades)</td>
+		<td>Duración<br>
+		(Tiempo)</td>
+	</tr>
+	<tr>
+		<td>P1</td>
+		<td>5</td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<td>P2</td>
+		<td>8</td>
+		<td>4</td>
+	</tr>
+	<tr>
+		<td>P3</td>
+		<td>3</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>P4</td>
+		<td>15</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P5</td>
+		<td>2</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td>P6</td>
+		<td>20</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P7</td>
+		<td>3</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P8</td>
+		<td>10</td>
+		<td>∞</td>
+	</tr>
+</table>
+<p>Se cargan en memoria en el orden de la tabla.</p>
+<p>Observaciones:</p>
+<ul>
+	<li>El proceso &quot;P7&quot; se carga en una partición liberada
+	por un proceso finalizado</li>
+	<li>El último proceso no se puede cargar ya que no hay ninguna
+	partición disponible suficientemente grande para acomodarlo, en cambio
+	en el conjunto de la memoria hay suficiente espacio</li>
+	<li>Si se <b>compacta</b> la memoria (botón derecho sobre la
+	memoria, menú contextual), todo el espacio disponible se agrupa en una
+	única partición y el último proceso se puede cargar</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<disk_management>
+  <params>
+    <object management="CLOOP">
+      <head>90</head>
+    </object>
+  </params>
+  <requests>
+    <object bid="100">
+      <init>0</init>
+      <color>-1270051</color>
+    </object>
+    <object bid="3">
+      <init>0</init>
+      <color>-4726827</color>
+    </object>
+    <object bid="150">
+      <init>0</init>
+      <color>-4203546</color>
+    </object>
+    <object bid="23">
+      <init>0</init>
+      <color>-1509908</color>
+    </object>
+    <object bid="120">
+      <init>0</init>
+      <color>-4523322</color>
+    </object>
+  </requests>
+</disk_management>
+

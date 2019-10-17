@@ -1,0 +1,54 @@
+<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link REL=StyleSheet HREF="resources.css" TYPE="text/css">
+</head>
+<body>
+<h3>Exercici. Segmentació</h3>
+<hr></hr>
+<h4>Enunciat.</h4>
+<p class="settings">La memòria del sistema és 64 unitats, el Sistema Operatiu ocupa 4 unitats. 
+Els processos es carreguen en l'ordre de la taula de processos.</p>
+<p>Donada la  taula de  processos de l'exercici, respon a les preguntes:  </p>
+<ol>
+<li>Crea la taula de segments de cada procés al final de la simulació:
+<table>
+<tr class="tablehead"><td colspan="4">Procés ...</td></tr>
+<tr class="tablehead"><td>Segment</td><td>Mida</td><td>Adreça</td><td>Bit validesa</td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td colspan="4">etc...</td></tr>
+</table>
+</li>
+<li>Quina és la fórmula que permet conèixer l'adreça física corresponent a 
+l'adreça lògica d'un procés en gestió de memòria segmentada?<br></li>
+<li>Indica l'adreça física corresponent dels processos de la taula. Si l'adreça no 
+correspon a l'espai d'adreces lògiques del procés indica <i>error</i>, i si l'adreça està 
+a un segment  a intercanvi indica <i>error de segment</i> 
+<table>
+<tr class="tablehead"><td>Procés</td><td>@adreça<br>lògica</td><td>@adreça<br>física</td></tr>
+<tr><td>P1</td><td>@3</td><td></td></tr>
+<tr><td>P1</td><td>@13</td><td></td></tr>
+<tr><td>P2</td><td>@7</td><td></td></tr>
+<tr><td>P3</td><td>@0</td><td></td></tr>
+<tr><td>P3</td><td>@41</td><td></td></tr>
+</table>
+</li>
+</ol>
+<h4>Dades. </h4>
+<table>
+<tr class="tablehead"><td>Procés</td><td>Mida<br>total<br>(Unitats)</td><td>Segment</td><td>Mida<br>(Unitats)</td><td>Carregat <br>inicialment</td></tr>
+<tr><td>P1</td><td>20</td><td>Codi</td><td>2</td><td>Si</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td><td>Dades</td><td>10</td><td>Si</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td><td>Pila</td><td>8</td><td>No</td></tr>
+<tr><td>P2</td><td>20</td><td>Codi</td><td>5</td><td>Si</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td><td>Dades</td><td>14</td><td>No</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td><td>Pila</td><td>1</td><td>Si</td></tr>
+<tr><td>P3</td><td>40</td><td>Codi</td><td>10</td><td>Si</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td><td>Dades</td><td>20</td><td>Si</td></tr>
+<tr><td>&nbsp;</td><td>&nbsp;</td><td>Pila</td><td>10</td><td>Si</td></tr>
+</table>
+<p>Es carreguen a memòria en l'ordre de la taula.</p>
+</body>
+</html>

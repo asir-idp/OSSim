@@ -1,0 +1,27 @@
+<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link REL=StyleSheet HREF="resources.css" TYPE="text/css">
+</head>
+<body>
+<h3>Exemple de planificació SJF no expulsiu</h3>
+<hr></hr>
+<p>Processos de diferents durades a la cua de preparats, els processos només tenen ràfegues de CPU. Un procés de poca durada arriba amb posterioritat a la cua.</p>
+<br>
+<table>
+<tr class="tablehead"><td>Procés</td><td>Durada<br>ràfega<br>(CPU)</td><td>Inici<br>(Temps)</td></tr>
+<tr><td>P1</td><td>5</td><td>0</td></tr>
+<tr><td>P2</td><td>4</td><td>0</td></tr>
+<tr><td>P3</td><td>7</td><td>0</td></tr>
+<tr><td>P4</td><td>3</td><td>0</td></tr>
+<tr><td>P5</td><td>2</td><td class="highlight">4</td></tr>
+</table>
+<p>Arriben en l'ordre de la taula, el procés "P5" arriba a l'instant 4.</p>
+<p>Observacions:</p>
+<ul><li>Es situen a la cua  ordenats segons la durada de cada procés, 
+primer els que tenen una durada més curta</li>
+<li>En el moment que arriba "P5" (durada 2 unitats), es troba en execució "P2" (pendent d'executar 3 unitats)</li>
+<li>L'algorisme no és expulsiu per tant "P2" continua executant-se i "P5" es situa a la cua</li>
+</ul>
+</body>
+</html>

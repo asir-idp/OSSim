@@ -1,0 +1,42 @@
+<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link REL=StyleSheet HREF="resources.css" TYPE="text/css">
+</head>
+<body>
+<h3>Exemple. Gestió de memòria contigua, amb particions de mida fixada (millor ajust)</h3>
+<hr></hr>
+<p>La memòria està dividida en particions fixes, els processos es carreguen sencers en alguna de les 
+particions disponibles, seguint la política del "millor ajust", cada procés cerca la partició disponible
+prou gran que s'ajusta millor a la seva mida.</p>
+<br>
+<table border="0"><tr>
+<td>
+Particions
+<table>
+<tr class="tablehead"><td>@inici</td><td>Mida<br>(Unitats)</td></tr>
+<tr><td>@4</td><td>10</td></tr>
+<tr><td>@14</td><td>5</td></tr>
+<tr><td>@19</td><td>4</td></tr>
+<tr><td>@23</td><td>15</td></tr>
+<tr><td>@38</td><td>10</td></tr>
+<tr><td>@48</td><td>14</td></tr>
+</table>
+</td>
+<td>
+Processos
+<table>
+<tr class="tablehead"><td>Procés</td><td>Mida<br>(Unitats)</td></tr>
+<tr><td>P1</td><td>5</td></tr>
+<tr><td>P2</td><td>10</td></tr>
+<tr><td>P3</td><td>3</td></tr>
+</table>
+</td>
+</tr></table>
+<p>Es carreguen a memòria en l'ordre de la taula.</p>
+<p>Observacions:</p>
+<ul>
+<li>La política de millor ajust minimitza la fragmentació interna.</li>
+</ul>
+</body>
+</html>

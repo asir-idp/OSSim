@@ -1,0 +1,129 @@
+﻿<html>
+<head><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Ejercicio. Particiones de tamaño fijada, políticas de
+asignación</h3>
+<hr>
+<h4>Enunciado.</h4>
+<p class="settings">La memoria del sistema es 64 unidades, el
+Sistema Operativo ocupa 4 unidades. Los procesos se cargan en el orden
+de la tabla de procesos.</p>
+<p>Dada la tabla de particiones del ejercicio y los procesos,
+responde a las preguntas:</p>
+<ol>
+	<li>Rellena la tabla indicando en qué partición se carga cada
+	proceso según la política de asignación:
+	<table>
+		<tr class="tablehead">
+			<td>@ Inicio<br>
+			partición</td>
+			<td>Primer Ajuste</td>
+			<td>Mejor Ajuste</td>
+			<td>Peor Ajuste</td>
+		</tr>
+		<tr>
+			<td>@ 4</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>@ 14</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>@ 19</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>@ 23</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>@ 38</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>@ 48</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	</li>
+	<li>Cuánta memoria se desaprovecha (Fragmentación Interna) en cada
+	política: primero ajuste, mejor ajuste, peor ajuste</li>
+	<li>¿Qué ventaja tiene <i>Primer Ajuste</i> respecto a las otras</li>
+</ol>
+<h4>Datos. Particiones iniciales de memoria y procesos</h4>
+<table border="0">
+	<tr>
+		<td>Particiones
+		<table>
+			<tr class="tablehead">
+				<td>@ Inicio</td>
+				<td>Tamaño<br>
+				(Unidades)</td>
+			</tr>
+			<tr>
+				<td>@ 4</td>
+				<td>10.</td>
+			</tr>
+			<tr>
+				<td>@ 14</td>
+				<td>5 </td>
+			</tr>
+			<tr>
+				<td>@ 19</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>@ 23</td>
+				<td>15</td>
+			</tr>
+			<tr>
+				<td>@ 38</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td>@ 48</td>
+				<td>14</td>
+			</tr>
+		</table>
+		</td>
+		<td>Procesos
+		<table>
+			<tr class="tablehead">
+				<td>Proceso</td>
+				<td>Dimensiones<br>
+				(Unidades)</td>
+			</tr>
+			<tr>
+				<td>P1</td>
+				<td>5</td>
+			</tr>
+			<tr>
+				<td>P2</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td>P3</td>
+				<td>3</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

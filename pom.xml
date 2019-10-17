@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>edu.upc.fib</groupId>
+	<artifactId>ossim</artifactId>
+	<version>1.2</version>
+
+	<name>OSSim</name>
+	<description>Operating System Concepts Simulator</description>
+
+	<properties>
+		<maven.compiler.target>8</maven.compiler.target>
+		<maven.compiler.source>8</maven.compiler.source>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<exec.mainClass>edu.upc.fib.ossim.OSSimFrame</exec.mainClass>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>fvarrui.maven</groupId>
+				<artifactId>javapackager</artifactId>
+				<version>0.8.3</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>package</goal>
+						</goals>
+						<configuration>
+							<forceJreOptimization>true</forceJreOptimization>
+							<bundleJre>true</bundleJre>
+							<mainClass>${exec.mainClass}</mainClass>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.jdom</groupId>
+			<artifactId>jdom</artifactId>
+			<version>1.1</version>
+		</dependency>
+	</dependencies>
+
+</project>

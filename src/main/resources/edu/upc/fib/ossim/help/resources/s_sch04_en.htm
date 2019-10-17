@@ -1,0 +1,44 @@
+﻿<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Round Robin scheduling example (quantum: 2)</h3>
+<hr>
+<p>Different duration processes in the ready queue, processes have
+only cpu bursts.</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td>Process</td>
+		<td>Burst<br>
+		duration<br>
+		(CPU)</td>
+	</tr>
+	<tr>
+		<td>P1</td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<td>P2</td>
+		<td>4</td>
+	</tr>
+	<tr>
+		<td>P3</td>
+		<td>7</td>
+	</tr>
+	<tr>
+		<td>P4</td>
+		<td>3</td>
+	</tr>
+</table>
+<p>All processes arrive in the table order at time 0.</p>
+<p>Comments:</p>
+<ul>
+	<li>They are queued as they arrive to ready queue</li>
+	<li>They are executed in this order, maximum quantum duration (2
+	units), then placed at the queue&#39;s end</li>
+</ul>
+</body>
+</html>

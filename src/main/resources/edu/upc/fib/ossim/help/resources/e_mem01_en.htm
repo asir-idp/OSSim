@@ -1,0 +1,129 @@
+﻿<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Exercise. Fixed-sized partitions, allocation policies</h3>
+<hr>
+<h4>Statement.</h4>
+<p class="settings">System memory size is 64 units and Operating
+System size is 4 units. The processes are allocated in the exercise
+table order.</p>
+<p>Given exercise processes data, answer the questions:</p>
+<ol>
+	<li>Fill in the table indicating which process is allocated in
+	partitions according to allocation policy:
+	<table>
+		<tr class="tablehead">
+			<td>Start <br>
+			partition address</td>
+			<td>First Fit</td>
+			<td>Best Fit</td>
+			<td>Worst Fit</td>
+		</tr>
+		<tr>
+			<td>@ 4</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>@ 14</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>@ 19</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>@ 23</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>@ 38</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>@ 48</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	</li>
+	<li>How much memory is wasted (Internal Fragmentation) for each
+	policy: first fit, best fit, worst fit</li>
+	<li>What is the advantage of <i>first fit</i> compared to the
+	other</li>
+</ol>
+<h4>Data. Initial memory partitions and processes</h4>
+<table border="0">
+	<tr>
+		<td>Partitions
+		<table>
+			<tr class="tablehead">
+				<td>Start address</td>
+				<td>Size<br>
+				Units</td>
+			</tr>
+			<tr>
+				<td>@ 4</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td>@ 14</td>
+				<td>5</td>
+			</tr>
+			<tr>
+				<td>@ 19</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>@ 23</td>
+				<td>15</td>
+			</tr>
+			<tr>
+				<td>@ 38</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td>@ 48</td>
+				<td>14</td>
+			</tr>
+		</table>
+		</td>
+		<td>Processes
+		<table>
+			<tr class="tablehead">
+				<td>Process</td>
+				<td>Size<br>
+				Units</td>
+			</tr>
+			<tr>
+				<td>P1.</td>
+				<td>5</td>
+			</tr>
+			<tr>
+				<td>P2</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td>P3</td>
+				<td>3</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

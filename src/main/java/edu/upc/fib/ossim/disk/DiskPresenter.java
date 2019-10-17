@@ -1,0 +1,514 @@
+package edu.upc.fib.ossim.disk;
+
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.util.Iterator;
+import java.util.Vector;
+
+import javax.swing.JSpinner;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ListSelectionEvent;
+
+import edu.upc.fib.ossim.disk.model.ContextDisk;
+import edu.upc.fib.ossim.disk.model.DiskStrategyCLOOK;
+import edu.upc.fib.ossim.disk.model.DiskStrategyCSCAN;
+import edu.upc.fib.ossim.disk.model.DiskStrategyFIFO;
+import edu.upc.fib.ossim.disk.model.DiskStrategyLIFO;
+import edu.upc.fib.ossim.disk.model.DiskStrategyLOOK;
+import edu.upc.fib.ossim.disk.model.DiskStrategySCAN;
+import edu.upc.fib.ossim.disk.model.DiskStrategySTF;
+import edu.upc.fib.ossim.disk.view.DiskPainter;
+import edu.upc.fib.ossim.disk.view.DiskSettings;
+import edu.upc.fib.ossim.disk.view.FormBlock;
+import edu.upc.fib.ossim.disk.view.GraphPainter;
+import edu.upc.fib.ossim.disk.view.InfoPainter;
+import edu.upc.fib.ossim.disk.view.PanelDisk;
+import edu.upc.fib.ossim.template.Presenter;
+import edu.upc.fib.ossim.template.view.PainterTemplate;
+import edu.upc.fib.ossim.template.view.PanelTemplate;
+import edu.upc.fib.ossim.template.view.TablePainterTemplate;
+import edu.upc.fib.ossim.utils.Functions;
+import edu.upc.fib.ossim.utils.SoSimException;
+import edu.upc.fib.ossim.utils.TimerPanel;
+import edu.upc.fib.ossim.utils.Translation;
+
+
+/**
+ * Disk presenter manage concrete disk scheduling behaviors, it builds main panel adding concrete components,
+ * manage specific events and implements xml processing  
+ * 
+ * @author Alex Macia
+ * 
+ * @see Presenter
+ */
+public class DiskPresenter extends Presenter {
+	
+ 	private static final int DISK_WIDTH = 440;
+	private static final int DISK_HEIGHT = 440;
+	private static final int REQUEST_WIDTH = 300;
+	private static final int REQUEST_HEIGHT = 180;
+	public static final int GRAPH_WIDTH = 300;
+	public static final int GRAPH_HEIGHT = 250;
+
+	public static final String GRAPH_PAINTER = "graph";
+	public static final String DISK_PAINTER = "disk";
+	public static final String REQUEST_PAINTER = "requests";
+	
+	private Vector<String[]> menuItems;
+	private ContextDisk context;
+	
+	/**************************************************************************************************/
+	/*************************************   Class  management  ***************************************/
+	/**************************************************************************************************/
+	
+	/**
+	 * @see Presenter
+	 */
+	public DiskPresenter(boolean openSettings) {
+		super(openSettings);
+	}
+	
+	/**
+	 * Constructs main panel adding all components and its pop up menus. Timer panel, three painters builds this panel,
+	 * a physical disk platter, a graph showing served request and a table with all requests and 
+	 * scheduling information, besides a settings dialog is initialized    
+	 *  
+	 */
+	public PanelTemplate createPanelComponents() {
+		timecontrols = new TimerPanel(this, TIMER_VELOCITY, 12); // Subtimer 12 times faster (1 unit main time, 12 subtimes)
+		createMenuItems();
+		super.addPainter(new DiskPainter(this, menuItems, DISK_WIDTH, DISK_HEIGHT), DISK_PAINTER);
+		super.addPainter(new GraphPainter(this, GRAPH_WIDTH, GRAPH_HEIGHT), GRAPH_PAINTER);
+		super.addPainter(new InfoPainter(this, "dk_41", "disk_info", context.getTableHeaderInfo(), menuItems, REQUEST_WIDTH, REQUEST_HEIGHT), REQUEST_PAINTER);
+		settings = new DiskSettings(this, "disk_set");
+		return new PanelDisk(this, "dk_42");
+	}
+	
+	private void createMenuItems() {
+		menuItems = new Vector<String[]>();
+		String[] item1 = {"painter_upd", "dk_06", "update.png"};
+		String[] item2 = {"painter_del", "dk_07", "trash.png"};
+		menuItems.add(item1);
+		menuItems.add(item2);
+	}
+	
+	/**
+	 * Maps ProcessPresenter concrete actions.
+	 * 
+	 * For instance<br/> <code>actions.put(action command, number);</code><br/>
+	 * <ul>
+	 * action command from component that generate the event<br/> 
+	 * number between 40 and 50 
+	 * </ul>
+	 */
+	public void mapActionsSpecific() {
+		actions.put("panel_add",40);
+		actions.put("painter_upd",41);
+		actions.put("painter_del",42);
+		actions.put("FIFO",43);
+		actions.put("LIFO",44);
+		actions.put("STF",45);
+		actions.put("LOOP",46);
+		actions.put("CLOOP",47);
+		actions.put("SCAN",48);
+		actions.put("CSCAN",49);
+	}
+	
+	/**
+	 * Creates disk scheduling model. Model implements Strategy Pattern, it can be accessed 
+	 * through <b>context</b>, different algorithms are implemented in concrete <b>strategies</b>. Initial
+	 * context strategy is FIFO   
+	 */
+	public void createContext() {
+		context = new ContextDisk(new DiskStrategyFIFO());
+	}
+	
+	/**************************************************************************************************/
+	/*************************************   Events management  ***************************************/
+	/**************************************************************************************************/
+	
+	/**
+	 * Manage list events generated by information table, 
+	 * shows a pop up depending on selected row<br/>
+	 *
+	 * @param e	list selection event
+	 *
+	 * @see InfoPainter#showPopupMenu(int, int)
+	 */
+	public void valueChanged(ListSelectionEvent e) {
+		// Table event. InfoPainter
+		Integer request = null;
+		Integer row = null;
+		if (!e.getValueIsAdjusting()) {
+			// Info painter table
+			row = this.getPainter(REQUEST_PAINTER).detectMouseOver(0, 0);
+			if (row != null) {
+				((TablePainterTemplate) this.getPainter(REQUEST_PAINTER)).setValueIsAdjusting(true);
+				request = new Integer((String) ((InfoPainter) this.getPainter(REQUEST_PAINTER)).getValueAt(row, 0));
+				selectElement(request, this.getPainter(REQUEST_PAINTER));
+				this.getPainter(REQUEST_PAINTER).showPopupMenu();
+			}
+		}
+	}
+	
+	/**
+	 * Receive setting's initial head position component and
+	 * form block request change state event
+	 * .   
+	 */
+	public void stateChangedSpecific(ChangeEvent e) {
+		JSpinner spin = (JSpinner) e.getSource(); 
+		
+		if ("initHead".equals(spin.getName())) { 
+			// Updates head position at settings
+			JSpinner head = (JSpinner) e.getSource();
+			context.setHeadPosition((Integer) head.getValue());
+			repaintPainters();
+		} 
+		if ("bid".equals(spin.getName())) { 
+			// Updates sector's cylinder at form disk
+			((FormBlock) form).setRequestCylinder();
+		}
+	}
+	
+	/**
+	 * Adds disk scheduling concrete implementation to play event (Template Pattern).
+	 * Back up's initial state and starts forwarding time. Returns false (No simulation end's detection)
+	 * 
+	 * @see Presenter#actionPerformed(ActionEvent e)
+	 * 
+	 */
+	public boolean actionPlay() {
+		super.getPainter(DISK_PAINTER).clearMenu();
+		super.getPainter(REQUEST_PAINTER).clearMenu();
+		context.forwardTime(timecontrols.getTime());
+		return false;
+	}
+	
+	/**
+	 * Adds disk scheduling concrete implementation to stop event (Template Pattern).
+	 * Restores initial state   
+	 * 
+	 * @see Presenter#actionPerformed(ActionEvent e)
+	 * 
+	 */
+	public void actionStop() {
+		context.restoreBackup();
+		context.setHeadPosition(((DiskSettings) settings).getInitHead());
+		super.getPainter(DISK_PAINTER).clearMenu();
+		super.getPainter(DISK_PAINTER).addMenuItem(menuItems.get(0));
+		super.getPainter(DISK_PAINTER).addMenuItem(menuItems.get(1));
+		super.getPainter(REQUEST_PAINTER).clearMenu();
+		super.getPainter(REQUEST_PAINTER).addMenuItem(menuItems.get(0));
+		super.getPainter(REQUEST_PAINTER).addMenuItem(menuItems.get(1));
+	}
+	
+	/**
+	 * Adds disk scheduling concrete implementation to timer event (Template Pattern).
+	 * forwards 1 time unit. Returns false (No simulation end's detection)
+	 * 
+	 * @see ContextDisk#forwardTime(int)
+	 * 
+	 */
+	public boolean actionTimer() { 
+		context.forwardTime(timecontrols.getTime());
+		//context.forwardDecimal();
+		return false;
+	}
+
+	/**
+	 * Adds disk scheduling concrete implementation to subtimer event (Template Pattern).
+	 * forwards 1 subtime unit   
+	 * 
+	 * @see ContextDisk#forwardDecimal(int)
+	 * 
+	 */
+	public void actionDecimal() { 
+		context.forwardDecimal();
+	}
+	
+	/**
+	 * Implements disk scheduling concrete action events (Template Pattern).
+	 * <ul>
+	 * <li>Adds a new block request. Opens FormBlock and updates model with user input</li>
+	 * <li>Updates a block request. Opens FormBlock and updates model with user input</li>
+	 * <li>Removes a block request. Opens a confirmation dialog, and if so deletes request</li>
+	 * <li>Changes current algorithm, updates model (context) and algorithm information</li>
+	 * </ul>    
+	 * 
+	 * @see Presenter#actionPerformed(ActionEvent e)
+	 */
+	public void actionSpecific(String actionCommand) throws SoSimException {
+		Vector<Object> d;
+		int action = actions.get(actionCommand).intValue();
+
+		switch (action) {
+		case 40:
+			// Add requests
+			// Control max request creation
+			if (context.getRequestCount() >= ContextDisk.MAX_REQUESTS) throw new SoSimException("dk_05", "(max. : " + ContextDisk.MAX_REQUESTS + ")");
+			
+			Vector<Object> values = new Vector<Object>();
+			values.add(this.getNblocks()); // Max blocks
+			d = openForm(new FormBlock(this, Translation.getInstance().getLabel("dk_42"), createHelp("disk_new"), values));
+
+			if (d != null) {
+				context.addRequest(d, timecontrols.getTime());
+			}
+			break;
+		case 41:
+			if (timecontrols.isRunning()) throw new SoSimException("dk_01");
+
+			Vector<Object> data = context.getSelectedRequestData();
+			if (data != null) {
+				d = openForm(new FormBlock(this, Translation.getInstance().getLabel("dk_42"), createHelp("disk_new"), data));
+
+				if (d != null) {
+					context.updateRequest(d, timecontrols.getTime());
+				}
+			}
+			break;
+		case 42:
+			if (context.getSelectedRequestData() != null) {
+				context.removeRequest(timecontrols.getTime());
+			}
+			break;
+
+			// Settings actions
+
+		case 43:
+			context.setAlgorithm(new DiskStrategyFIFO());
+			panel.setLabel(getAlgorithmInfo());
+			break;
+		case 44:
+			context.setAlgorithm(new DiskStrategyLIFO());
+			panel.setLabel(getAlgorithmInfo());
+			break;
+		case 45:
+			context.setAlgorithm(new DiskStrategySTF());
+			panel.setLabel(getAlgorithmInfo());
+			break;
+		case 46:
+			context.setAlgorithm(new DiskStrategyLOOK());
+			panel.setLabel(getAlgorithmInfo());
+			break;
+		case 47:
+			context.setAlgorithm(new DiskStrategyCLOOK());
+			panel.setLabel(getAlgorithmInfo());
+			break;
+		case 48:
+			context.setAlgorithm(new DiskStrategySCAN());
+			panel.setLabel(getAlgorithmInfo());
+			break;
+		case 49:
+			context.setAlgorithm(new DiskStrategyCSCAN());
+			panel.setLabel(getAlgorithmInfo());
+			break;
+		}
+	}
+	
+	/**
+	 * Selects model object representing a request identified by id
+	 * No element can be selected if simulation has started
+	 *  
+	 * @param id	request identifier (block number)
+	 * @param pt 	unused
+	 * 
+	 * @return element can be selected
+	 */
+	public boolean selectElement(Integer id, PainterTemplate pt) {
+		if (started) return false; // Nothing to do in queue once started
+		return context.setSelectedRequest(id.intValue());
+	}
+	
+	/**************************************************************************************************/
+	/*************************************   Request management ***************************************/
+	/**************************************************************************************************/
+	
+	/**
+	 * Updates information panel data according to current simulation time   
+	 */
+	public void updateInfo() {
+		// Update possible value changed. 
+		((InfoPainter) this.getPainter(REQUEST_PAINTER)).initData(context.getTableInfoData());
+	}
+	
+	/**
+	 * Translates information painter
+	 * 
+	 */
+	public void updateLabels() {
+		// Update info dialog
+		//info.updateLabels(context.getTableHeaderInfo());
+		((InfoPainter) this.getPainter(REQUEST_PAINTER)).updateLabels(context.getTableHeaderInfo(), "dk_41");
+	}
+	
+	/**
+	 * Returns model requests iterator. Parameter <code>i</code> determines from which queue 
+	 * 
+	 * @param i	identifies iterator source queue: 0-queued requests , other-served requests
+	 * 
+	 * @return   a model processes iterator
+	 */
+	public Iterator<Integer> iterator(int i) {
+		if (i == 0) return context.iteratorRequests();
+		else return context.iteratorRequestsServed();
+	}
+
+	/**
+	 * @see ContextDisk#getAlgorithmInfo()
+	 */
+	public String getAlgorithmInfo() {
+		return context.getAlgorithmInfo();
+	}
+	
+	/**
+	 * @see ContextDisk#getInfo(int)
+	 */
+	public Vector<String> getInfo(int bid) {
+		return context.getInfo(bid);
+	}
+	
+	/**
+	 * @see ContextDisk#getColor(int)
+	 */
+	public Color getColor(int bid) {
+		return context.getColor(bid);
+	}
+
+	/**
+	 * @see ContextDisk#getRequestsServed()
+	 */
+	public int getRequestsServed() {
+		return context.getRequestsServed();
+	}
+	
+	/**
+	 * @see ContextDisk#getTinit(int)
+	 */
+	public int getPinit(int pid) {
+		return context.getTinit(pid);
+	}
+
+	public int getRunning() {
+		return context.getHeadPosition();
+	}
+	
+	/**
+	 * @see DiskSettings#getInitHead()
+	 */
+	public int getInitHeadPosition() {
+		return ((DiskSettings) settings).getInitHead();
+	}
+
+	/**
+	 * @see ContextDisk#getNBLOCKS()
+	 */
+	public int getNblocks() {
+		return ContextDisk.getNBLOCKS();
+	}
+
+	/**
+	 * @see ContextDisk#getCylinders()
+	 */
+	public int getCylinders() {
+		return ContextDisk.getCylinders();
+	}
+
+	/**
+	 * @see ContextDisk#getSectors()
+	 */
+	public int getSectors() {
+		return ContextDisk.getSectors();
+	}
+	
+	/**************************************************************************************************/
+	/*************************************   XML management ***************************************/
+	/**************************************************************************************************/
+
+	/**
+	 * Returns XML root element for disk scheduling simulation files
+	 * 
+	 */
+	public String getXMLRoot() {
+		// Returns XML root element 
+		return Functions.getInstance().getPropertyString("xml_root_disk");
+	}
+	
+	/**
+	 * Returns XML direct root children for disk scheduling simulation files:
+	 * "params" and "requests". 
+	 * Every child groups simulation persistent object    
+	 * 
+	 */
+	public Vector<String> getXMLChilds() {
+		Vector<String> childs = new Vector<String>();
+		childs.add("params");
+		childs.add("requests");
+		return childs;
+	}
+	
+	/**
+	 * Returns all model information from a concrete child identified by <code>child</code>.
+	 * 
+	 * @see  #getXMLChilds()
+	 */
+	public Vector<Vector<Vector<String>>> getXMLData(int child) {
+		Vector<Vector<Vector<String>>> data = null;
+		
+		switch (child) {
+		case 0: 	// Params
+			data = new Vector<Vector<Vector<String>>>();
+			Vector<Vector<String>> param = new Vector<Vector<String>>();
+			Vector<String> attribute = new Vector<String>();		
+			attribute.add("management");
+			attribute.add(settings.getAlgorithm());
+			param.add(attribute);
+			attribute = new Vector<String>();		
+			attribute.add("head");
+			attribute.add(Integer.toString(((DiskSettings) settings).getInitHead()));
+			param.add(attribute);
+			data.add(param);
+			break;
+		case 1: 	// requests
+			data =  context.getXMLDataRequests();
+			break;
+		}
+		return data;	
+	}
+	
+	/**
+	 * Builds all model information from a concrete child identified by <code>child</code>
+	 * 
+  	 * @see  #getXMLChilds()
+	 */
+	public void putXMLData(int child, Vector<Vector<Vector<String>>> data) throws SoSimException {
+		try {
+			switch (child) {
+			case 0: 	// Params
+				String actionCommand = data.get(0).get(0).get(1);
+				String sHead = data.get(0).get(1).get(1);
+				int head = new Integer(sHead).intValue();
+				settings.selectAlgorithm(actionCommand);
+				((DiskSettings) settings).setInitHead(head);
+				context.setHeadPosition(head);
+				actionSpecific(actionCommand); // Updates management. 
+				break;
+			case 1:	
+				for (int i=0; i<data.size(); i++) { // Requests
+					Vector<Vector<String>> process = data.get(i);
+					Vector<Object> requestData = new Vector<Object>();  
+
+					requestData.add(new Integer(process.get(0).get(1))); // bid. Value at position 1
+					requestData.add(new Integer(process.get(1).get(1))); // init. Value at position 1
+					requestData.add(new Color(new Integer(process.get(2).get(1)))); // color. Value at position 1 (RGB value)
+
+					context.addRequest(requestData, timecontrols.getTime());
+				}
+				break;
+			}
+		} catch (Exception e) {
+			throw new SoSimException("all_04");
+		}
+	}
+}

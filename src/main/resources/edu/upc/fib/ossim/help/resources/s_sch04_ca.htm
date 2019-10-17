@@ -1,0 +1,24 @@
+<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link REL=StyleSheet HREF="resources.css" TYPE="text/css">
+</head>
+<body>
+<h3>Exemple de planificació Round Robin (quantum : 2)</h3>
+<hr></hr>
+<p>Processos de diferents durades a la cua de preparats, els processos només tenen ràfegues de CPU.</p>
+<br>
+<table>
+<tr class="tablehead"><td>Procés</td><td>Durada<br>ràfega<br/>(CPU)</td></tr>
+<tr><td>P1</td><td>5</td></tr>
+<tr><td>P2</td><td>4</td></tr>
+<tr><td>P3</td><td>7</td></tr>
+<tr><td>P4</td><td>3</td></tr></table>
+<p>Arriben en l'ordre de la taula, tots a temps 0.</p>
+<p>Observacions:</p>
+<ul>
+<li>Es situen a la cua en l'ordre d'arribada</li>
+<li>S'executen seguint aquest ordre, com a màxim la durada del quantum (2 unitats), després es situen al final de la cua</li>
+</ul>
+</body>
+</html>

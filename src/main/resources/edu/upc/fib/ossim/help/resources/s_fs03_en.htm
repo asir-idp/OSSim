@@ -1,0 +1,131 @@
+﻿<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Example: Indexed Allocation (UNIX). References to i-nodes</h3>
+<hr>
+<p>In this example a folder tree is created with different types of
+file system objects: folders, files and links.</p>
+<p>On UNIX each object is associated with a structure called the
+i-node, this reference is in the folder entries where the objects are.</p>
+<p>The links refer to other objects, and are associated with the
+same i-node of the object to which they relate, i-nodes keep track of
+objects associated with them.</p>
+<p><b>Reminder 1:</b> the folders' color is green and the links are blue.
+The files color is defined when created.</p>
+<p><b>Reminder 2:</b> In the simulation the folder size is 1 block,
+while the links do not occupy disk space, they are simply entries in its
+folder data.</p>
+<p><b>Reminder 3:</b> The structure of an i-node is</p>
+<ul>
+	<li>Information, which for example contains the number of
+	references to the i-node</li>
+	<li>12 pointers to data blocks</li>
+	<li>1 pointer to an indirect block.</li>
+	<li>1 pointer to a double indirect block.</li>
+	<li>1 pointer to a triple indirect block.</li>
+</ul>
+<br>
+<table>
+	<tr class="tablehead">
+		<td colspan="4">Tree</td>
+		<td>Type</td>
+		<td>Size <br>
+		Units</td>
+	</tr>
+	<tr>
+		<td>/</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Folder</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>folder1</td>
+		<td></td>
+		<td></td>
+		<td>Folder</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>file1.txt</td>
+		<td></td>
+		<td>File</td>
+		<td>101</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>file2.txt</td>
+		<td></td>
+		<td>File</td>
+		<td>200</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>link1</td>
+		<td></td>
+		<td>Hard link<br>
+		(to file1.txt)</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>folder2</td>
+		<td></td>
+		<td></td>
+		<td>Folder</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>file3.txt</td>
+		<td></td>
+		<td>File</td>
+		<td>460</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>Folder3</td>
+		<td></td>
+		<td>Folder</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>file4.txt</td>
+		<td>File</td>
+		<td>120</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>link2</td>
+		<td></td>
+		<td>Hard link<br>
+		(to link1)</td>
+		<td>0</td>
+	</tr>
+</table>
+<p>Block size is 1 unit.</p>
+<p>Comments:</p>
+<ul>
+	<li>Objects that are linked, link2 -&gt; link1 -&gt; file1.txt,
+	refer to the same i-node.</li>
+	<li>Opening corresponding i-node information (right click on
+	folder view, pop up menu) shows the number of links that is 3, so it
+	has 3 references: file1.txt, link1 and link2</li>
+</ul>
+</body>
+</html>

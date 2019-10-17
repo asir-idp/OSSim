@@ -1,0 +1,78 @@
+﻿<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Example: Contiguous memory management with fixed-size
+partitions (best fit)</h3>
+<hr>
+<p>Memory is divided into fixed-sized partitions, entire processes
+are allocated in one of these available partitions, in &quot;best
+fit&quot; policy, a partition which is large enough and fits best is selected.</p>
+<br>
+<table border="0">
+	<tr>
+		<td>Partitions
+		<table>
+			<tr class="tablehead">
+				<td>Start address</td>
+				<td>Size<br>
+				Units</td>
+			</tr>
+			<tr>
+				<td>@4</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td>@14</td>
+				<td>5</td>
+			</tr>
+			<tr>
+				<td>@19</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>@23</td>
+				<td>15</td>
+			</tr>
+			<tr>
+				<td>@38</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td>@48</td>
+				<td>14</td>
+			</tr>
+		</table>
+		</td>
+		<td>Processes
+		<table>
+			<tr class="tablehead">
+				<td>Process</td>
+				<td>Size<br>
+				Units</td>
+			</tr>
+			<tr>
+				<td>P1</td>
+				<td>5</td>
+			</tr>
+			<tr>
+				<td>P2</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td>P3</td>
+				<td>3</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+<p>Process are allocated in the table order.</p>
+<p>Comments:</p>
+<ul>
+	<li>Best-fit policy minimizes internal fragmentation.</li>
+</ul>
+</body>
+</html>

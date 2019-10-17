@@ -1,0 +1,50 @@
+<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link REL=StyleSheet HREF="resources.css" TYPE="text/css">
+</head>
+<body>
+<h3>Exemple. Accés indexat (UNIX). Referències a i-nodes</h3>
+<hr></hr>
+<p>A l'exemple es crea un arbre de directoris amb els diferents tipus d'objectes del sistema de fitxers:
+directoris, fitxers i enllaços.</p>
+<p>En sistemes UNIX cada objecte està associat amb una estructura anomenada i-node, 
+aquesta referència està a les entrades dels directoris on es troben els objectes.</p>
+<p>Els enllaços fan referència a altres objectes, i s'associen al mateix i-node de l'objecte al 
+qual fan referència, els i-nodes mantenen un registre d'objectes associats a ells.</p>
+<p><b>Recordatori 1</b>: El color dels directoris és verd i el dels enllaços blau. El color dels fitxers 
+es defineix quan es creen.</p>
+<p><b>Recordatori 2</b>:  A la simulació la mida dels directoris és 1 bloc, mentre que els enllaços no ocupen
+espai de disc, simplement són entrades de dades al seu directori.</p>
+<p><b>Recordatori 3</b>: La estructura d'un i-node és</p>
+<ul>
+ <li>Informació, que conté el nombre de referències a l'i-node entre d'altre</li>
+ <li>12 apuntadors a blocs de dades</li>
+ <li>1 apuntador a 1 bloc indirecte</li>
+ <li>1 apuntador a 1 bloc doble indirecte</li>
+ <li>1 apuntador a 1 bloc triple indirecte.</li>
+ </ul>
+<br>
+<table>
+<tr class="tablehead"><td colspan="4">Arbre</td><td>tipus</td><td>Mida <br>(unitats)</td></tr>
+<tr><td>/</td><td></td><td></td><td></td><td>Directori</td><td>1</td></tr>
+<tr><td></td><td>folder1</td><td></td><td></td><td>Directori</td><td>1</td></tr>
+<tr><td></td><td></td><td>file1.txt</td><td></td><td>Fitxer</td><td>101</td></tr>
+<tr><td></td><td></td><td>file2.txt</td><td></td><td>Fitxer</td><td>200</td></tr>
+<tr><td></td><td></td><td>link1</td><td></td><td>Enllaç fort<br>(a file1.txt)</td><td>1</td></tr>
+<tr><td></td><td>folder2</td><td></td><td></td><td>Directori</td><td>1</td></tr>
+<tr><td></td><td></td><td>file3.txt</td><td></td><td>Fitxer</td><td>460</td></tr>
+<tr><td></td><td></td><td>folder3</td><td></td><td>Directori</td><td>1</td></tr>
+<tr><td></td><td></td><td></td><td>file4.txt</td><td>Fitxer</td><td>120</td></tr>
+<tr><td></td><td></td><td>link2</td><td></td><td>Enllaç fort<br>(a link1)</td><td>0</td></tr>
+</table>
+
+<p>La mida del bloc és 1 unitat.</p>
+<p>Observacions:</p>
+<ul>
+<li>Els objectes que tenen enllaços link2 --> link1 --> file1.txt, fan referència al mateix i-node.</li>
+<li>Accedint a la informació de l'i-node corresponent (botó dret, menú contextual vista de directori) 
+es veu que el nombre d'enllaços és 3, o sigui que té 3 referències: file1.txt, link1 i link2</li>
+</ul>
+</body>
+</html>

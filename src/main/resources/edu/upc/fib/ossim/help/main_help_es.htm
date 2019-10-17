@@ -1,0 +1,1967 @@
+﻿<html>
+<head><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link rel="StyleSheet" href="help.css" type="text/css">
+</head>
+<body><a NAME="index"></a>
+<h2>Ayuda de OS Sim v.1.0</h2>
+<hr>
+<h2>Índice</h2>
+<ul>
+	<li><a href="#introduction">Introducción</a></li>
+	<li><a href="#welcome">Inicio y menú</a></li>
+	<li><a href="#lang">Idioma</a></li>
+	<li><a href="#simulations">Simulaciones</a>
+	<ul>
+		<li><a href="#scheduling">Planificación de procesos</a>
+		<ul>
+			<li><a href="#sch_screen">Pantalla</a></li>
+			<li><a href="#sch_cpu">Procesador (CPU)</a></li>
+			<li><a href="#sch_ready">Cola de preparado</a></li>
+			<li><a href="#sch_incoming">Procesos entrantes</a></li>
+			<li><a href="#sch_set">Configuración</a></li>
+			<li><a href="#sch_new">Añadir procesos</a></li>
+			<li><a href="#sch_info">Datos y estadísticas</a></li>
+		</ul>
+		</li>
+		<li><a href="#memory">Gestión de memoria</a>
+		<ul>
+			<li><a href="#mem_screen">Pantalla</a></li>
+			<li><a href="#mem_ram">Memoria principal</a></li>
+			<li><a href="#mem_queue">Cola de procesos</a></li>
+			<li><a href="#mem_set">Configuración</a></li>
+			<li><a href="#mem_new">Añadir procesos</a></li>
+			<li><a href="#mem_info">Datos y estadísticas</a></li>
+			<LI><A HREF="#mem_detailinfo">Tabla de páginas y tabla de segmentos</A> </LI>
+			<li><a href="#mem_part">Crear una partición (sólo
+			particiones de tamaño fijada)</a></li>
+			<li><a href="#mem_comp">Compactar la memoria (sólo
+			particiones de tamaño variable y segmentación)</a></li>
+			<li><a href="#mem_swap">Memoria de intercambio</a></li>
+			<li><a href="#mem_addr">Traducción de direcciones</a></li>
+			<li><a href="#mem_err">Errores en la simulación</a></li>
+		</ul>
+		</li>
+		<li><a href="#filesystem">Gestión del sistema de ficheros</a>
+		<ul>
+			<li><a href="#fs_screen">Pantalla</a></li>
+			<li><a href="#fslogical">Sistema de ficheros lógico</a></li>
+			<li><a href="#fsphysical">(Dispositivo) Sistema de ficheros
+			físico</a></li>
+			<li><a href="#fsfolder">Vista del directorio actual</a></li>
+			<li><a href="#fs_set">Configuración</a></li>
+			<li><a href="#fsnew_file">Añadir un archivo</a></li>
+			<li><a href="#fsnew_folder">Añadir un directorio</a></li>
+			<li><a href="#fsnew_link">Añadir un enlace</a></li>
+			<li><a href="#fsdetail_info">Información detalla de un
+			objeto</a></li>
+			<li><a href="#fs_info">Datos y estadísticas</a></li>
+			<li><a href="#fs_err">Errores en la simulación</a></li>
+		</ul>
+		</li>
+		<li><a href="#disk">Políticas de planificación de disco</a>
+		<ul>
+			<li><a href="#disk_screen">Pantalla</a></li>
+			<li><a href="#disk_platter">El disco</a></li>
+			<li><a href="#disk_graph">Gráfica de movimiento del cabezal</a>
+			</li>
+			<li><a href="#disk_info">Datos y estadísticas </a></li>
+			<li><a href="#disk_set">Configuración</a></li>
+			<li><a href="#disk_new">Añadir petición</a></li>
+		</ul>
+		</li>
+		<li><a href="#common">Tareas comunes</a>
+		<ul>
+			<li><a href="#open_save">Abrir y guardar simulaciones</a></li>
+			<li><a href="#time">Control de tiempo</a></li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+	<li><a href="#examples">Ejemplos disponibles de ...</a>
+	<ul>
+		<li><a href="#scheduling_examples">... planificación</a></li>
+		<li><a href="#memory_examples">... memoria</a></li>
+		<li><a href="#filesystem_examples">... sistema de ficheros</a></li>
+		<li><a href="#disk_examples">... disco</a></li>
+	</ul>
+	</li>
+	<li><a href="#exercises">Ejercicios disponibles de ...</a>
+	<ul>
+		<li><a href="#scheduling_exercises">... planificación</a></li>
+		<li><a href="#memory_exercises">... memoria</a></li>
+		<li><a href="#filesystem_exercises">... sistema de ficheros</a></li>
+		<li>
+		<p><a href="#disk_exercises">... disco</a></p>
+		</li>
+	</ul>
+	</li>
+</ul>
+<hr>
+<p align="right"><a name="introduction"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h2>Introducción</h2>
+<p><b>OS Sim (Simulador de Conceptos de Sistemas Operativos)</b> es
+una aplicación de propósito educativo para simular gráficamente
+conceptos relacionados con los Sistemas Operativos y complementar así el
+aprendizaje de los estudiantes de informática. <br>
+<br>
+Concretamente la aplicación se divide en cuatro bloques o simulaciones
+independientes: planificación de procesos, gestión de memoria, gestión
+del sistema de ficheros y políticas de planificación de discos.<br>
+<br>
+Más allá de pretender describir los complejos sistemas reales, se centra
+en mostrar los conceptos fundamentales de los Sistemas Operativos como
+se explican a los estudiantes de informática, se incluyen los
+principales algoritmos y sus parámetros más relevantes.<br>
+<br>
+Además dispone de una serie de ejemplos y ejercicios con las
+simulaciones correspondientes que permiten explorar las posibilidades
+que ofrece la aplicación.</p>
+<p>La versión actual de la aplicación es la 1.2.</p>
+<p>Está disponible libremente para cualquier uso bajo <b>licencia
+BSD</b></p>
+<p align="right"><a name="welcome"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h2>Inicio y menú</h2>
+<p>La pantalla de bienvenida da acceso directo a cada una de las
+simulaciones, en cualquier momento se puede volver al inicio desde el
+menú <i>Archivo.</i></p>
+<table border="1">
+	<tr>
+		<td>
+		<p align="center"><img src="img/cpu.png"></p>
+		<h4 align="center">Planificación procesos</h4>
+		</td>
+		<td>
+		<p align="center"><img src="img/ram.png"></p>
+		<h4 align="center">Gestión de memoria</h4>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p align="center"><img src="img/tree.png"></p>
+		<h4 align="center">Sistema de archivos</h4>
+		</td>
+		<td>
+		<p align="center"><img src="img/hdd.png"></p>
+		<h4 align="center">Planificación de discos</h4>
+		</td>
+	</tr>
+</table>
+<p>La mayoría de las acciones del menú están disponibles a través de
+los atajos de teclado que se muestran a continuación:</p>
+<table border="1" cellpadding="2" cellspacing="2">
+	<tr class="tablehead">
+		<td>
+		<p><b>Acción</b></p>
+		</td>
+		<td>
+		<p><b>Atajo</b></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Salir</p>
+		</td>
+		<td>
+		<p>CTRL + E</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Abrir una simulación guardada</p>
+		</td>
+		<td>
+		<p>CTRL + O</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Guardar una simulación</p>
+		</td>
+		<td>
+		<p>CTRL + S <br>
+		<i>(Sólo disponible si está </i><br>
+		<i>abierta alguna simulación)</i></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Acceder a planificación de procesos</p>
+		</td>
+		<td>
+		<p>CTRL + P</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Acceder a gestión de memoria</p>
+		</td>
+		<td>
+		<p>CTRL + M</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Acceder a gestión del sistema de ficheros</p>
+		</td>
+		<td>
+		<p>CTRL + I</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Acceder a políticas de planificación de disco</p>
+		</td>
+		<td>
+		<p>CTRL + D</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Ayuda</p>
+		</td>
+		<td>
+		<p>F1</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>En cuanto a ...</p>
+		</td>
+		<td>
+		<p>CTRL + A</p>
+		</td>
+	</tr>
+</table>
+<p align="right"><a name="lang"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h2>Idioma</h2>
+<p>De momento la aplicación está disponible en tres idiomas:</p>
+<ul>
+	<li><img src="img/en.gif"> Inglés.</li>
+	<li><img src="img/ca.gif"> Catalán.</li>
+	<li><img src="img/es.gif"> Castellano.</li>
+</ul>
+<p align="right"><a name="simulations"></a><a name="scheduling"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h2>Descripción de las simulaciones</h2>
+<h3> Planificación de procesos</h3>
+<p>La simulación se centra en la planificación de procesos a <b>corto
+plazo</b> con un único procesador, su objetivo es seleccionar uno de los
+procesos disponibles para ejecutarse en el procesador.<br>
+<br>
+La ejecución de un proceso consiste en ciclos alternados de ráfagas de
+CPU y ráfagas de E / S (Ciclo de ráfagas CPU y E / S). Un proceso está
+disponible sólo durante las ráfagas de CPU.<br>
+<br>
+La simulación se basa en el modelo de tres estados, que define tres
+estados de un proceso y sus posibles transiciones: En ejecución, en
+espera (o preparado) y bloqueado.</p>
+<p><img border="1" src="img/3statemodel.jpg"
+	style="height: 175px; width: 450px"></p>
+<p>En cualquier momento sólo un proceso se encuentra ejecutándose,
+el resto de procesos esperan en la <b>cola de preparados</b> hasta que
+el planificador los seleccione, o bien se encuentran <b>bloqueados</b>
+realizando operaciones de E / S.</p>
+<p>Las decisiones del planificador dependen de dos factores
+principalmente: El algoritmo de planificación y la multiprogramación. El
+usuario puede escoger cuatro algoritmos diferentes: <i>FCFS (First
+Come First Served), SJF (Shortest Job First), Prioridad y Round Robin,</i> y
+también puede indicar si quiere un sistema monoprogramat o
+multiprogramado <br>
+<br>
+Los algoritmos de planificación se diferencian por tanto en el modo en
+que seleccionan los procesos para ejecutarse:</p>
+<ul>
+	<li><i>FCFS. </i><i>First Come First Served</i> Los procesos se
+	ejecutan en el orden de llegada. Se implementa con una cola FIFO.</li>
+	<li><i>SJF. </i><i>Shortest Job First</i> Se basa en la estimación
+	de la duración de las ráfagas de CPU, los procesos con la siguiente
+	ráfaga más corta se ejecutan primero. Se implementa con una cola de
+	prioridad ordenada por duración de las ráfagas de CPU. Aunque el
+	algoritmo es óptimo (mínimo tiempo de espera medio), la dificultad es
+	estimar las duraciones de las ráfagas. El algoritmo puede ser
+	expulsivo, en este caso los nuevos procesos que entran en la cola de
+	preparados pueden ocupar el lugar del proceso en ejecución.</li>
+	<li><i>Prioridad. </i>Se asocia una prioridad a cada proceso, el
+	planificador carga el proceso con más alta prioridad. Se implementa con
+	una cola ordenada por prioridad. El algoritmo puede ser expulsivo, en
+	este caso los nuevos procesos que entran en la cola de preparados
+	podrán ocupar el lugar del proceso en ejecución.</li>
+	<li>
+	<p><i>Round Robin. </i>Este algoritmo se diseñó especialmente para
+	los sistemas de <b>tiempo compartido,</b> una unidad de tiempo llamada
+	<b>quantum</b> limita el tiempo que los procesos se pueden ejecutar
+	cada vez que entran al procesador, cuando los procesos agotan el tiempo
+	regresan al final de la cola.</p>
+	</li>
+</ul>
+<p><b>Algoritmos expulsius:</b> Los procesos en ejecución pueden ser
+obligados a dejar el procesador a otro proceso más privilegiado antes de
+finalizar. De otra manera los algoritmos son <b>no expulsivo o
+cooperativos.</b></p>
+<p>Más información<br>
+<a href="http://en.wikipedia.org/wiki/Scheduling_%28computing%29">http://en.wikipedia.org/wiki/Scheduling_
+(computing)</a><br>
+<br>
+<a href="http://en.wikipedia.org/wiki/Computer_multitasking">http://en.wikipedia.org/wiki/Computer_multitasking</a>
+</p>
+<p align="right"><a name="sch_screen"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h4>: Pantalla:</h4>
+<p><img width="500" height="375" src="img/shc_map.png"></p>
+<p align="right"><a name="sch_cpu"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Procesador (CPU):</h4>
+<p>Puede estar ocioso (libre) u ocupado, en este caso se muestra el
+proceso que en ejecución, su información más relevante (PID, nombre y
+prioridad) y el ciclo de vida completo (ráfagas de procesador y
+operaciones de E / S) . <br>
+<br>
+Cada cuadro del ciclo corresponde a una unidad del tiempo de la
+simulación, en rojo se muestra en qué punto del ciclo se encuentra el
+proceso<br>
+<br>
+El proceso en ejecución sale del procesador cuando finaliza, vuelve a la
+cola de preparados o comienza una ráfaga de E / S</p>
+<p align="right"><a name="sch_ready"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Cola de preparados:</h4>
+<p>Contiene los procesos disponibles para entrar en ejecutarse (en
+espera). <br>
+<br>
+La cola siempre se muestra ordenada (primero a la derecha, último a la
+izquierda) según el algoritmo de planificación:</p>
+<ul>
+	<li><i>FCFS (First Come First Served):</i> Odre de llegada en
+	cola.</li>
+	<li><i>SJF (Shortest Job First):</i> Menor tiempo restante de
+	procesador (Respecto al actual ráfaga de CPU de cada proceso).</li>
+	<li><i>Prioridad:</i> Orden de prioridad, un valor mayor de la
+	prioridad indica una mayor prioridad, los procesos con igual prioridad
+	se ponen en orden de llegada.</li>
+	<li><i>Round Robin:</i> Odre de llegada a la cola.</li>
+</ul>
+<p>Para cada proceso se muestra su información más relevante (PID,
+nombre y prioridad) y el ciclo de vida completo (ráfagas de procesador y
+operaciones de E / S). <br>
+<br>
+Cada cuadro del ciclo corresponde a una unidad del tiempo de la
+simulación, en rojo se muestra en qué punto del ciclo se encuentra el
+proceso.<br>
+<br>
+Mientras la simulación está parada, con el botón derecho sobre cualquier
+proceso, se muestra un <b>menú contextual</b> que permite modificar y
+borrarlo.<br>
+<br>
+De la cola de preparados los procesos sólo salen para entrar en el
+procesador.</p>
+<p>Criterio en el orden de entrada de procesos en la cola
+una vez iniciada la simulación: nuevos procesos (entrantes) -> procesos que acaban E/S -> procesos que dejan la CPU </p>
+<p align="right"><a name="sch_incoming"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Procesos entrantes:</h4>
+<p>Los procesos que se inician con posterioridad (tiempo inicio&gt;
+0) se sitúan en esta cola. A medida que avanza la simulación y llega el
+tiempo de iniciarse entran en la cola de preparados.<br>
+<br>
+Esta cola permite que el usuario planifique toda la simulación y después
+ejecute completa sin más intervención.<br>
+<br>
+Los procesos se ordenan según el tiempo restante para iniciarse, o sea
+entrar en la cola de preparados.</p>
+<p> Mientras la simulación está parada,
+seleccionado cualquier proceso de la tabla, se muestra un <b>menú
+contextual</b> que permite modificar y borrarlo.</p>
+<p align="right"><a name="sch_set"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h4>: Configuración:</h4>
+<p>Establece el comportamiento de la simulación:</p>
+<ul>
+	<li><i>Multiprogramación o monoprogramació:</i> El planificador
+	cuando el proceso en ejecución comienza una ráfaga de E / S, si es
+	multiprogramado un nuevo proceso entrará a ejecutarse, en caso
+	contrario el procesador quedará ocioso (desaprovechado) hasta que
+	finalice la ráfaga E / S.</li>
+	<li>Algoritmo:
+	<ul>
+		<li><i>FCFS (First Come First Served):</i> No tiene parámetros,
+		no es expulsivo.</li>
+		<li><i>SJF (Shortest Job First):</i> Este puede ser expulsivo o
+		no.</li>
+		<li><i>Prioridad:</i> Este puede ser expulsivo o no.</li>
+		<li>
+		<p><i>Round Robin:</i> Siempre es expulsivo, el quantum es el
+		tiempo máximo que un proceso puede ejecutarse de forma continuada.
+		Valores posibles: 1 - 10 unidades de tiempo.</p>
+		</li>
+	</ul>
+	</li>
+</ul>
+<p align="right"><a name="sch_new"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Añadir procesos:</h4>
+<p>Sólo se pueden añadir procesos mientras la simulación está
+parada, para cada nuevo proceso hay que introducir la siguiente
+información:</p>
+<ul>
+	<li><i>PID,</i> Identificador de proceso, se calcula
+	automáticamente y es incremental.</li>
+	<li><i>Nombre,</i> (obligatorio) Cualquier texto es válido.</li>
+	<li><i>Prioridad,</i> Valor más altos indican mayor prioridad
+	(Valores: 1 - 10).</li>
+	<li><i>Inicio,</i> momento en que el proceso entrará en la cola de
+	preparados, si es 0 se añadirá a la cola de preparados, mientras que si
+	es superior a 0 el proceso se añadirá a la tabla de procesos entrantes
+	hasta que la simulación llegue al tiempo de inicio del proceso
+	(Valores: 1 - 100).</li>
+	<li><i>Color,</i> color con el que se dibujarán los elementos
+	gráficos relacionados con el proceso.</li>
+	<li><i>No finaliza,</i> indica que el proceso no termina y su
+	ciclo de ráfagas se repite indefinidamente.</li>
+	<li>
+	<p><i>Ciclo de ráfagas,</i> la mesa permite indicar la duración de
+	las ráfagas de CPU y E / S del proceso, cada fila es una unidad de
+	tiempo, obligatoriamente todos los procesos empiezan con una ráfaga de
+	CPU, además si finalizan (no es un ciclo periódico), 
+	la última ráfaga también debe ser de CPU. La duración máxima del proceso es 10 unidades
+	de tiempo.</p>
+	</li>
+</ul>
+<p>Sólo se puede acceder a la configuración mientras la simulación
+está parada</p>
+<p align="right"><a name="sch_info"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Datos y estadísticas:</h4>
+<p>Ver la información resultante de la planificación en cada momento
+de la simulación.</p>
+<p>Los datos globales son:</p>
+<ul>
+	<li><i>Eficiencia,</i> porcentaje de tiempo que está ocupado el
+	procesador.</li>
+	<li><i>Rendimiento,</i> # procesos finalizados por unidad de
+	tiempo.</li>
+	<li><i>Duración media,</i> duración media de los procesos
+	finalizados (duración = t. finalización - t. inicio).</li>
+	<li><i>Tiempo medio de espera,</i> media del tiempo de espera de
+	los procesos (tiempo en la cola de preparados).</li>
+	<li><i>Tiempo medio de respuesta,</i> media del tiempo de
+	respuesta de los procesos (respuesta = t. primera entrada CPU - t.
+	inicio).</li>
+</ul>
+<p>Para cada proceso se muestra una tabla con la siguiente
+información</p>
+<ul>
+	<li><i>PID,</i> ID de proceso (El color de fondo es el color del
+	proceso).</li>
+	<li><i>Nombre,</i> Nombre del proceso.</li>
+	<li><i>Prioridad,</i> Prioridad del proceso.</li>
+	<li><i>Inicio,</i> momento de entrada en la cola de preparados.</li>
+	<li><i>Periódico,</i> Indica si el proceso finaliza o no.</li>
+	<li><i>CPU,</i> tiempo que ha sido el proceso a la CPU hasta el
+	momento.</li>
+	<li><i>Respuesta,</i> tiempo desde la entrada en la cola de
+	preparados hasta que se produce la primera entrada al procesador.</li>
+	<li><i>Esperando,</i> tiempo total que lleva el proceso a la cola
+	de preparados hasta el momento.</li>
+	<li><i>Duración,</i> tiempo desde la entrada en la cola de
+	preparados hasta la finalización del proceso.</li>
+	<li><i>% CPU,</i> porcentaje de tiempo de CPU respecto al tiempo
+	de espera.</li>
+	<li><i>% E / S,</i> porcentaje de tiempo de E / S respecto a la
+	duración del proceso (Todas las ráfagas).</li>
+</ul>
+<p align="right"><a name="memory"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h3>Gestión de memoria</h3>
+<p>La simulación muestra la carga de procesos en memoria principal
+según diferentes sistemas de gestión de memoria. Adicionalmente ofrece
+versiones simplificadas de los mecanismos de <b>intercambio</b> (swap) y
+<b>memoria virtual.</b></p>
+<p>Los algoritmos de gestión de memoria se divide en dos grupos:</p>
+<ul>
+	<li><b>Gestión de memoria contigua,</b> los procesos se cargan
+	enteros en la memoria, para cada proceso que hay que cargar se
+	selecciona una de las particiones que no esté ocupada y que sea
+	suficientemente grande para acomodar el proceso entero.
+	<p><img src="img/contiguous.jpg" border="1"></p>
+	<p>Se incluyen dos posibles algoritmos de gestión:</p>
+	<ul>
+		<li><i>Particiones de tamaño fijada,</i> la memoria está
+		inicialmente dividida en particiones de tamaño fijada, que en la
+		simulación debe crear el usuario. En general los procesos que ocupan
+		las particiones tienen un tamaño inferior a éstas y por tanto hay una
+		parte de la partición que no se usa y queda desaprovechada, eso se
+		llama <b>fragmentación interna.</b></li>
+		<li>
+		<p><i>Particiones de tamaño variable,</i> la memoria al inicio
+		está toda libre y para cada proceso se crea una partición exactamente
+		del tamaño de este, a medida que los procesos finalicen liberan las
+		particiones y pueden ser reutilizadas. Las particiones que no están
+		ocupadas generan <b>fragmentación externa.</b></p>
+		</li>
+	</ul>
+	<p>Otro concepto de interés es la política de asignación, de qué
+	manera selecciona el Sistema Operativo una de las particiones
+	disponibles, la aplicación contempla las más habituales:</p>
+	<ul>
+		<li><i>Primero ajuste.</i> La primera partición suficientemente
+		grande.</li>
+		<li><i>Mejor ajuste.</i> La que se ajusta mejor al tamaño del
+		proceso.</li>
+		<li><i>Peor ajuste.</i> La que se ajusta peor a la medida del
+		proceso.</li>
+	</ul>
+	</li>
+	<li><b>Gestión de memoria no contigua,</b> los procesos se dividen
+	en partes que se pueden cargar independientemente en la memoria,
+	incluye:
+	<ul>
+		<li><i>Paginación,</i> la memoria y los procesos se dividen en
+		partes de igual tamaño (marcos y páginas), las páginas de los procesos
+		se cargan los marcos libres de memoria.
+		<p><img src="img/pagination.jpg" border="1"></p>
+		</li>
+		<li><i>Segmentación,</i> los procesos se dividen en partes
+		lógicas (por ejemplo el código, los datos o la pila) y éstas se cargan
+		independientemente a memoria en particiones de su tamaño.
+		<p><img src="img/segmentation.jpg" border="1"></p>
+		</li>
+	</ul>
+	</li>
+</ul>
+<p align="right"><a name="mem_screen"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h4>: Pantalla:</h4>
+<p><img width="500" height="375" src="img/mem_map.png"></p>
+<p align="right"><a name="mem_ram"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Memoria principal:</h4>
+<p>Los procesos es cargan a memoria principal, ocupando el espacio
+que decide el Sistema Operativo, ya sea entero o dividido en las páginas
+o segmentos.<br>
+<br>
+Por definición en cualquiera de los sistemas de gestión de memoria,
+siempre hay un primer proceso cargado, ocupando las direcciones bajas,
+el Sistema Operativo, el tamaño del que puede variar entre 1, 2 o 4
+unidades.<br>
+<br>
+En todo momento se muestran las direcciones, los procesos, las
+particiones, ocupadas o disponibles, y la fragmentación siguiendo un
+código de color que permite una rápida comprensión de su estado.</p>
+<table border="1" cellpadding="2" cellspacing="2">
+	<tr class="tablehead">
+		<td>
+		<p><b>Color</b></p>
+		</td>
+		<td>
+		<p><b>Significado</b></p>
+		</td>
+	</tr>
+	<tr>
+		<td bgcolor="#dddddd">
+		<p><i>gris</i></p>
+		</td>
+		<td>
+		<p>Sistema Operativo</p>
+		</td>
+	</tr>
+	<tr>
+		<td bgcolor="#ffffff">
+		<p><i>blanco</i></p>
+		</td>
+		<td>
+		<p>Memoria sin particionar</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p><font color="#0000ff"><i>punteado azul</i></font></p>
+		</td>
+		<td>
+		<p>Fragmentación interna</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p><font color="#ffc0cb"><i>punteado rosa</i></font></p>
+		</td>
+		<td>
+		<p>Fragmentación externa</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p><i>[Otros colores]</i></p>
+		</td>
+		<td>
+		<p>Los procesos, cada uno de su color</p>
+		</td>
+	</tr>
+</table>
+<p>El tamaño de la memoria a la simulación varía entre 64 y 256
+unidades.</p>
+<p>Con el botón derecho sobre la memoria, se muestra el <b>menú
+contextual</b> que permite realizar varias acciones:</p>
+<ul>
+	<li>Mientras la simulación está parada: (Sólo para particiones de
+	tamaño fijada) modificar y borrar particiones.</li>
+	<li>
+	<p>En tiempos de simulación y para cada proceso cargado en memoria,
+	borrar el proceso, moverlo intercambio, acceder a la traducción de
+	direcciones, ver la información detallada (Sólo paginación y
+	segmentación) y compactar la memoria (Sólo para particiones de tamaño
+	variable y segmentación).</p>
+	</li>
+</ul>
+<p align="right"><a name="mem_queue"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Cola de procesos:</h4>
+<p>Contiene los procesos disponibles para cargarse en memoria
+ordenados por orden de llegada a la cola.</p>
+<p>Para cada proceso se muestra su información más relevante (PID,
+nombre y duración, que puede ser indefinida), además del tamaño y su
+distribución, donde cada cuadro corresponde a una unidad de espacio, que
+se carga a una única dirección de memoria.<br>
+<br>
+En paginación y segmentación la distribución diferencia los componentes
+de los procesos, páginas o segmentos, y resalta en gris aquellos que no
+se cargan inicialmente en memoria sino directamente a intercambio.<br>
+<br>
+Mientras la simulación está parada, con el botón derecho sobre cualquier
+proceso, se muestra un <b>menú contextual</b> que permite modificar y
+borrarlo.</p>
+<p align="right"><a name="mem_set"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Configuración:</h4>
+<p>Establece el comportamiento de la simulación:</p>
+<ul>
+	<li><i>Tamaño de la memoria</i> (Valores entre 64 a 256 unidades).
+	</li>
+	<li><i>Tamaño del Sistema Operativo</i> (Valores 1, 2 o 4
+	unidades).</li>
+	<li>Algoritmo:
+	<ul>
+		<li><i>Dimensiones fijada</i> (Gestión de memoria contigua), es
+		obligatorio particionar toda la memoria.</li>
+		<li><i>Tamaño variable</i> (Gestión de memoria contigua).</li>
+		<li><i>Paginación</i> (Gestión de memoria NO contigua) hay que
+		definir el tamaño de la página del sistema (Valores: 1, 2 o 4).</li>
+		<li><i>Segmentación</i> (Gestión de memoria NO contigua).</li>
+	</ul>
+	</li>
+	<li>Política de asignación, que partición elegirá el sistema entre
+	todas las disponibles:
+	<ul>
+		<li><i>Primero ajuste.</i> La primera partición suficientemente
+		grande.</li>
+		<li><i>Mejor ajuste.</i> La que se ajusta mejor al tamaño del
+		proceso.</li>
+		<li><i>Peor ajuste.</i> La que se ajusta peor a la medida del
+		proceso.</li>
+	</ul>
+	</li>
+</ul>
+<p>Cualquier cambio de algoritmo, de tamaño de la memoria o del SO
+obliga a reiniciar la simulación y borra todos los procesos existentes.</p>
+<p align="right"><a name="mem_new"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Añadir procesos:</h4>
+<p>Sólo se pueden añadir procesos mientras la simulación está
+parada, para cada nuevo proceso hay que introducir la siguiente
+información:</p>
+<ul>
+	<li><i>PID,</i> Identificador de proceso, se calcula
+	automáticamente y es incremental.</li>
+	<li><i>Nombre,</i> (obligatorio) Cualquier texto es válido.</li>
+	<li><i>Dimensiones,</i> del proceso (Valores: 1 - 64 unidades).</li>
+	<li><i>Duración,</i> los procesos pueden tener una duración
+	indefinida (Valor -1) o concreta (Valores 1 - 100), pero en ningún caso
+	0.</li>
+	<li>
+	<p><i>Color,</i> color con el que se dibujarán los elementos
+	gráficos relacionados con el proceso.</p>
+	</li>
+</ul>
+<p>Adicionalmente para procesos paginados se muestra:</p>
+<ul>
+	<li><i>Tabla de páginas,</i> el número de páginas depende del
+	tamaño del proceso, para cada página el usuario debe indicar si se
+	cargará inicialmente en memoria (valor por defecto) o intercambio
+	(memoria de apoyo).</li>
+</ul>
+<p>Y para procesos segmentados se muestra:</p>
+<ul>
+	<li><i>Tabla de segmentos,</i> todos los procesos obligatoriamente
+	tienen tres segmentos: código, datos, pila, para cada segmento el
+	usuario debe indicar el tamaño y si se cargará inicialmente en memoria
+	(valor por defecto) o intercambio (memoria de apoyo) . <i>Hay que
+	observar que la suma de los segmentos debe coincidir con el tamaño del
+	proceso. </i></li>
+</ul>
+<p align="right"><a name="mem_info"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Datos y estadísticas:</h4>
+<p>Muestra la información de empleo de la memoria en cada momento de
+la simulación. Esta información varía de un algoritmo a otro.</p>
+<p>En gestión de <b>memoria contigua,</b> se muestra una tabla con
+la siguiente información</p>
+<ul>
+	<li><i>Dirección,</i> inicio de la partición.</li>
+	<li><i>Medida,</i> de la partición.</li>
+</ul>
+<p><i>(Si la partición está ocupada)</i></p>
+<ul>
+	<li><i>PID,</i> ID de proceso (El color de fondo es el color del
+	proceso).</li>
+	<li><i>Nombre,</i> del proceso.</li>
+	<li><i>Dimensiones,</i> del proceso.</li>
+	<li>
+	<p><i>Duración,</i> del proceso.</p>
+	</li>
+</ul>
+<p>En <b>paginación,</b> se muestra una tabla con la siguiente
+información</p>
+<ul>
+	<li><i>Dirección,</i> inicio del marco.</li>
+	<li><i>Marco,</i> número de marco.</li>
+</ul>
+<p><i>(Si la partición está ocupada)</i></p>
+<ul>
+	<li><i>PID,</i> ID de proceso (El color de fondo es el color del
+	proceso).</li>
+	<li><i>Página,</i> del proceso que ocupa el marco correspondiente.
+	</li>
+	<li><i>Nombre,</i> del proceso.</li>
+	<li><i>Dimensiones,</i> del proceso (total).</li>
+	<li>
+	<p><i>Duración,</i> del proceso.</p>
+	</li>
+</ul>
+<p>En <b>segmentación,</b> se muestra una tabla con la siguiente
+información</p>
+<ul>
+	<li><i>Dirección,</i> inicio del marco.</li>
+	<li><i>Medida,</i> de la partición.</li>
+</ul>
+<p><i>(Si la partición está ocupada)</i></p>
+<ul>
+	<li><i>PID,</i> ID de proceso (El color de fondo es el color del
+	proceso).</li>
+	<li><i>Segmento,</i> del proceso: código, datos o pila.</li>
+	<li><i>Nombre,</i> del proceso.</li>
+	<li><i>Dimensiones,</i> del proceso (total).</li>
+	<li>
+	<p><i>Duración,</i> del proceso.</p>
+	</li>
+</ul>
+<P ALIGN=RIGHT><A NAME="mem_detailinfo"></A><A HREF="#index"><IMG SRC="img/return.png" BORDER=0></A></P>
+<H4>: Tabla de páginas y tabla de segmentos :</H4>
+<P>Muestra la información de ocupación de un proceso en gestión de memoria no contigua.</P>
+<P>En <B>paginación</B>, se muestra una tabla con la siguiente 
+información</P>
+<UL>
+	<LI><I>Página,</I> del proceso que
+	ocupa el marco correspondiente. </LI>
+	<LI><I>Marco,</I> número de marco.</LI>
+	<LI><I>Válida,</I> bit de validez de la página. (v - válida, i - inválida). 
+	Una página no es válida si no está cargada en memoria</LI>
+</UL>
+<P>En <B>segmentación</B>, se muestra una tabla con la siguiente 
+información</P>
+<UL>
+	<LI><I>Segmento,</I> del proceso: código,
+	datos o pila. </LI>
+	<LI><I>Tamaño,</I> del segmento.</LI>
+	<LI><I>Dirección,</I> inicio del marco. </LI>
+	<LI><I>Válido,</I> bit de validez del segmento. (v - válido, i - inválido). 
+	Un segmento no es válid si no está cargado en memoria</LI>
+</UL>
+<p align="right"><a name="mem_part"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Crear una partición (sólo particiones de tamaño fijada):</h4>
+<p>Sólo hay que indicar la dirección de <b>inicio</b> y el <b>tamaño.</b></p>
+<p>Las particiones no se pueden solapar, ni pueden finalizar más
+allá del final de la memoria.</p>
+<p align="right"><a name="mem_comp"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Compactar la memoria (sólo particiones de tamaño variable y
+segmentación):</h4>
+<p>La gestión con particiones de tamaño variable y la segmentación
+tienen en común que crean particiones dinámicamente y del tamaño exacto
+necesaria para dar cabida a procesos o segmentos de estos, por lo tanto
+el Sistema Operativo selecciona una partición generalmente de de tamaño
+superior y la divide en dos partes, en una ubicación el proceso y el
+otro que disponible.</p>
+<p>una vez liberadas (porque finaliza el proceso o se ha movido a
+intercambio), quedan nuevamente disponibles y este proceso continúa
+indefinidamente, las particiones disponibles cada vez son más pequeñas y
+la memoria se <b>degrada.</b></p>
+<p>El proceso de <b>compactación</b> lo soluciona, reorganiza la
+memoria, agrupa todos los procesos en las zonas bajas de memoria ya
+continuación crea una partición tan grande como toda la memoria
+disponible.</p>
+<p>Esto que es una responsabilidad del Sistema Operativo, queda en
+manos del usuario en la simulación <b>(menú contextual</b> de la
+memoria).</p>
+<p align="right"><a name="mem_swap"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Memoria de intercambio:</h4>
+<p>La memoria de intercambio (o apoyo) permite que se ejecuten más
+procesos de los que caben en la memoria principal y generalmente se
+implementa en memoria secundaria.</p>
+<p>La idea se basa en reservar un espacio adicional donde mover los
+procesos o partes de ellos (páginas o segmentos) menos activos y
+reubicarlos cuando sean necesarios.</p>
+<p>De manera simplificada la simulación permite el intercambio de
+procesos o partes de éstos entre la memoria e intercambio al usuario
+manualmente.</p>
+<p><b>Swap out,</b> desde el menú contextual de la memoria. Mueve un
+proceso o parte de este intercambio.</p>
+<p><b>Swap in,</b> desde el menú contextual de intercambio. Intenta
+mover un proceso o parte de éste a memoria, si la memoria está ocupada
+genera un error y no se mueve.</p>
+<p>Los algoritmos de paginación y segmentación permiten que
+directamente las páginas o segmentos se carguen inicialmente
+intercambio. Este espacio no está limitado ni por la cantidad ni el
+tamaño de los procesos que contiene.</p>
+<p align="right"><a name="mem_addr"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Traducción de direcciones:</h4>
+<p align="right"><a name="mem_err"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Errores en la simulación:</h4>
+<ol>
+	<li><b>Memoria llena,</b> a medida que se procesa la cola durante
+	la simulación, la memoria ocupándose y se acaba llenando. Desde el
+	momento en que un proceso no se puede cargar por falta de espacio, no
+	se sigue con ninguno de los procesos posteriores. La memoria se puede
+	liberar automáticamente (finaliza alguno de los procesos) o con la
+	intervención del usuario (borrar o mover a intercambio algún proceso).
+	</li>
+	<li><b>Memoria no totalmente particionado</b> por el algoritmo de
+	particiones de tamaño fijada es obligatorio que toda la memoria esté
+	particionado (donde acaba una partición seguidamente comienza la
+	siguiente).</li>
+</ol>
+<p align="right"><a name="filesystem"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h3>Gestión de los sistemas de ficheros</h3>
+<p>El sistema de ficheros gestiona la relación entre el espacio
+lógico que ve el usuario (archivos, directorios, enlaces) con la
+estructura correspondiente y la ubicación física (real) de los objetos
+en la memoria secundaria.</p>
+<p>La unidad mínima de trabajo del sistema de ficheros es <b>el
+bloque,</b> la memoria y los objetos del sistema de ficheros se dividen en
+bloques del mismo tamaño, y la gestión del sistema consiste en ubicar
+los bloques de los objetos en bloques disponibles de la memoria
+secundaria y mantener el control.</p>
+<p>La simulación implementa las dos principales técnicas de gestión
+de sistema de ficheros:</p>
+<ul>
+	<li>Lista enlazada con tabla de asignación de archivos <b>(FAT,
+	entornos MS-DOS).</b></li>
+	<li>
+	<p>Acceso indexado con triple nivel de indirección <b>(Sistemas
+	UNIX).</b></p>
+	</li>
+</ul>
+<p>Los parámetros de la simulación son:</p>
+<ul>
+	<li>El bloque (1, 2 o 4 unidades).</li>
+	<li>El tamaño total del disco (4, 6 u 8 Mega unidades).</li>
+</ul>
+<p>Los primeros 128 bloques del disco no se utilizan para simular
+que se reservan para tareas administrativas del Sistema Operativo.</p>
+<p>Los dos algoritmos de gestión del sistema de ficheros son:</p>
+<ul>
+	<li><b>Lista enlazada con tabla de asignación de archivos,</b> El
+	sistema mantiene una tabla con tantas entradas como bloques tiene el
+	sistema (File Allocation Table, FAT), para cada objeto sólo se dispone
+	de una referencia a su primer bloque. Estas referencias se encuentran en
+	el directorio que contiene el objeto.<br>
+	En la tabla cada bloque tiene una referencia al siguiente bloque de
+	manera que se pueden ir siguiendo encadenadament los bloques de un
+	fichero del primero al último.<br>
+	<br>
+	El tamaño de la tabla FAT = Tamaño del disco / Tamaño del block<br>
+	Los bloques necesarios para cada fichero = Tamaño archivo / Tamaño del
+	block<br>
+	<br>
+	Para simplicidad en la simulación los directorios ocupan sólo un
+	bloque, y los enlaces (hacen referencia a un elemento existente y esta
+	referencia sólo se guarda en el directorio que contiene el enlace).</li>
+	<li><b>Acceso indexado con triple nivel de indirección,</b> el
+	acceso indexado se basa en una estructura llamada i-nodo, y cada objeto
+	está asociado a un i-nodo. La estructura de un i-nodo es:
+	<ul>
+		<li>1 campo de información.</li>
+		<li>12 apuntadores a bloques de datos.</li>
+		<li>1 apuntador a 1 bloque indirecto.</li>
+		<li>1 apuntador a 1 bloque doble indirecto.</li>
+		<li>1 apuntador a 1 bloque triple indirecto.</li>
+	</ul>
+	<p><br>
+	El bloque indirecto simple apunta a bloques de datos, el doble en
+	bloques indirectos que a su vez apuntan a bloques de datos y el triple
+	en bloques indirectos que apuntan bloques indirectos que apuntan a
+	bloques de datos.<br>
+	Para crear nuevos ficheros primero se ocupan los bloques de datos,
+	luego el indirecto simple, el doble y el triple hasta ocupar los
+	bloques de datos necesarios según el tamaño del archivo. Por
+	simplicidad los directorios ocupan un bloque (de datos), y los enlaces.
+	<img src="img/inode.gif"></p>
+	<p>Referencia <a href="http://es.wikipedia.org/wiki/Inodo">http://es.wikipedia.org/wiki/Inodo</a></p>
+	<p>En la simulación el máximo número de i-nodos que se pueden crear
+	son 128 y los bloques indirectos tienen 20 apuntadores, en la tabla
+	siguiente se muestra cómo calcular los bloques necesarios para crear un
+	archivo.</p>
+	</li>
+</ul>
+<dl>
+	<dd>
+	<table border="1" cellpadding="2" cellspacing="2">
+		<tr class="tablehead">
+			<td></td>
+			<td>
+			<p>Bloques de datos <br>
+			disponibles</p>
+			</td>
+			<td>
+			<p>Bloques <br>
+			administrativos</p>
+			</td>
+			<td>
+			<p align="center">Total Bloques<br>
+			datos</p>
+			</td>
+			<td>
+			<p align="center">Total<br>
+			Bloques adm.</p>
+			</td>
+			<td>
+			<p align="center">Total<br>
+			Bloques</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><b>Un i-nodo</b></p>
+			</td>
+			<td>
+			<p>12 bloques</p>
+			</td>
+			<td>
+			<p>Jefe</p>
+			</td>
+			<td>
+			<p align="center">12.</p>
+			</td>
+			<td>
+			<p align="center">0</p>
+			</td>
+			<td>
+			<p align="center">12.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><b>Primera</b><br>
+			<b>indirección</b></p>
+			</td>
+			<td>
+			<p>Anteriores más ...<br>
+			20 bloques</p>
+			</td>
+			<td>
+			<p>1 bloque indirecto</p>
+			</td>
+			<td>
+			<p align="center">32</p>
+			</td>
+			<td>
+			<p align="center">1</p>
+			</td>
+			<td>
+			<p align="center">33</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><b>Segunda</b><br>
+			<b>indirección</b></p>
+			</td>
+			<td>
+			<p>Anteriores más ...<br>
+			20 * 20 bloques</p>
+			</td>
+			<td>
+			<p>1 bloque indirecto<br>
+			1 +20 b. indirectos</p>
+			</td>
+			<td>
+			<p align="center">432</p>
+			</td>
+			<td>
+			<p align="center">22</p>
+			</td>
+			<td>
+			<p align="center">454</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><b>Tercera</b><br>
+			<b>indirección</b></p>
+			</td>
+			<td>
+			<p>Anteriores más ...<br>
+			20 * 20 * 20 bloques</p>
+			</td>
+			<td>
+			<p>1 bloque indirecto<br>
+			1 +20 b. indirectos<br>
+			1 +20 +400 b. indirectos</p>
+			</td>
+			<td>
+			<p align="center">8.432</p>
+			</td>
+			<td>
+			<p align="center">433</p>
+			</td>
+			<td>
+			<p align="center">8.875</p>
+			</td>
+		</tr>
+	</table>
+	</dd>
+</dl>
+<p align="right"><a name="fs_screen"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h4>: Pantalla:</h4>
+<p><img width="500" height="375" src="img/fs_map.png"></p>
+<p align="right"><a name="fslogical"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Sistema de ficheros lógico:</h4>
+<p>Muestra el sistema de ficheros como lo ven los usuarios, el árbol
+de directorios y ficheros y enlaces dentro de cada directorio. La raíz <b>(root)</b>
+depende del gestor sistema de archivo, UNIX es &quot;/&quot; a MD-DOS es
+&quot;C: \&quot;</p>
+<p>Con el botón derecho sobre un objeto cualquiera, se muestra el <b>menú
+contextual</b> que permite realizar varias acciones:</p>
+<ul>
+	<li>Añadir un archivo al mismo directorio del objeto.</li>
+	<li>Añadir un subdirectorio dentro del mismo directorio del
+	objeto.</li>
+	<li>Añadir un enlace dentro del mismo directorio del objeto.</li>
+	<li>Modificar el objeto.</li>
+	<li>
+	<p>Borrar el objeto.</p>
+	</li>
+</ul>
+<p align="right"><a name="fsphysical"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: (Dispositivo) Sistema de ficheros físico:</h4>
+<p>Muestra el dispositivo (sistema de ficheros físico) dividido en
+bloques, a la derecha el direccionamiento.</p>
+<p>El espacio inicial (128 unidades) se reservan para tareas
+administrativas del Sistema Operativo y no se utilizan.</p>
+<p>Los bloques se pintan de diferentes colores según qué objeto
+correspondan o su finalidad:</p>
+<table border="1" cellpadding="2" cellspacing="2">
+	<tr class="tablehead">
+		<td>
+		<p><b>Color</b></p>
+		</td>
+		<td>
+		<p><b>Uso del bloque</b></p>
+		</td>
+	</tr>
+	<tr>
+		<td bgcolor="#000000">
+		<p><font color="#ffffff"><i>negro</i></font></p>
+		</td>
+		<td>
+		<p>Administración (Sistema de archivos)</p>
+		</td>
+	</tr>
+	<tr>
+		<td bgcolor="#ffffff">
+		<p><i>blanco</i></p>
+		</td>
+		<td>
+		<p>Disponible</p>
+		</td>
+	</tr>
+	<tr>
+		<td bgcolor="#00ff00">
+		<p><i>Verde</i></p>
+		</td>
+		<td>
+		<p>Directorio</p>
+		</td>
+	</tr>
+	<tr>
+		<td bgcolor="#00ffff">
+		<p><i>Azul</i></p>
+		</td>
+		<td>
+		<p>Enlace débil</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p><i>[Otros colores]</i></p>
+		</td>
+		<td>
+		<p>Ocupado por un archivo,<br>
+		<i>UNIX &quot;Y&quot; significa que es un bloque indirecto</i></p>
+		</td>
+	</tr>
+</table>
+<p align="right"><a name="fsfolder"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Vista del directorio actual:</h4>
+<p>Esta vista depende del directorio que esté seleccionado el <a
+	href="#fslogical">sistema de ficheros lógico</a> , se muestra el
+contenido del directorio, cada objeto se dibuja con el color
+correspondiente: ficheros (color variable según archivo), enlaces
+(azul), directorios (verde).</p>
+<p>Para cada uno de los objetos indica su referencia al <a
+	href="#fsphysical">sistema de ficheros físico</a> . Para UNIX el i-nodo
+del objeto, para MS-DOS la entrada inicial en la tabla FAT.</p>
+<p>Con el botón derecho sobre cualquiera de los objetos, se muestra
+un <b>menú contextual</b> que permite ver la <a href="#fsdetail_info">información
+detallada</a> .</p>
+<p align="right"><a name="fs_set"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Configuración:</h4>
+<p>Establece el comportamiento de la simulación:</p>
+<ul>
+	<li><i>Tamaño del bloque</i> (Valores 1, 2 o 4 unidades) (Valores
+	entre 64 a 256 unidades).</li>
+	<li><i>Tamaño de la memoria</i> (Valores 4, 6 u 8, x 1024
+	unidades).</li>
+	<li>Algoritmo:
+	<ul>
+		<li>Asignación enlazada con tabla de asignación de archivos <i>(FAT,
+		MS-DOS).</i></li>
+		<li>
+		<p>Asignación indexada con triple indirección Dimensiones variable
+		<i>(UNIX).</i></p>
+		</li>
+	</ul>
+	</li>
+</ul>
+<p>Cualquier cambio de algoritmo, de tamaño del bloque, de la
+memoria o del algoritmo obliga a reiniciar la simulación y borra todos
+los objetos existentes.</p>
+<p align="right"><a name="fsnew_file"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Añadir un archivo:</h4>
+<p>El fichero se añade al directorio que esté seleccionado en ese
+momento, para cada nuevo archivo hay que introducir la siguiente
+información:</p>
+<ul>
+	<li><i>Nombre,</i> (obligatorio) Cualquier texto es válido.</li>
+	<li><i>Tamaño,</i> del archivo (Valores: 1 a 4096 unidades).</li>
+	<li>
+	<p><i>Color,</i> color con el que se dibujarán los elementos
+	gráficos relacionados con el archivo.</p>
+	</li>
+</ul>
+<p align="right"><a name="fsnew_folder"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Añadir un directorio:</h4>
+<p>El directorio se añade en el directorio que esté seleccionado en
+ese momento,<br>
+sólo hay que indicar el nombre del nuevo directorio, es obligatorio y
+cualquier texto es válido.</p>
+<p align="right"><a name="fsnew_link"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Añadir un enlace:</h4>
+<p>El enlace se añade al directorio que esté seleccionado en ese
+momento, para cada nuevo enlace hay que introducir la siguiente
+información:</p>
+<ul>
+	<li><i>Nombre,</i> (obligatorio) Cualquier texto es válido.</li>
+	<LI><I>Débil,</I> tipo de enlace, débil (seleccionado) o fuerte (no seleccionado). MS-DOS sólo admite enlaces débiles </LI>
+	<li>
+	<p><i>Destino,</i> objeto destino del enlace.</p>
+	</li>
+</ul>
+<p align="right"><a name="fsdetail_info"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Información detalla de un objeto:</h4>
+<p>Desde la vista de directorio, se puede acceder a la información
+detallada de cualquier objeto dentro del directorio, ésta depende del
+sistema de ficheros.</p>
+<p>Para UNIX se muestra el detalle del i-nodo:</p>
+<ul>
+	<li>Información, en este caso sólo el número de enlaces que
+	apuntan a la i-nodo.</li>
+	<li>12 bloques de datos, directamente el número de bloque donde se
+	encuentran los datos, o &quot;nil&quot; si no se utiliza.</li>
+	<li>Indireccions, 1 ª, 2 ª y 3 ª, número de bloque donde se
+	encuentra el bloque indirecto, o &quot;nil&quot; si no se utiliza.
+	<ul>
+		<li>Para cada indirección también se puede acceder a su
+		información:
+		<ul>
+			<li>Índice del apuntador.</li>
+			<li>bloque donde apunta, o &quot;nil&quot; si no se utiliza.</li>
+			<li>
+			<p>Tipo: &quot;Bloque&quot; si es de datos o
+			&quot;indirección&quot; si es indirecto.</p>
+			</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+</ul>
+<p>Para MS-DOS se muestran las entradas de la tabla FAT
+correspondientes al objeto:</p>
+<ul>
+	<li>Número de bloque (Entrada en la tabla FAT).</li>
+	<li>
+	<p>Número del siguiente bloque del objeto o &quot;nil&quot; si es
+	el último.</p>
+	</li>
+</ul>
+<p align="right"><a name="fs_info"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Datos y estadísticas:</h4>
+<p>Muestra la información de empleo del dispositivo. Esta
+información varía de un algoritmo a otro.</p>
+<p>En <b>UNIX,</b> se muestra una tabla con todos los bloques de
+datos del dispositivo, para cada bloque:</p>
+<ul>
+	<li><i>Bloque,</i> número de bloque (Inicia con el primer bloque
+	de datos, 128).</li>
+	<li><i>Tipo:</i> &quot;Bloque de datos&quot; o &quot;Bloque
+	indirecto&quot;.</li>
+</ul>
+<p>En <b>MS-DOS,</b> se muestra la tabla FAT que es una
+representación de todos los bloques del dispositivo, para cada entrada
+de la tabla la siguiente información:</p>
+<ul>
+	<li><i>Bloque,</i> número de bloque (Inicia con el primer bloque
+	de datos, 128).</li>
+	<li><i>Siguiente,</i> número del siguiente bloque del objeto que
+	lo ocupa, &quot;nil&quot; si es el último bloque del objeto que lo
+	ocupa o 0 si está libre.</li>
+	<li><i>Estado,</i> del bloque, &quot;usado&quot; o
+	&quot;libre&quot;.</li>
+</ul>
+<p align="right"><a name="fs_err"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4>: Errores en la simulación:</h4>
+<ol>
+	<li><b>Memoria llena,</b> los nuevos objetos que se crean ocupan
+	los bloques del dispositivo que son limitados, si no se pueden crear
+	nuevos objetos por falta de espacio hay que reducir el tamaño de los
+	existentes o borrarlos.</li>
+	<li><b>Existe otro objeto con el mismo nombre</b> dentro de un
+	mismo directorio no pueden existir objetos (ficheros, enlaces o
+	subdirectorios) con el mismo nombre.</li>
+</ol>
+<p align="right"><a name="disk"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h3>Políticas de planificación de discos</h3>
+<p>Se trata la parte de políticas de planificación de discos
+incluida dentro de la gestión de dispositivos de E / S del Sistema
+Operativo.</p>
+<p>A pesar de la heterogeneidad e intensidad de estos, disco ópticos
+o magnéticos, rígidos o flexibles, sólo de lectura o de lectura y
+escritura, CD, DVD&#39;s o HHD por ejemplo, se pueden tratar de manera
+similar.</p>
+<p>Los discos se organizan en <b>sectores,</b> éstos se agrupan en <b>pistas,</b>
+las pistas están en una <b>cara o superficie en un plato,</b> y cada
+disco puede tener varios <b>platos.</b></p>
+<p><img src="img/disc_structure.png"></p>
+<p>Referencia <a href="http://es.wikipedia.org/wiki/Disco_duro">http://es.wikipedia.org/wiki/Disco_duro</a></p>
+<p>Las pistas que están en la misma posición del cabezal se llaman
+cilindros.</p>
+<p>Los sectores se referencian secuencialmente, el primer sector 0,
+está en la primera pista, el primer plato, el cilindro más exterior. Los
+platos giran constantemente y cada uno tiene un cabezal justo encima que
+lee o escribe los sectores, los cabezales se pueden desplazar
+perpendicularmente a las pistas a medida que el diseño gira.</p>
+<p>La geometría del disco de la simulación es: un plato, 16
+cilindros, 12 sectores por cilindro, en total 192 sectores o bloques de
+datos</p>
+<p>El Sistema Operativo recibe constantemente peticiones para
+escribir o leer del disco, la forma en que se sirven estas peticiones
+viene definida por la política de planificación de discos.</p>
+<p>Una buena política de planificación debe minimizar el movimiento
+del cabezal, que se traduce en una vida más larga del dispositivo, ya la
+vez atender las peticiones tan pronto como sea posible (reducir el
+tiempo de acceso a las peticiones de sectores del Sistema Operativo) .</p>
+<p>En la simulación están disponibles las siguientes políticas de
+planificación:</p>
+<ul>
+	<li>
+	<p><i>FIFO. </i><i>Fist In First Out</i> Esta planificación es muy
+	sencilla, atienden las peticiones en el orden estricto de llegada. El
+	cabezal se mueve siempre buscando la siguiente petición
+	independientemente de donde esté, no intenta minimizar el movimiento
+	del cabezal pero es justa porque no prioriza ninguna petición.</p>
+	</li>
+	<li>
+	<p><i>LIFO. </i><i>Last In First Out</i> Al contrario que FIFO,
+	ahora se atienden las peticiones en el orden inverso de llegada, la
+	última en llegar es atendida primero. Las últimas peticiones se sirven
+	inmediatamente, pero puede provocar inanición, las primeras peticiones
+	nunca serán servidas si van entrando de nuevas constantemente.</p>
+	</li>
+	<li>
+	<p><i>STF. </i><i>Shortest (Seek) Time First</i> atiende siempre
+	primero la petición que se encuentra más cerca de la posición del
+	cabezal. Esta planificación minimiza el movimiento del cabezal, pero
+	también puede provocar inanición.</p>
+	</li>
+	<li>
+	<p><i>SCAN.</i> También llamada &quot;Ascensor&quot;, el cabezal se
+	mueve del cilindro más externo al más interno, cuando llega al final
+	cambia el sentido y vuelve al principio, y así indefinidamente. Atiende
+	las peticiones a medida que las va encontrando durante su movimiento.</p>
+	</li>
+	<li>
+	<p><i>C-SCAN. </i><i>Circular SCAN.</i> Igual que SCAN, la
+	diferencia es que cuando llega al cilindro más interno al final de la
+	cara, se desplaza directamente al comienzo y vuelve a empezar, por lo
+	tanto siempre atiende las peticiones en la misma sentido del
+	movimiento. Mejora uno de los inconvenientes de SCAN, que cuando cambia
+	de sentido vuelve a pasar por las pistas que acaba de mirar.</p>
+	</li>
+	<li>
+	<p><i>LOOK.</i> Es una variación que mejora la planificación SCAN,
+	la diferencia es que sólo llega hasta la última petición no hasta el
+	último cilindro. En el momento que se detecta que no quedan más
+	peticiones en la misma dirección, entonces cambia el sentido.</p>
+	</li>
+	<li>
+	<p><i>C, LOOK. </i><i>Circular LOOK</i> Incluye las mejoras de LOOK
+	y C-SCAN, sólo llega hasta la última petición y además cuando llega a
+	la más externa, se desplaza al principio y vuelve a empezar, siempre
+	atiende las peticiones en el mismo sentido.</p>
+	</li>
+</ul>
+<p align="right"><a name="disk_screen"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h4>: Pantalla:</h4>
+<p><img width="500" height="375" src="img/disk_map.png"></p>
+<p align="right"><a name="disk_platter"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4><b>: El disco:</b></h4>
+<p>Ver el plato del disco con las divisiones de sectores y
+cilindros.</p>
+<p>El sector 0 (primer) se encuentra en la parte superior del
+cilindro más externo, a la derecha de la vertical.</p>
+<p>En todo momento de la simulación la posición del cabezal se
+muestra en color negro, y las peticiones en el color correspondiente</p>
+<p>Mientras la simulación está parada, con el botón derecho sobre
+cualquier petición, se muestra un menú contextual que permite
+modificarla y borrarla.</p>
+<p align="right"><a name="disk_graph"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4><b>: Gráfica de movimiento del cabezal:</b></h4>
+<p>La gráfica representa el movimiento del cabezal a medida que se
+sirven las peticiones.</p>
+<p>En el eje de las abscisas los cilindros y el eje de ordenadas el
+tiempo.</p>
+<p>Cada petición atendida se marca con un punto (del color de la
+petición) indicando el cilindro donde se encuentra el sector atendido y
+el tiempo, los puntos se unen con rectas que representan el movimiento
+del cabezal a través de los cilindros.</p>
+<p align="right"><a name="disk_info"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4><b>: Datos y estadísticas:</b></h4>
+<p>Ver todas las peticiones, la información de la tabla es
+siguiente:</p>
+<ul>
+	<li><i>Sector,</i> número de sector de la petición.</li>
+	<li><i>Cilindro,</i> donde se encuentra el sector.</li>
+	<li><i>Retraso,</i> tiempo que tarda en llegar la petición. Por
+	ejemplo una petición con retraso 3 unidades, entrará en la cola de
+	peticiones al tiempo 3 de la simulación.</li>
+	<li><i>Movimiento,</i> para las peticiones atendidas, muestra el
+	movimiento del cabezal desde la anterior petición, el número de
+	cilindros por los que ha pasado hasta llegar al cilindro de la actual
+	petición.</li>
+	<li><i>Acumulado,</i> movimiento del cilindro acumulado desde el
+	inicio de la simulación.</li>
+</ul>
+<p>Las peticiones pueden estar en tres estados diferentes:</p>
+<ul>
+	<li><i>Servidas,</i> ya han sido atendidas.</li>
+	<li><i>Esperando,</i> se encuentran en la cola pendientes de ser
+	atendidas.</li>
+	<li><i>Pendientes de llegar,</i> llegan con retraso.</li>
+</ul>
+<p>Primeramente se muestran las servidas, luego las que se
+encuentran esperando en la cola y finalmente las que aún no han llegado.</p>
+<p>Mientras la simulación está parada, con el botón derecho sobre
+cualquier petición, se muestra un menú contextual que permite
+modificarla y borrarla.</p>
+<p align="right"><a name="disk_set"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4><b>: Configuración:</b></h4>
+<p>Establece el comportamiento de la simulación:</p>
+<ul>
+	<li><i>Posición inicial del cabezal:</i> El usuario puede
+	seleccionar a cuál de los sectores estará el cabezal inicialmente
+	(Valores: 0 - 192).</li>
+	<li>Algoritmo:
+	<ul>
+		<li><i>FIFO,</i> Primero en entrar primero en salir.</li>
+		<li><i>LIFO,</i> Último en entrar primero en salir.</li>
+		<li><i>STF,</i> Primero el tiempo de búsqueda más corto.</li>
+		<li><i>SCAN.</i></li>
+		<li><i>C-SCAN,</i> SCAN circular.</li>
+		<li><i>LOOK.</i></li>
+		<li><i>C-LOOK,</i> LOOK circular.</li>
+	</ul>
+	</li>
+</ul>
+<p>Sólo se puede acceder a la configuración mientras la simulación
+está parada</p>
+<p align="right"><a name="disk_new"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4><b>: Añadir petición:</b></h4>
+<p>Sólo se pueden añadir peticiones mientras la simulación está
+parada, para cada nueva petición hay que introducir la siguiente
+información:</p>
+<ul>
+	<li><i>Sector,</i> número de sector sobre el que se genera la
+	petición (Valores: 1 - 192).</li>
+	<li><i>Retraso,</i> momento en que la petición entrará en la cola
+	de peticiones, si es 0 se añadirá directamente a la cola, en caso
+	contrario se añadirá con el retraso indicado (Valores: 1 - 100).</li>
+	<li><i>Color,</i> color con el que se dibujarán los elementos
+	gráficos relacionados con la petición.</li>
+</ul>
+<p>Adicionalmente el sistema muestra el cilindro correspondiente al
+sector indicado.</p>
+<h3><a name="common"></a> <b>Tareas comunes</b></h3>
+<p align="right"><a name="open_save"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h4>: Abrir y guardar simulaciones:</h4>
+<p> Mientras la simulación está parada los
+usuarios pueden guardar las simulaciones que han creado y abrirlas
+posteriormente para completarlas, revisarlas, etc ...</p>
+<p>Se guardan todos los procesos, tanto de la cola de preparados
+como de la tabla de procesos entrantes, y los datos de configuración</p>
+<p>No es posible abrir o guardar simulaciones si se ejecuta la aplicación 
+a través del Applet debido a limitaciones de seguridad de java.</p>
+<p align="right"><a name="time"></a><a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h4><b>: Control de tiempo:</b></h4>
+<p>Permite gestionar el progreso de la simulación, avance normal,
+avance paso a paso (una unidad de tiempo cada vez), detener o reiniciar
+la simulación.</p>
+<p>Adicionalmente se puede variar la velocidad, entre 0,5 segundos y
+2 segundos por cada unidad de tiempo.</p>
+<p>En todo momento se muestra el tiempo actual de la simulación.</p>
+<p align="right"><a name="examples"></a><a name="scheduling_examples"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h2>Ejemplos disponibles</h2>
+<h3> <b>Ejemplos
+de planificación de procesos</b></h3>
+<table dir="ltr" align="left" width="100%" border="1" cellpadding="2"
+	cellspacing="2">
+	<tr class="tablehead">
+		<td colspan="3">Descripción</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Ejemplo simple de planificación FIFO</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_sch01htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_sch01"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Planificación SJF no expulsivo</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_sch02htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_sch02"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Planificación por Prioridad expulsiva</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_sch03htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_sch03"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Planificación Round Robin (quantum: 2)</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_sch04htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_sch04"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Planificación multiprogramación con E / S</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_sch05htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_sch05"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Planificación monoprogramació con E / S</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_sch06htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_sch06"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+</table>
+<p align="right"><a name="memory_examples"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h3><b>Ejemplos de gestión de
+memoria</b></h3>
+<table dir="ltr" align="left" width="100%" border="1" cellpadding="2"
+	cellspacing="2">
+	<tr class="tablehead">
+		<td colspan="3">Descripción</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Gestión de memoria contigua, con particiones de tamaño fijada
+		(primer ajuste)</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_mem01htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_mem01"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Gestión de memoria contigua, con particiones de tamaño fijada
+		(mejor ajuste)</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_mem02htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_mem02"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Gestión de memoria contigua, con particiones de tamaño variable
+		(Compactación)</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_mem03htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_mem03"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Gestión de memoria contigua, con particiones de tamaño variable
+		(Intercambio)</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_mem04htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_mem04"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Paginación</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_mem05htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_mem05"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Segmentación, carga parcial de procesos en memoria</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_mem06htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_mem06"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+</table>
+<p align="right"><a name="filesystem_examples"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h3>Ejemplos de gestión del sistema de ficheros</h3>
+<table dir="ltr" align="left" width="100%" border="1" cellpadding="2"
+	cellspacing="2">
+	<tr class="tablehead">
+		<td colspan="3">Descripción</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Lista enlazada con FAT. Objetos del sistema de ficheros</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_fs01htm"><img src="img/view.png"
+			border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_fs01"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Lista enlazada con FAT. Tamaño del bloque grande</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_fs02htm"><img src="img/view.png"
+			border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_fs02"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Acceso indexado (UNIX). Referencias a i-nodos</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_fs03htm"><img src="img/view.png"
+			border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_fs03"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Acceso indexado (UNIX). Indireccions</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_fs04htm"><img src="img/view.png"
+			border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_fs04"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+</table>
+<p align="right"><a name="disk_examples"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h3>Ejemplos políticas de planificación de discos</h3>
+<table dir="ltr" align="left" width="100%" border="1" cellpadding="2"
+	cellspacing="2">
+	<tr class="tablehead">
+		<td colspan="3">Descripción</td>
+	</tr>
+	<tr>
+		<td>
+		<p>La planificación justa. FIFO</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_disk01htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_disk01"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Ejemplo de planificación STF. Inanición</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_disk02htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_disk02"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>El ascensor (SCAN)</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_disk03htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_disk03"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>El ascensor mejorado 1. SCAN circular</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_disk04htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_disk04"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>El ascensor mejorado 2. LOOK circular</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_disk05htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#s_disk05"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+</table>
+<p align="right"><a name="exercises"></a><a
+	name="scheduling_exercises"></a> <a href="#index"><img
+	src="img/return.png" border="0"></a></p>
+<h2>Ejercicios disponibles</h2>
+<h3>Ejercicios de planificación de procesos</h3>
+<table dir="ltr" align="left" width="100%" border="1" cellpadding="2"
+	cellspacing="2">
+	<tr class="tablehead">
+		<td colspan="3">Descripción</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Orden de la cola de preparados</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_sch01htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_sch01"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Multiprogramación o monoprogramació?</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_sch02htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_sch02"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Diferencias entre una planificación expulsiva y no expulsiva</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_sch03htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_sch03"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Comparativa rendimiento algoritmos de planificación</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_sch04htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_sch04"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+</table>
+<p align="right"><a	name="memory_exercises"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h3>Ejercicios de gestión de memoria</h3>
+<table dir="ltr" align="left" width="100%" border="1" cellpadding="2"
+	cellspacing="2">
+	<tr bgcolor="#dddddd">
+		<td class="tablehead" colspan="3">Descripción</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Particiones de tamaño fijada, políticas de asignación</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_mem01htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_mem01"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Particiones de tamaño variable, traducción de direcciones</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_mem02htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_mem02"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Paginación</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_mem03htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_mem03"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Segmentación</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_mem04htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_mem04"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+</table>
+<p align="right"><a	name="filesystem_exercises"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h3>Ejercicios de sistemas de ficheros</h3>
+<table dir="ltr" align="left" width="100%" border="1" cellpadding="2"
+	cellspacing="2">
+	<tr class="tablehead">
+		<td colspan="3">Descripción</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Lista enlazada, FAT</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_fs01htm"><img src="img/view.png"
+			border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_fs01"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Acceso indexado, UNIX</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_fs02htm"><img src="img/view.png"
+			border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_fs02"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+</table>
+<p align="right"><a	name="disk_exercises"></a><a href="#index"><img src="img/return.png"
+	border="0"></a></p>
+<h3>Ejercicios Planificación de Disco</h3>
+<table dir="ltr" align="left" width="100%" border="1" cellpadding="2"
+	cellspacing="2">
+	<tr class="tablehead">
+		<td colspan="3">Descripción</td>
+	</tr>
+	<tr>
+		<td>
+		<p>Comparativa algoritmos</p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_disk01htm"><img
+			src="img/view.png" border="0"></a></p>
+		</td>
+		<td width="40">
+		<p align="center"><a href="#e_disk01"><img src="img/open.png"
+			border="0"></a></p>
+		</td>
+	</tr>
+</table>
+<br>
+<br>
+</body>
+</html>

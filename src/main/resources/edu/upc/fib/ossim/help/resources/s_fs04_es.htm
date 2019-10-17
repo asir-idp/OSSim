@@ -1,0 +1,139 @@
+﻿<html>
+<head><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Ejemplo. Acceso indexado (UNIX). Indireccions</h3>
+<hr>
+<p>En el ejemplo se crea un árbol de directorios con los diferentes
+tipos de objetos del sistema de ficheros: directorios, ficheros y
+enlaces.</p>
+<p>En sistemas UNIX cada objeto está asociado con una estructura
+llamada i-nodo, esta referencia está en las entradas de los directorios
+donde se encuentran los objetos.</p>
+<p><b>Recordatorio 1:</b> El color de los directorios es verde y el
+de los enlaces azul. El color de los ficheros se define cuando se crean.</p>
+<p><b>Recordatorio 2:</b> En la simulación el tamaño de los
+directorios es 1 bloque, mientras que los enlaces no ocupan espacio de
+disco, simplemente son entradas de datos en su directorio.</p>
+<p><b>Recordatorio 3:</b> La estructura de un i-nodo es</p>
+<ul>
+	<li>Información, que contiene el número de referencias al i-nodo
+	entre otras</li>
+	<li>12 apuntadores a bloques de datos</li>
+	<li>1 apuntador a 1 bloque indirecto</li>
+	<li>1 apuntador a 1 bloque doble indirecto</li>
+	<li>1 apuntador a 1 bloque triple indirecto.</li>
+</ul>
+<p>Para cada nuevo archivo los bloques de datos se llenan en el
+orden del i-nodo, primero los directos, luego las indireccions normal,
+doble y triple.</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td colspan="4">Árbol</td>
+		<td>tipo</td>
+		<td>Tamaño <br>
+		(Unidades)</td>
+	</tr>
+	<tr>
+		<td>/</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Directorio</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>folder1</td>
+		<td></td>
+		<td></td>
+		<td>Directorio</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>file1.txt</td>
+		<td></td>
+		<td>Archivo</td>
+		<td>101</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>file2.txt</td>
+		<td></td>
+		<td>Archivo</td>
+		<td>200</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>link1</td>
+		<td></td>
+		<td>Enlace fuerte<br>
+		(A file1.txt)</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>folder2</td>
+		<td></td>
+		<td></td>
+		<td>Directorio</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>file3.txt</td>
+		<td></td>
+		<td>Archivo</td>
+		<td>460</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>folder3</td>
+		<td></td>
+		<td>Directorio</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>file4.txt</td>
+		<td>Archivo</td>
+		<td>120</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>link2</td>
+		<td></td>
+		<td>Enlace fuerte<br>
+		(A link1)</td>
+		<td>0</td>
+	</tr>
+</table>
+<p>El tamaño del bloque es 1 unidad.</p>
+<p>Observaciones:</p>
+<ul>
+	<li>Los bloques indirectos se muestran con el carácter
+	&quot;I&quot;. Estos bloques no contienen datos, sólo apuntadores a
+	bloques de datos u otros bloques indirectos</li>
+	<li>Dos bloques indirectos seguidos (&quot;I&quot;,
+	&quot;I&quot;), significa que se empieza a llenar la segunda
+	indirección, y tres bloques indirectos (&quot;I&quot;, &quot;I&quot;,
+	&quot;I&quot;) la tercera</li>
+	<li>Se puede seguir el rastro de las indireccions y los bloques de
+	datos accediendo a la información del i-nodo correspondiente (botón
+	derecho, menú contextual vista de directorio), y luego a la de los
+	bloqueos indirectos de este.</li>
+</ul>
+</body>
+</html>

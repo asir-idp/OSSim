@@ -1,0 +1,174 @@
+﻿<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Exercise. Indexed Allocation, UNIX</h3>
+<hr>
+<h4>Statement.</h4>
+<p class="settings">Secondary memory size is 4 x 1024 units, block
+size is 1 unit.</p>
+<p class="settings">The memory is initially empty, the objects are
+created in the table order. Addresses @ 0 to @ 127 are reserved and can
+not be used. The i-node number is assigned sequentially from 0 (root).</p>
+<p>Given the objects of the table of the file system, answer the questions:</p>
+<ol>
+	<li>Indicates the total size in blocks (data + indirect) of the
+	different objects and their i-node number:
+	<table>
+		<tr class="tablehead">
+			<td>Object</td>
+			<td>Size<br>
+			(In blocks)</td>
+			<td>I-node</td>
+		</tr>
+		<tr>
+			<td>/</td>
+			<td></td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>folder1</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>file1.txt</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>file2.txt</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>link1</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>folder2</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>file3.txt</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Folder3</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>file4.txt</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>link2</td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	</li>
+	<li>What is the maximum file size in this scheme? <br>
+	</li>
+</ol>
+<h4>Data</h4>
+<table>
+	<tr class="tablehead">
+		<td colspan="4">Tree</td>
+		<td>Type</td>
+		<td>Size <br>
+		Units</td>
+	</tr>
+	<tr>
+		<td>/</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Folder</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>folder1</td>
+		<td></td>
+		<td></td>
+		<td>Folder</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>file1.txt</td>
+		<td></td>
+		<td>File</td>
+		<td>101</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>file2.txt</td>
+		<td></td>
+		<td>File</td>
+		<td>200</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>link1</td>
+		<td></td>
+		<td>Hard link<br>
+		(to file1.txt)</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>folder2</td>
+		<td></td>
+		<td></td>
+		<td>Folder</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>file3.txt</td>
+		<td></td>
+		<td>File</td>
+		<td>460</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>Folder3</td>
+		<td></td>
+		<td>Folder</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>file4.txt</td>
+		<td>File</td>
+		<td>120</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>link2</td>
+		<td></td>
+		<td>Hard link<br>
+		(to link1)</td>
+		<td>0</td>
+	</tr>
+</table>
+</body>
+</html>

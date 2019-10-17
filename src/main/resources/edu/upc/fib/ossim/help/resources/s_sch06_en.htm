@@ -1,0 +1,44 @@
+﻿<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Monoprogramming scheduling example with I/O</h3>
+<hr>
+<p>Different duration processes in the ready queue, processes mix
+CPU and I/O bursts. Processes run until complete, during I/O bursts does
+not enter processor, it is idle.</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td>Process</td>
+		<td>Bursts<br>
+		(Duration and type)</td>
+	</tr>
+	<tr>
+		<td>P1</td>
+		<td>2 CPU + 2 I/O + 1 cpu</td>
+	</tr>
+	<tr>
+		<td>P2</td>
+		<td>4 cpu</td>
+	</tr>
+	<tr>
+		<td>P3</td>
+		<td>3 cpu + 2 I/O + 2 cpu</td>
+	</tr>
+	<tr>
+		<td>P4</td>
+		<td>3 cpu</td>
+	</tr>
+</table>
+<p>All processes arrive in the table order at time 0.</p>
+<p>Comments:</p>
+<ul>
+	<li>The process always begins and ends with cpu bursts</li>
+	<li>While a process leave the CPU to perform I/O, the processor is
+	idle</li>
+</ul>
+</body>
+</html>

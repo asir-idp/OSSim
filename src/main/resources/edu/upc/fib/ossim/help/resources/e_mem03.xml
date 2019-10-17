@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<memory_manager>
+  <params>
+    <object management="PAG">
+      <memorySize>64</memorySize>
+      <soSize>4</soSize>
+      <pageSize>2</pageSize>
+      <policy>FF</policy>
+    </object>
+  </params>
+  <memory />
+  <programs_queue>
+    <object pid="1">
+      <name>P1</name>
+      <size>5</size>
+      <duration>-1</duration>
+      <color>-3483232</color>
+      <bid>0</bid>
+      <size>2</size>
+      <load>true</load>
+      <bid>1</bid>
+      <size>2</size>
+      <load>true</load>
+      <bid>2</bid>
+      <size>1</size>
+      <load>true</load>
+    </object>
+    <object pid="2">
+      <name>P2</name>
+      <size>4</size>
+      <duration>-1</duration>
+      <color>-3090440</color>
+      <bid>0</bid>
+      <size>2</size>
+      <load>true</load>
+      <bid>1</bid>
+      <size>2</size>
+      <load>true</load>
+    </object>
+    <object pid="4">
+      <name>P3</name>
+      <size>11</size>
+      <duration>-1</duration>
+      <color>-3560000</color>
+      <bid>0</bid>
+      <size>2</size>
+      <load>true</load>
+      <bid>1</bid>
+      <size>2</size>
+      <load>true</load>
+      <bid>2</bid>
+      <size>2</size>
+      <load>true</load>
+      <bid>3</bid>
+      <size>2</size>
+      <load>true</load>
+      <bid>4</bid>
+      <size>2</size>
+      <load>true</load>
+      <bid>5</bid>
+      <size>1</size>
+      <load>true</load>
+    </object>
+    <object pid="14">
+      <name>P4</name>
+      <size>5</size>
+      <duration>-1</duration>
+      <color>-4802389</color>
+      <bid>0</bid>
+      <size>2</size>
+      <load>true</load>
+      <bid>1</bid>
+      <size>2</size>
+      <load>true</load>
+      <bid>2</bid>
+      <size>1</size>
+      <load>true</load>
+    </object>
+    <object pid="16">
+      <name>P5</name>
+      <size>7</size>
+      <duration>-1</duration>
+      <color>-2177639</color>
+      <bid>0</bid>
+      <size>2</size>
+      <load>true</load>
+      <bid>1</bid>
+      <size>2</size>
+      <load>true</load>
+      <bid>2</bid>
+      <size>2</size>
+      <load>true</load>
+      <bid>3</bid>
+      <size>1</size>
+      <load>true</load>
+    </object>
+    <object pid="17">
+      <name>P6</name>
+      <size>3</size>
+      <duration>-1</duration>
+      <color>-2907926</color>
+      <bid>0</bid>
+      <size>2</size>
+      <load>true</load>
+      <bid>1</bid>
+      <size>1</size>
+      <load>true</load>
+    </object>
+  </programs_queue>
+</memory_manager>
+

@@ -1,0 +1,62 @@
+﻿<html>
+<head><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Ejercicio. Orden de la cola de preparados</h3>
+<hr>
+<h4>Enunciado.</h4>
+<p class="settings">El sistema está configurado para
+multiprogramación.</p>
+<p>Dada la tabla de procesos del ejercicio, responde a las
+preguntas:</p>
+<ol>
+	<li>En qué orden se sitúan los procesos en la cola para cada uno de los procesos siguientes:
+	<ul>
+		<li>Algoritmo FCFS</li>
+		<li>Algoritmo SJF (no expulsiva)</li>
+		<li>Algoritmo SJF (expulsiva)</li>
+		<li>Algoritmo Prioridad (no expulsiva)</li>
+		<li>Algoritmo Prioridad (expulsiva)</li>
+		<li>Algoritmo Round Robin (quantum: 1)</li>
+	</ul>
+	</li>
+</ol>
+<h4>Datos.</h4>
+<table>
+	<tr class="tablehead">
+		<td>Proceso</td>
+		<td>Inicio <br>
+		(Tiempo)</td>
+		<td>Prioridad</td>
+		<td>Ráfagas<br>
+		(Duración y tipo)</td>
+	</tr>
+	<tr>
+		<td>P1</td>
+		<td>0</td>
+		<td>3</td>
+		<td>2 cpu + 2 yo + 1 cpu</td>
+	</tr>
+	<tr>
+		<td>P2</td>
+		<td>0</td>
+		<td>1</td>
+		<td>4 cpu</td>
+	</tr>
+	<tr>
+		<td>P3</td>
+		<td>0</td>
+		<td>9</td>
+		<td>3 cpu + 2 yo + 2 cpu</td>
+	</tr>
+	<tr>
+		<td>P4</td>
+		<td>0</td>
+		<td>10</td>
+		<td>5 cpu</td>
+	</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,126 @@
+﻿<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Exercise. Pagination</h3>
+<hr>
+<h4>Statement.</h4>
+<p class="settings">System memory size is 64 units and Operating
+System size is 4 units. The processes are allocated in the exercise
+table order. Page size is 2 units.</p>
+<p>Given exercise processes data, answer the questions:</p>
+<ol>
+	<li>Create the table of the pages of each process at simulation end:
+	<table>
+		<tr class="tablehead">
+			<td colspan="3">Process</td>
+		</tr>
+		<tr class="tablehead">
+			<td>Page</td>
+			<td>Frame</td>
+			<td>Valid Bit</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td colspan="3">etc...</td>
+		</tr>
+	</table>
+	</li>
+	<li>What is the formula used to know the physical address
+	corresponding to the logical address of a process in pagination memory
+	management?<br>
+	</li>
+	<li>Swap out the following pages: P1 page 2, P3 pages 0 and 3 <br>
+	Indicate the corresponding physical address of processes in the table.
+	If the address does not match the logical address space of the process
+	indicate an <i>error,</i> and if the address is in a swapped page
+	indicate <i>page error</i>
+	<table>
+		<tr class="tablehead">
+			<td>Proceso</td>
+			<td>Location<br>
+			logic</td>
+			<td>Location<br>
+			physical</td>
+		</tr>
+		<tr>
+			<td>P1</td>
+			<td>@ 3</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>P1</td>
+			<td>@ 6</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>P3</td>
+			<td>@ 0</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>P3</td>
+			<td>@ 8</td>
+			<td></td>
+		</tr>
+	</table>
+	</li>
+</ol>
+<h4>Data</h4>
+<table>
+	<tr class="tablehead">
+		<td>Process</td>
+		<td>Size</td>
+		<td>Duration<br>
+		Time</td>
+	</tr>
+	<tr>
+		<td>P1</td>
+		<td>5 u.</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P2</td>
+		<td>4 u.</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P3</td>
+		<td>11 u.</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P4</td>
+		<td>5 u.</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P5</td>
+		<td>7 u.</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P6</td>
+		<td>3 u.</td>
+		<td>∞</td>
+	</tr>
+</table>
+<p>Are allocated into memory in the table order.</p>
+</body>
+</html>

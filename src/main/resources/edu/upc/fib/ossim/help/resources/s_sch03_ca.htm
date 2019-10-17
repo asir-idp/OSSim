@@ -1,0 +1,28 @@
+<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link REL=StyleSheet HREF="resources.css" TYPE="text/css">
+</head>
+<body>
+<h3>Exemple de planificació per Prioritat expulsiu</h3>
+<hr></hr>
+<p>Processos de diferents durades i prioritats a la cua de preparats, els processos només tenen ràfegues de CPU, 
+un procés molt prioritari arriba amb posterioritat a la cua</p>
+<br>
+<table>
+<tr class="tablehead"><td>Procés</td><td>Durada<br>ràfega<br>(CPU)</td><td>Prioritat</td><td>Inici<br>(temps)</td></tr>
+<tr><td>P1</td><td>5</td><td>4</td><td>0</td></tr>
+<tr><td>P2</td><td>4</td><td>1</td><td>0</td></tr>
+<tr><td>P3</td><td>7</td><td>9</td><td>0</td></tr>
+<tr><td>P4</td><td>3</td><td>1</td><td>0</td></tr>
+<tr><td>P5</td><td>2</td><td class="highlight">10</td><td class="highlight">2</td></tr>
+</table>
+<p>Arriben en l'ordre de la taula, el procés "P5" arriba a l'instant 2 i té prioritat 10.</p>
+<p>Observacions:</p>
+<ul><li>Es situen a la cua  ordenats segons la prioritat de de cada procés, 
+un valor més gran indica una prioritat major</li>
+<li>En el moment que arriba "P5" (prioritat 10), es troba en execució "P3" (prioritat 9)</li>
+<li>L'algorisme és expulsiu per tant "P5" expulsa "P3" i entra a executar-se</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link REL=StyleSheet HREF="resources.css" TYPE="text/css">
+</head>
+<body>
+<h3>Exemple. L'ascensor millorat 1. SCAN circular</h3>
+<hr></hr>
+<p>El capçal es mou independentment de les sol·licituds escanejant en un únic sentit,  dels cilindres exteriors als interiors, les sol·licituds  són servides a mesura que les troba.</p>
+<p><b>Recordatori</b>: La geometria del disc de la simulació és: un plat, 16 cilindres, 12 sectors per cilindre, en total 192 sectors o blocs de dades.</p>
+<br>
+<table>
+<tr class="tablehead"><td>Sector</td><td>Cilindre</td></tr>
+<tr><td>100</td><td>8</td></tr>
+<tr><td>3</td><td>0</td></tr>
+<tr><td>150</td><td>12</td></tr>
+<tr><td>23</td><td>1</td></tr>
+<tr><td>120</td><td>10</td></tr></table>
+<p>El capçal està posicionat inicialment al sector 90 (cilindre 7), movent-se en direcció dels cilindres més interns.</p>
+<p>Les sol·licituds arriben en l'ordre de la taula, totes a temps 0.</p>
+<p>Observacions:</p>
+<ul>
+<li>La sol·licitud més interna està al cilindre 12, tot i això continua fins arribar a l'últim cilindre</li>
+<li><i>(Millora respecte SCAN)</i> En el moment que arriba a l'últim cilindre, com acaba de servir
+les sol·licituds més internes i les que queden estan als cilindres més externs, desplaça el capçal directament
+al començament i torna a començar</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,59 @@
+﻿<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Non preemptive SJF scheduling example</h3>
+<hr>
+<p>Different duration processes in the ready queue, processes have
+only CPU bursts. A short process arrives later.</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td>Process</td>
+		<td>Burst<br>
+		duration<br>
+		(CPU)</td>
+		<td>Submission<br>
+		Time</td>
+	</tr>
+	<tr>
+		<td>P1</td>
+		<td>5</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>P2</td>
+		<td>4</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>P3</td>
+		<td>7</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>P4</td>
+		<td>3</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>P5</td>
+		<td>2</td>
+		<td class="highlight">4</td>
+	</tr>
+</table>
+<p>All processes arrive in the table order, process &quot;P5&quot;
+arrives at time 4.</p>
+<p>Comments:</p>
+<ul>
+	<li>Process are sorted by its duration, first those with a shorter
+	duration</li>
+	<li>At the time it arrives &quot;P5&quot; (duration 2 units), is
+	running &quot;P2&quot; (3 units left)</li>
+	<li>Algorithm is not preemptive, then &quot;P2&quot; keeps running
+	and &quot;P5&quot; is queued</li>
+</ul>
+</body>
+</html>

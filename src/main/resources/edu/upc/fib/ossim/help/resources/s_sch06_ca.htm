@@ -1,0 +1,25 @@
+<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link REL=StyleSheet HREF="resources.css" TYPE="text/css">
+</head>
+<body>
+<h3>Exemple de planificació monoprogramació amb E/S</h3>
+<hr></hr>
+<p>Processos de diferents durades a la cua de preparats, els processos combinen ràfegues de CPU i E/S. 
+Els processos s'executen completament, durant les ràfegues de E/S el processador queda ociós.</p>
+<br>
+<table>
+<tr class="tablehead"><td>Procés</td><td>Ràfegues<br>(durada i tipus)</td></tr>
+<tr><td>P1</td><td>2 cpu + 2 io + 1 cpu</td></tr>
+<tr><td>P2</td><td>4 cpu</td></tr>
+<tr><td>P3</td><td>3 cpu + 2 io + 2 cpu</td></tr>
+<tr><td>P4</td><td>3 cpu</td></tr></table>
+<p>Arriben en l'ordre de la taula, tots a temps 0.</p>
+<p>Observacions:</p>
+<ul>
+<li>Els processos comencen i acaben sempre amb ràfegues de cpu</li>
+<li>Mentre els processos abandonen la cpu per realitzar operacions d'E/S, el processador queda ociós</li>
+</ul>
+</body>
+</html>

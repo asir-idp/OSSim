@@ -1,0 +1,61 @@
+﻿<html>
+<head><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Ejemplo. Paginación (Tamaño página 2 unidades)</h3>
+<hr>
+<p>Los procesos se dividen en páginas de tamaño fijo (en el
+ejemplo 2 unidades), la memoria también está dividida en marcos del
+mismo tamaño. Las páginas de los procesos se cargan los marcos
+disponibles de la memoria.</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td>Proceso</td>
+		<td>Tamaño</td>
+		<td>Duración<br>
+		(Tiempo)</td>
+	</tr>
+	<tr>
+		<td>P1</td>
+		<td>5 u. (3 páginas)</td>
+		<td>5.4.</td>
+	</tr>
+	<tr>
+		<td>P2</td>
+		<td>4 u. (2 páginas)</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P3</td>
+		<td>11 u. (6 páginas)</td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>P4</td>
+		<td>5 u. (3 páginas)</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P5</td>
+		<td>7 u. (4 páginas)</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P6</td>
+		<td>3 u. (2 páginas)</td>
+		<td>∞</td>
+	</tr>
+</table>
+<p>Se cargan en memoria en el orden de la tabla.</p>
+<p>Observaciones:</p>
+<ul>
+	<li>La última página de los procesos no siempre está totalmente
+	ocupada, esto genera fragmentación interna</li>
+	<li>En paginación no tiene ningún sentido hablar de políticas de
+	asignación, las páginas y los marcos son exactamente del mismo tamaño</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link REL=StyleSheet HREF="resources.css" TYPE="text/css">
+</head>
+<body>
+<h3>Exemple. Llista enllaçada amb FAT, objectes del sistema de fitxers</h3>
+<hr></hr>
+<p>A l'exemple es crea un arbre de directoris amb els diferents tipus d'objectes del sistema de fitxers:
+directoris, fitxers i enllaços.</p>
+<p><b>Recordatori 1</b>: El color dels directoris és verd i el dels enllaços blau. El color dels fitxers 
+es defineix quan es creen.</p>
+<p><b>Recordatori 2</b>:  A la simulació la mida dels directoris és 1 bloc, mentre que els enllaços no ocupen
+espai de disc, simplement són entrades de dades al seu directori.</p>
+<br>
+<table>
+<tr class="tablehead"><td colspan="4">Arbre</td><td>tipus</td><td>Mida <br>(unitats)</td></tr>
+<tr><td>C:</td><td></td><td></td><td></td><td>Directori</td><td>1</td></tr>
+<tr><td></td><td>folder1</td><td></td><td></td><td>Directori</td><td>1</td></tr>
+<tr><td></td><td></td><td>file1.txt</td><td></td><td>Fitxer</td><td>101</td></tr>
+<tr><td></td><td></td><td>file2.txt</td><td></td><td>Fitxer</td><td>200</td></tr>
+<tr><td></td><td>folder2</td><td></td><td></td><td>Directori</td><td>1</td></tr>
+<tr><td></td><td></td><td>file3.txt</td><td></td><td>Fitxer</td><td>35</td></tr>
+<tr><td></td><td></td><td>folder3</td><td></td><td>Directori</td><td>1</td></tr>
+<tr><td></td><td></td><td></td><td>file4.txt</td><td>Fitxer</td><td>120</td></tr>
+<tr><td></td><td></td><td>link1</td><td></td><td>Enllaç feble<br>(a file1.txt)</td><td>0</td></tr>
+</table>
+<p>La mida del bloc és 1 unitat.</p>
+
+<p>Observacions:</p>
+<ul>
+<li>L'arrel (root) del sistema de fitxers és &quot;C:&quot; i el caràcter separador de directoris  en les rutes és &quot;\&quot;</li>
+<li>A cada nou directori, automàticament es creen els enllaços "." i ".." que apunten al propi directori i al seu pare 
+respectivament</li>
+<li>El bloc inicial dels diferents objectes correspon amb la primera entrada de la taula FAT de l'objecte</li>
+<li>Si s'esborra el fitxer apuntat per l'enllaç (link1 --> file1.txt), l'enllaç es manté però sense ús</li>
+<li>Si s'esborra un dels directoris, s'esborren tots els elements que en pengen</li>
+</ul>
+</body>
+</html>

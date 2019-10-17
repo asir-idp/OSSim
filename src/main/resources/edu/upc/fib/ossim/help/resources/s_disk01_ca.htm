@@ -1,0 +1,27 @@
+<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link REL=StyleSheet HREF="resources.css" TYPE="text/css">
+</head>
+<body>
+<h3>Exemple. La planificació justa. FIFO</h3>
+<hr></hr>
+<p>Les sol·licituds de sectors del disc són servides en l'ordre estricte d'arribada.</p>
+<p><b>Recordatori</b>: La geometria del disc de la simulació és: un plat, 16 cilindres, 12 sectors per cilindre, en total 192 sectors o blocs de dades.</p>
+<br>
+<table>
+<tr class="tablehead"><td>Sector</td><td>Cilindre</td></tr>
+<tr><td>100</td><td>8</td></tr>
+<tr><td>3</td><td>0</td></tr>
+<tr><td>150</td><td>12</td></tr>
+<tr><td>23</td><td>1</td></tr>
+<tr><td>120</td><td>10</td></tr></table>
+<p>El capçal està posicionat inicialment al sector 0 (cilindre 0).</p>
+<p>Les sol·licituds arriben en l'ordre de la taula, totes a temps 0.</p>
+<p>Observacions:</p>
+<ul>
+<li>El capçal sempre es mou cercant la següent sol·licitud</li>
+<li>El capçal passa per cilindres que contenen sol·licituds, però no les serveix perquè no són la que busca</li>
+</ul>
+</body>
+</html>

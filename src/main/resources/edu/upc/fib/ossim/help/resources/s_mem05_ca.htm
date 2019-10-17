@@ -1,0 +1,29 @@
+<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link REL=StyleSheet HREF="resources.css" TYPE="text/css">
+</head>
+<body>
+<h3>Exemple.  Paginació (Mida pàgina 2 unitats) </h3>
+<hr></hr>
+<p>Els processos es divideixen en pàgines de mida fixada (a l'exemple 2 unitats), 
+la memòria també està dividida en marcs de la mateixa mida. 
+Les pàgines dels processos es carreguen als marcs disponibles de la memòria.</p>
+<br>
+<table>
+<tr class="tablehead"><td>Procés</td><td>Mida</td><td>Durada<br>(Temps)</td></tr>
+<tr><td>P1</td><td>5 u. (3 pàgines)</td><td>4</td></tr>
+<tr><td>P2</td><td>4 u. (2 pàgines)</td><td>&#8734;</td></tr>
+<tr><td>P3</td><td>11 u. (6 pàgines)</td><td>2</td></tr>
+<tr><td>P4</td><td>5 u. (3 pàgines)</td><td>&#8734;</td></tr>
+<tr><td>P5</td><td>7 u. (4 pàgines)</td><td>&#8734;</td></tr>
+<tr><td>P6</td><td>3 u. (2 pàgines)</td><td>&#8734;</td></tr>
+</table>
+<p>Es carreguen a memòria en l'ordre de la taula.</p>
+<p>Observacions:</p>
+<ul>
+<li>La última pàgina dels processos no sempre està totalment ocupada, això genera fragmentació interna</li>
+<li>En paginació no té cap sentit parlar de polítiques d'assignació, les pàgines i els marcs són exactament de la mateixa mida</li>
+</ul>
+</body>
+</html>

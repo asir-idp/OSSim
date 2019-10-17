@@ -1,0 +1,11 @@
+@CHARSET "UTF-8";
+BODY  { background-color: #fefeca; font-family: helvetica, sans-serif; font-size: 12pt;}
+H2  { color: blue }
+H3  { color: blue }
+H4  { color: #cd5c5c }
+TABLE { border-width:1px; border-color:#777777; }
+TD { border-width:1px; border-color:#777777; }
+tr { text-align: center}
+.highlight { color:#CC00DD }
+.tablehead { background-color:#DDDDDD; color:#fefeca; font-weight: bold;  } 
+.settings { font-size: 10pt; font-style: italic; color:#BBBBBB}

@@ -1,0 +1,81 @@
+﻿<html>
+<head><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Ejemplo. Gestión de memoria contigua, con particiones de tamaño
+fijada (primer ajuste)</h3>
+<hr>
+<p>La memoria está dividida en particiones fijas, los procesos se
+cargan enteros en alguna de las particiones disponibles. Siguiendo la
+política del &quot;primer ajuste&quot;, en la primera partición
+disponible suficientemente grande.</p>
+<br>
+<table border="0">
+	<tr>
+		<td>Particiones
+		<table>
+			<tr class="tablehead">
+				<td>@ Inicio</td>
+				<td>Tamaño<br>
+				(Unidades)</td>
+			</tr>
+			<tr>
+				<td>@4</td>
+				<td>10.</td>
+			</tr>
+			<tr>
+				<td>@ 14</td>
+				<td>5</td>
+			</tr>
+			<tr>
+				<td>@ 19</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>@ 23</td>
+				<td>15</td>
+			</tr>
+			<tr>
+				<td>@ 38</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td>@ 48</td>
+				<td>14</td>
+			</tr>
+		</table>
+		</td>
+		<td>Procesos
+		<table>
+			<tr class="tablehead">
+				<td>Proceso</td>
+				<td>Tamaño<br>
+				(Unidades)</td>
+			</tr>
+			<tr>
+				<td>P1</td>
+				<td>5</td>
+			</tr>
+			<tr>
+				<td>P2</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td>P3</td>
+				<td>3</td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+<p>Se cargan en memoria en el orden de la tabla.</p>
+<p>Observaciones:</p>
+<ul>
+	<li>La política de primer ajuste es rápida pero no eficiente, los
+	procesos ocupan particiones demasiado grandes y generan mucha
+	fragmentación interna.</li>
+</ul>
+</body>
+</html>

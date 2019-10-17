@@ -1,0 +1,44 @@
+﻿<html>
+<head><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Ejemplo de planificación monoprogramació con E / S</h3>
+<hr>
+<p>Procesos de diferente duración en la cola de preparados, los
+procesos combinan ráfagas de CPU y E / S. Los procesos se ejecutan
+completamente, durante las ráfagas de E / S el procesador queda ocioso.</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td>Proceso</td>
+		<td>Ráfagas<br>
+		(Duración y tipo)</td>
+	</tr>
+	<tr>
+		<td>P1</td>
+		<td>2 cpu + 2 E/S + 1 cpu</td>
+	</tr>
+	<tr>
+		<td>P2</td>
+		<td>4 cpu</td>
+	</tr>
+	<tr>
+		<td>P3</td>
+		<td>3 cpu + 2 E/S + 2 cpu</td>
+	</tr>
+	<tr>
+		<td>P4</td>
+		<td>3 cpu</td>
+	</tr>
+</table>
+<p>Llegan en el orden de la tabla, todos a tiempo 0.</p>
+<p>Observaciones:</p>
+<ul>
+	<li>Los procesos comienzan y terminan siempre con ráfagas de cpu</li>
+	<li>Mientras los procesos abandonan la cpu para realizar
+	operaciones de E / S, el procesador queda ocioso</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿<html>
+<head><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Ejemplo de planificación SJF no expulsivo</h3>
+<hr>
+<p>Procesos de diferente duración en la cola de preparados, los
+procesos sólo tienen ráfagas de CPU. Un proceso de poca duración llega a la cola
+con posterioridad.</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td>Proceso</td>
+		<td>Duración<br>
+		ráfaga<br>
+		(CPU)</td>
+		<td>Inicio<br>
+		(Tiempo)</td>
+	</tr>
+	<tr>
+		<td>P1</td>
+		<td>5</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>P2</td>
+		<td>4</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>P3</td>
+		<td>7</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>P4</td>
+		<td>3</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>P5</td>
+		<td>2</td>
+		<td class="highlight">4</td>
+	</tr>
+</table>
+<p>Llegan en el orden de la tabla, el proceso &quot;P5&quot; llega
+en el instante 4.</p>
+<p>Observaciones:</p>
+<ul>
+	<li>Se sitúan a la cola ordenados según la duración de cada
+	proceso, primero los que tienen una duración más corta</li>
+	<li>En el momento que llega &quot;P5&quot; (duración 2 unidades),
+	se encuentra en ejecución &quot;P2&quot; (pendiente de ejecutar 3
+	unidades)</li>
+	<li>El algoritmo no es expulsivo por tanto &quot;P2&quot; continúa
+	ejecutándose y &quot;P5&quot; se sitúa a la cola</li>
+</ul>
+</body>
+</html>

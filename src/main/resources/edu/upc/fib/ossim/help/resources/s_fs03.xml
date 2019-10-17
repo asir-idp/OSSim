@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<filesystem_manager>
+  <params>
+    <object fileSystem="LINUX">
+      <blockSize>1</blockSize>
+      <devSize>4096</devSize>
+    </object>
+  </params>
+  <fsobjects>
+    <object id="4">
+      <name>folder1</name>
+      <parent>1</parent>
+      <type>folder</type>
+    </object>
+    <object id="7">
+      <name>file1.txt</name>
+      <parent>4</parent>
+      <type>file</type>
+      <size>101</size>
+      <color>-2496085</color>
+    </object>
+    <object id="8">
+      <name>file2.txt</name>
+      <parent>4</parent>
+      <type>file</type>
+      <size>200</size>
+      <color>-1260643</color>
+    </object>
+    <object id="10">
+      <name>folder2</name>
+      <parent>1</parent>
+      <type>folder</type>
+    </object>
+    <object id="13">
+      <name>file3.txt</name>
+      <parent>10</parent>
+      <type>file</type>
+      <size>460</size>
+      <color>-5637423</color>
+    </object>
+    <object id="14">
+      <name>folder3</name>
+      <parent>10</parent>
+      <type>folder</type>
+    </object>
+    <object id="17">
+      <name>file4.txt</name>
+      <parent>14</parent>
+      <type>file</type>
+      <size>120</size>
+      <color>-3417185</color>
+    </object>
+    <object id="9">
+      <name>link1</name>
+      <parent>4</parent>
+      <type>link</type>
+      <target>7</target>
+      <soft>false</soft>
+    </object>
+    <object id="18">
+      <name>link2</name>
+      <parent>10</parent>
+      <type>link</type>
+      <target>9</target>
+      <soft>false</soft>
+    </object>
+  </fsobjects>
+</filesystem_manager>
+

@@ -1,0 +1,82 @@
+﻿<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Example: STF scheduling example. Starvation</h3>
+<hr>
+<p>Requests closest to the head are served first, this may cause
+that while requests arrive close to the head, those further
+away are not served (Starvation)</p>
+<p><b>Reminder</b>: disk geometry is one platter, 16 cylinders, 12
+sectors per cylinder, 192 sectors in total.</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td>Sector</td>
+		<td>Cylinder</td>
+		<td>Delay</td>
+	</tr>
+	<tr>
+		<td>170</td>
+		<td>14</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>150</td>
+		<td>12</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>120</td>
+		<td>10</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>40</td>
+		<td>3</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td>20</td>
+		<td>1</td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>35</td>
+		<td>2</td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>0</td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<td>10</td>
+		<td>0</td>
+		<td>8</td>
+	</tr>
+	<tr>
+		<td>50</td>
+		<td>4</td>
+		<td>15</td>
+	</tr>
+	<tr>
+		<td>0</td>
+		<td>0</td>
+		<td>15</td>
+	</tr>
+</table>
+<p>The head is initially positioned at sector 50 (Cylinder 4)</p>
+<p>All requests arrive in the table order, according to the delay
+indicated.</p>
+<p>Comments:</p>
+<ul>
+	<li>The first requests are in inner cylinders, and are not served
+	as new requests come close to the head</li>
+	<li>This situation could continue indefinitely</li>
+</ul>
+</body>
+</html>

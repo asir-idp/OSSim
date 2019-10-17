@@ -1,0 +1,162 @@
+﻿<html>
+<head><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Ejercicio. Lista enlazada, FAT</h3>
+<hr>
+<h4>Enunciado.</h4>
+<p class="settings">La memoria secundaria tiene un tamaño de 4 x
+1024 unidades, el tamaño del bloque es de 4 unidades.</p>
+<p class="settings">La memoria está inicialmente vacía, los objetos
+se crean en el orden de la tabla. Las direcciones @ 0 hasta @ 127 están
+reservadas y no se pueden utilizar.</p>
+<p>Dada la tabla de objetos del sistema de ficheros del ejercicio,
+responde a las preguntas:</p>
+<ol>
+	<li>Indica el tamaño en bloques de los diferentes objetos y cual es su
+	primer bloque:
+	<table>
+		<tr class="tablehead">
+			<td>Objeto</td>
+			<td>Tamaño<br>
+			(En bloques)</td>
+			<td>Bloque<br>
+			Inicial</td>
+		</tr>
+		<tr>
+			<td>C:</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>folder1</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>file1.txt</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>file2.txt</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>folder2</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>file3.txt</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>folder3</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>file4.txt</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>link1</td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	</li>
+	<li>¿Cuál es el tamaño máximo de un archivo en este esquema?
+	¿Cuántos bloques para datos hay disponibles?<br>
+	</li>
+</ol>
+<h4>Datos.</h4>
+<table>
+	<tr class="tablehead">
+		<td colspan="4">Árbol</td>
+		<td>tipo</td>
+		<td>Tamaño <br>
+		(Unidades)</td>
+	</tr>
+	<tr>
+		<td>C:</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Directorio</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>folder1</td>
+		<td></td>
+		<td></td>
+		<td>Directorio</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>file1.txt</td>
+		<td></td>
+		<td>Archivo</td>
+		<td>101</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>file2.txt</td>
+		<td></td>
+		<td>Archivo</td>
+		<td>200</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>folder2</td>
+		<td></td>
+		<td></td>
+		<td>Directorio</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>file3.txt</td>
+		<td></td>
+		<td>Archivo</td>
+		<td>35</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>folder3</td>
+		<td></td>
+		<td>Directorio</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>file4.txt</td>
+		<td>Archivo</td>
+		<td>120</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>link1</td>
+		<td></td>
+		<td>Enlace débil<br>
+		(A file1.txt)</td>
+		<td>0</td>
+	</tr>
+</table>
+</body>
+</html>

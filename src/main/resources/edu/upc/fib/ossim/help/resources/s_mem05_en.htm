@@ -1,0 +1,60 @@
+﻿<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Example: Pagination (Page Size 2 units)</h3>
+<hr>
+<p>Processes are divided into fixed-sized pages (in Example 2
+units), memory is also divided into frames of equal size. Process pages
+are allocated into available memory frames.</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td>Process</td>
+		<td>Size</td>
+		<td>Duration<br>
+		Time</td>
+	</tr>
+	<tr>
+		<td>P1</td>
+		<td>5 u. (3 pages)</td>
+		<td>4</td>
+	</tr>
+	<tr>
+		<td>P2</td>
+		<td>4 u. (2 pages)</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P3</td>
+		<td>11 u. (6 pages)</td>
+		<td>2</td>
+	</tr>
+	<tr>
+		<td>P4</td>
+		<td>5 u. (3 pages)</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P5</td>
+		<td>7 u. (4 pages)</td>
+		<td>∞</td>
+	</tr>
+	<tr>
+		<td>P6</td>
+		<td>3 u. (2 pages)</td>
+		<td>∞</td>
+	</tr>
+</table>
+<p>Processes are allocated in the table order.</p>
+<p>Comments:</p>
+<ul>
+	<li>The last page of a processes is not always fully occupied,
+	this creates internal fragmentation</li>
+	<li>On pagination it makes no sense to talk about allocation
+	policies, pages and frames are exactly the same size</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,172 @@
+﻿<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Exercise. Segmentation</h3>
+<hr>
+<h4>Statement.</h4>
+<p class="settings">System memory size is 64 units and Operating
+System size is 4 units. The processes are allocated in the exercise
+table order.</p>
+<p>Given exercise processes data, answer the questions:</p>
+<ol>
+	<li>Create segments tables for each process at simulaton end:
+	<table>
+		<tr class="tablehead">
+			<td colspan="4">Process</td>
+		</tr>
+		<tr class="tablehead">
+			<td>Segment</td>
+			<td>Size</td>
+			<td>Address</td>
+			<td>Valid Bit</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td colspan="4">etc.)...</td>
+		</tr>
+	</table>
+	</li>
+	<li>What is the formula used to know the physical address
+	corresponding to the logical address of a process in segmentation
+	memory management?<br>
+	</li>
+	<li>Indicate the corresponding physical address of processes in
+	the table. If address does not match the logical address space of the
+	process indicate an <i>error,</i> and if the address is in a swapped
+	segment indicate <i>segmentation error</i>
+	<table>
+		<tr class="tablehead">
+			<td>Process</td>
+			<td>@logical<br>
+			address</td>
+			<td>physical<br>
+			address</td>
+		</tr>
+		<tr>
+			<td>P1</td>
+			<td>@ 3</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>P1</td>
+			<td>@ 13</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>P2</td>
+			<td>@ 7</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>P3</td>
+			<td>@ 0</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>P3</td>
+			<td>@ 41</td>
+			<td></td>
+		</tr>
+	</table>
+	</li>
+</ol>
+<h4>Data</h4>
+<table>
+	<tr class="tablehead">
+		<td>Process</td>
+		<td>Total<br>
+		Size<br>
+		Units</td>
+		<td>Segment</td>
+		<td>Size<br>
+		Units</td>
+		<td>initially <br>
+		allocated</td>
+	</tr>
+	<tr>
+		<td>P1</td>
+		<td>20</td>
+		<td>Code</td>
+		<td>2</td>
+		<td>YES</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td>Data</td>
+		<td>10</td>
+		<td>YES</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td>Stack</td>
+		<td>8</td>
+		<td>NO</td>
+	</tr>
+	<tr>
+		<td>P2</td>
+		<td>20</td>
+		<td>Code</td>
+		<td>5</td>
+		<td>YES</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td>Data</td>
+		<td>14</td>
+		<td>NO</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td>Stack</td>
+		<td>1</td>
+		<td>YES</td>
+	</tr>
+	<tr>
+		<td>P3</td>
+		<td>40</td>
+		<td>Code</td>
+		<td>10</td>
+		<td>YES</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td>Data</td>
+		<td>20</td>
+		<td>YES</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td>Stack</td>
+		<td>10</td>
+		<td>YES</td>
+	</tr>
+</table>
+<p>Are allocated into memory in the table order.</p>
+</body>
+</html>

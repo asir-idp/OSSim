@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<disk_management>
+  <params>
+    <object management="STF">
+      <head>50</head>
+    </object>
+  </params>
+  <requests>
+    <object bid="170">
+      <init>0</init>
+      <color>-1270051</color>
+    </object>
+    <object bid="150">
+      <init>0</init>
+      <color>-4203546</color>
+    </object>
+    <object bid="120">
+      <init>0</init>
+      <color>-4523322</color>
+    </object>
+    <object bid="40">
+      <init>1</init>
+      <color>-550183</color>
+    </object>
+    <object bid="20">
+      <init>2</init>
+      <color>-2496307</color>
+    </object>
+    <object bid="35">
+      <init>5</init>
+      <color>-2759498</color>
+    </object>
+    <object bid="2">
+      <init>6</init>
+      <color>-6704164</color>
+    </object>
+    <object bid="10">
+      <init>8</init>
+      <color>-664152</color>
+    </object>
+    <object bid="50">
+      <init>15</init>
+      <color>-3167542</color>
+    </object>
+    <object bid="0">
+      <init>15</init>
+      <color>-4852744</color>
+    </object>
+  </requests>
+</disk_management>
+

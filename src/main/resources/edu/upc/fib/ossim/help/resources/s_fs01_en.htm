@@ -1,0 +1,114 @@
+﻿<html>
+<head>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Example: Linked Allocation with FAT. File System objects</h3>
+<hr>
+<p>In this example a folder tree is created with different types of
+file system objects: folders, files and links.</p>
+<p><b>Reminder 1:</b> the folders' color is green and the links are blue.
+The files color is defined when created.</p>
+<p><b>Reminder 2:</b> In the simulation the folder size is 1 block,
+while the links do not occupy disk space, they are simply entries in its
+folder data.</p>
+<br>
+<table>
+	<tr class="tablehead">
+		<td colspan="4">Tree</td>
+		<td>Type</td>
+		<td>Size <br>
+		Units</td>
+	</tr>
+	<tr>
+		<td>C:</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>Folder</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>folder1</td>
+		<td></td>
+		<td></td>
+		<td>Folder</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>file1.txt</td>
+		<td></td>
+		<td>File</td>
+		<td>101</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>file2.txt</td>
+		<td></td>
+		<td>File</td>
+		<td>200</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>folder2</td>
+		<td></td>
+		<td></td>
+		<td>Folder</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>file3.txt</td>
+		<td></td>
+		<td>File</td>
+		<td>35</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>Folder3</td>
+		<td></td>
+		<td>Folder</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>file4.txt</td>
+		<td>File</td>
+		<td>120</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td>link1</td>
+		<td></td>
+		<td>Soft link<br>
+		(to file1.txt)</td>
+		<td>0</td>
+	</tr>
+</table>
+<p>Block size is 1 unit.</p>
+<p>Comments:</p>
+<ul>
+	<li>File system root is &quot;C:&quot; and path separator is
+	&quot;\&quot;</li>
+	<li>In each new folder, two links are automatically created
+	&quot;.&quot; and &quot;..&quot; pointing to the directory itself and
+	its parent respectively</li>
+	<li>First block of the different objects corresponds with the
+	first entry in its FAT table</li>
+	<li>If a file referenced by a link is deleted (link1 -&gt;
+	file1.txt), link remains but become unusable</li>
+	<li>If a folder is deleted, all the objects hanging from it are also
+	deleted</li>
+</ul>
+</body>
+</html>

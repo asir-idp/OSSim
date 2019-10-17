@@ -1,0 +1,174 @@
+﻿<html>
+<head><META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+
+<link rel="StyleSheet" href="resources.css" type="text/css">
+</head>
+<body>
+<h3>Ejercicio. Segmentación</h3>
+<hr>
+<h4>Enunciado.</h4>
+<p class="settings">La memoria del sistema es 64 unidades, el
+Sistema Operativo ocupa 4 unidades. Los procesos se cargan en el orden
+de la tabla de procesos.</p>
+<p>Dada la tabla de procesos del ejercicio, responde a las
+preguntas:</p>
+<ol>
+	<li>Crea la tabla de segmentos de cada proceso al final de la
+	simulación:
+	<table>
+		<tr class="tablehead">
+			<td colspan="4">Proceso ...</td>
+		</tr>
+		<tr class="tablehead">
+			<td>Segmento</td>
+			<td>Tamaño</td>
+			<td>Dirección</td>
+			<td>Bit validez</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td colspan="4">etc ...</td>
+		</tr>
+	</table>
+	</li>
+	<li>¿Cuál es la fórmula que permite conocer la dirección física
+	correspondiente a la dirección lógica de un proceso en gestión de
+	memoria segmentada?<br>
+	</li>
+	<li>Indica la dirección física correspondiente de los procesos de
+	la tabla. Si la dirección no corresponde al espacio de direcciones
+	lógicas del proceso indica <i>error,</i> y si la dirección está en
+	un segmento en intercambio indica <i>error de segmento</i>
+	<table>
+		<tr class="tablehead">
+			<td>Proceso</td>
+			<td>@ Dirección<br>
+			lógica</td>
+			<td>@ Dirección<br>
+			física</td>
+		</tr>
+		<tr>
+			<td>P1</td>
+			<td>@ 3</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>P1</td>
+			<td>@ 13</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>P2</td>
+			<td>@ 7</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>P3</td>
+			<td>@ 0</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>P3</td>
+			<td>@ 41</td>
+			<td></td>
+		</tr>
+	</table>
+	</li>
+</ol>
+<h4>Datos.</h4>
+<table>
+	<tr class="tablehead">
+		<td>Proceso</td>
+		<td>Tamaño<br>
+		total<br>
+		(Unidades)</td>
+		<td>Segmento</td>
+		<td>Tamaño<br>
+		(Unidades)</td>
+		<td>Cargado <br>
+		inicialmente</td>
+	</tr>
+	<tr>
+		<td>P1</td>
+		<td>20</td>
+		<td>Código</td>
+		<td>2</td>
+		<td>Si</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td>Datos</td>
+		<td>10</td>
+		<td>Si</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td>Pila</td>
+		<td>8</td>
+		<td>No</td>
+	</tr>
+	<tr>
+		<td>P2</td>
+		<td>20</td>
+		<td>Código</td>
+		<td>5</td>
+		<td>Si</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td>Datos</td>
+		<td>14</td>
+		<td>No</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td>Pila</td>
+		<td>1</td>
+		<td>Si</td>
+	</tr>
+	<tr>
+		<td>P3</td>
+		<td>40</td>
+		<td>Código</td>
+		<td>10</td>
+		<td>Si</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td>Datos</td>
+		<td>20</td>
+		<td>Si</td>
+	</tr>
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td>Pila</td>
+		<td>10</td>
+		<td>Si</td>
+	</tr>
+</table>
+<p>Se cargan en memoria en el orden de la tabla.</p>
+</body>
+</html>
