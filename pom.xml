@@ -6,7 +6,7 @@
 
 	<groupId>edu.upc.fib</groupId>
 	<artifactId>ossim</artifactId>
-	<version>1.2</version>
+	<version>1.2.0</version>
 
 	<name>OSSim</name>
 	<description>Operating System Concepts Simulator</description>
@@ -17,6 +17,19 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<exec.mainClass>edu.upc.fib.ossim.OSSimFrame</exec.mainClass>
 	</properties>
+
+	<organization>
+		<name>Francisco Vargas Ruiz</name>
+		<url>https://github.com/fvarrui</url>
+	</organization>
+
+	<licenses>
+		<license>
+			<name>BSD-3</name>
+			<comments>BSD 3-Clause License</comments>
+			<url>LICENSE</url>
+		</license>
+	</licenses>
 
 	<build>
 		<plugins>
